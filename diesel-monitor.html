@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diesel Monitor</title>
+<meta name="theme-color" content="#f0c040">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Diesel">
+<link rel="manifest" href="manifest.json">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0f11;
+    --surface: #161719;
+    --card: #1c1e21;
+    --border: #2a2d32;
+    --accent: #f0c040;
+    --accent2: #e05a20;
+    --text: #e8e6e0;
+    --muted: #666c75;
+    --green: #4caf7d;
+    --red: #e05a20;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    min-height: 100vh;
+    padding: 0 0 60px;
+  }
+
+  header {
+    padding: 32px 40px 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+
+  header h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--accent);
+  }
+
+  header span {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* INPUT SECTION */
+  .inputs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .field {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+    transition: border-color 0.15s;
+  }
+
+  .field:focus-within { border-color: var(--accent); }
+
+  .field label {
+    display: block;
+    font-size: 0.65rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+
+  .field-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .field input[type="number"],
+  .field input[type="text"] {
+    background: none;
+    border: none;
+    outline: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text);
+    width: 100%;
+  }
+
+  .field .unit {
+    font-size: 0.75rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* MONTH SELECTOR */
+  .month-bar {
+    margin-top: 28px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .month-bar span {
+    font-size: 0.65rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-right: 4px;
+  }
+
+  .month-btn {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .month-btn:hover { border-color: var(--accent); color: var(--text); }
+  .month-btn.active { background: var(--accent); color: #000; border-color: var(--accent); font-weight: 500; }
+
+  .add-month-btn {
+    background: none;
+    border: 1px dashed var(--border);
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .add-month-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* RESULTS */
+  .results {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .stat {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px;
+  }
+
+  .stat.highlight { border-color: var(--accent); }
+
+  .stat .stat-label {
+    font-size: 0.62rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+
+  .stat .stat-value {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .stat .stat-sub {
+    font-size: 0.68rem;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  .stat .delta {
+    font-size: 0.72rem;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+  .delta.up { color: var(--red); }
+  .delta.down { color: var(--green); }
+  .delta.neutral { color: var(--muted); }
+
+  /* COMPARISON TABLE */
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin: 36px 0 12px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+  }
+
+  thead th {
+    text-align: left;
+    padding: 8px 12px;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+
+  tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.1s;
+  }
+  tbody tr:hover { background: var(--card); }
+  tbody tr.current-row { background: rgba(240,192,64,0.05); }
+
+  tbody td {
+    padding: 10px 12px;
+    color: var(--text);
+  }
+
+  .tag {
+    display: inline-block;
+    background: rgba(240,192,64,0.15);
+    color: var(--accent);
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    letter-spacing: 0.05em;
+  }
+
+  /* OPTIMIZER */
+  .optimizer {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-top: 12px;
+  }
+
+  .optimizer-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .opt-col {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .opt-col:hover { border-color: var(--accent); }
+  .opt-col.opt-current { border-color: var(--accent); background: rgba(240,192,64,0.08); }
+
+  .opt-col .opt-days {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .opt-col .opt-label {
+    font-size: 0.58rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 3px 0 8px;
+  }
+
+  .opt-col .opt-cost {
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .opt-col .opt-save {
+    font-size: 0.65rem;
+    color: var(--green);
+    margin-top: 2px;
+  }
+
+  .opt-col .opt-extra {
+    font-size: 0.65rem;
+    color: var(--red);
+    margin-top: 2px;
+  }
+
+  /* FUEL GAUGE */
+  .gauge-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .gauge-track {
+    flex: 1;
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .gauge-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 3px;
+    transition: width 0.4s ease;
+  }
+  .gauge-label { font-size: 0.7rem; color: var(--muted); white-space: nowrap; }
+
+  @media (max-width: 600px) {
+    header { padding: 20px 16px 16px; }
+    .inputs-grid { grid-template-columns: 1fr; }
+    .results { grid-template-columns: 1fr 1fr; }
+    .optimizer-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>⛽ Diesel Monitor</h1>
+  <span>woon-werkverkeer tracker</span>
+</header>
+
+<div class="container">
+
+  <div class="inputs-grid">
+    <div class="field">
+      <label>Dieselprijs</label>
+      <div class="field-row">
+        <input type="number" id="price" value="1.72" step="0.01" min="0">
+        <span class="unit">€ / liter</span>
+      </div>
+    </div>
+    <div class="field">
+      <label>Kantoor dagen / week</label>
+      <div class="field-row">
+        <input type="number" id="days" value="3" min="0" max="5" step="1">
+        <span class="unit">dagen</span>
+      </div>
+    </div>
+    <div class="field">
+      <label>Km per rit (heen+terug)</label>
+      <div class="field-row">
+        <input type="number" id="km" value="150" min="1">
+        <span class="unit">km</span>
+      </div>
+    </div>
+    <div class="field">
+      <label>Weken in maand</label>
+      <div class="field-row">
+        <input type="number" id="weeks" value="4" min="1" max="5" step="1">
+        <span class="unit">weken</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MONTH TABS -->
+  <div class="month-bar" id="monthBar">
+    <span>Maand:</span>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results" id="results"></div>
+
+  <!-- FUEL GAUGE -->
+  <div style="margin-top:18px; background:var(--card); border:1px solid var(--border); border-radius:8px; padding:16px 18px;">
+    <div style="font-size:0.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">Tankbeurten deze maand</div>
+    <div class="gauge-row">
+      <div class="gauge-track"><div class="gauge-fill" id="gaugeFill"></div></div>
+      <div class="gauge-label" id="gaugeLabel"></div>
+    </div>
+  </div>
+
+  <!-- OPTIMIZER -->
+  <div class="section-title">Kostoptimalisatie — minder dagen = minder kosten</div>
+  <div class="optimizer">
+    <div style="font-size:0.72rem;color:var(--muted);">Vergelijk maandkosten op basis van aantal kantoor dagen/week</div>
+    <div class="optimizer-grid" id="optimizerGrid"></div>
+  </div>
+
+  <!-- HISTORY TABLE -->
+  <div class="section-title" id="histTitle">Maandoverzicht</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Maand</th>
+        <th>Kantoor dagen</th>
+        <th>Km totaal</th>
+        <th>Liters</th>
+        <th>Kosten</th>
+        <th>Δ vs vorige</th>
+      </tr>
+    </thead>
+    <tbody id="historyBody"></tbody>
+  </table>
+
+</div>
+
+<script>
+// ---- CONSTANTS ----
+const KM_PER_TANK = 1000;
+const TANK_LITERS = 50;
+const L_PER_KM = TANK_LITERS / KM_PER_TANK; // 0.05 L/km
+
+// ---- STATE ----
+const MONTH_NAMES = ['Jan','Feb','Mrt','Apr','Mei','Jun','Jul','Aug','Sep','Okt','Nov','Dec'];
+const now = new Date();
+
+let months = JSON.parse(localStorage.getItem('diesel_months') || 'null');
+if (!months) {
+  // seed last 3 months + current
+  months = [];
+  for (let i = 3; i >= 0; i--) {
+    const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+    months.push({
+      key: `${d.getFullYear()}-${d.getMonth()}`,
+      label: MONTH_NAMES[d.getMonth()] + ' ' + d.getFullYear(),
+      price: 1.72 - (i * 0.04) + (Math.random() * 0.06 - 0.03),
+      days: [3,3,2,3][3-i],
+      weeks: 4,
+      km: 150,
+    });
+  }
+}
+
+let activeKey = months[months.length - 1].key;
+
+function save() { localStorage.setItem('diesel_months', JSON.stringify(months)); }
+
+function calcMonth(m) {
+  const trips = m.days * m.weeks;
+  const totalKm = trips * m.km;
+  const liters = totalKm * L_PER_KM;
+  const cost = liters * m.price;
+  const tanks = liters / TANK_LITERS;
+  return { trips, totalKm, liters, cost, tanks };
+}
+
+function getActive() { return months.find(m => m.key === activeKey); }
+
+// ---- RENDER ----
+function renderAll() {
+  renderTabs();
+  renderResults();
+  renderOptimizer();
+  renderHistory();
+}
+
+function renderTabs() {
+  const bar = document.getElementById('monthBar');
+  bar.innerHTML = '<span>Maand:</span>';
+  months.forEach(m => {
+    const btn = document.createElement('button');
+    btn.className = 'month-btn' + (m.key === activeKey ? ' active' : '');
+    btn.textContent = m.label;
+    btn.onclick = () => { activeKey = m.key; syncInputsFromActive(); renderAll(); };
+    bar.appendChild(btn);
+  });
+  const addBtn = document.createElement('button');
+  addBtn.className = 'add-month-btn';
+  addBtn.textContent = '+ Nieuwe maand';
+  addBtn.onclick = addMonth;
+  bar.appendChild(addBtn);
+}
+
+function addMonth() {
+  const last = months[months.length - 1];
+  const parts = last.key.split('-').map(Number);
+  const d = new Date(parts[0], parts[1] + 1, 1);
+  const key = `${d.getFullYear()}-${d.getMonth()}`;
+  if (months.find(m => m.key === key)) return;
+  months.push({
+    key,
+    label: MONTH_NAMES[d.getMonth()] + ' ' + d.getFullYear(),
+    price: last.price,
+    days: last.days,
+    weeks: 4,
+    km: last.km,
+  });
+  activeKey = key;
+  save();
+  syncInputsFromActive();
+  renderAll();
+}
+
+function syncInputsFromActive() {
+  const m = getActive();
+  if (!m) return;
+  document.getElementById('price').value = m.price.toFixed(2);
+  document.getElementById('days').value = m.days;
+  document.getElementById('weeks').value = m.weeks;
+  document.getElementById('km').value = m.km;
+}
+
+function renderResults() {
+  const m = getActive();
+  const { trips, totalKm, liters, cost, tanks } = calcMonth(m);
+
+  // delta
+  const idx = months.findIndex(x => x.key === activeKey);
+  let deltaHtml = '<span class="delta neutral">— eerste maand</span>';
+  if (idx > 0) {
+    const prev = calcMonth(months[idx - 1]);
+    const diff = cost - prev.cost;
+    const pct = ((diff / prev.cost) * 100).toFixed(1);
+    if (diff > 0.5) deltaHtml = `<span class="delta up">▲ €${diff.toFixed(2)} (+${pct}%)</span>`;
+    else if (diff < -0.5) deltaHtml = `<span class="delta down">▼ €${Math.abs(diff).toFixed(2)} (${pct}%)</span>`;
+    else deltaHtml = `<span class="delta neutral">≈ geen verschil</span>`;
+  }
+
+  document.getElementById('results').innerHTML = `
+    <div class="stat highlight">
+      <div class="stat-label">Maandkosten</div>
+      <div class="stat-value">€${cost.toFixed(2)}</div>
+      ${deltaHtml}
+    </div>
+    <div class="stat">
+      <div class="stat-label">Km gereden</div>
+      <div class="stat-value">${totalKm}</div>
+      <div class="stat-sub">${trips} ritten × ${m.km} km</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Verbruik</div>
+      <div class="stat-value">${liters.toFixed(1)}L</div>
+      <div class="stat-sub">5L / 100km</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Kosten / km</div>
+      <div class="stat-value">${(cost / totalKm).toFixed(3)}</div>
+      <div class="stat-sub">€ per kilometer</div>
+    </div>
+  `;
+
+  // gauge
+  const pct = Math.min((tanks % 1 === 0 ? 100 : (tanks % 1) * 100), 100);
+  document.getElementById('gaugeFill').style.width = pct + '%';
+  document.getElementById('gaugeLabel').textContent = `±${tanks.toFixed(1)} volle tanks`;
+}
+
+function renderOptimizer() {
+  const m = getActive();
+  const grid = document.getElementById('optimizerGrid');
+  grid.innerHTML = '';
+  const baseCost = calcMonth(m).cost;
+
+  for (let d = 1; d <= 5; d++) {
+    const sim = { ...m, days: d };
+    const { cost } = calcMonth(sim);
+    const diff = cost - baseCost;
+    const isCurrent = d === m.days;
+
+    const col = document.createElement('div');
+    col.className = 'opt-col' + (isCurrent ? ' opt-current' : '');
+    col.innerHTML = `
+      <div class="opt-days">${d}</div>
+      <div class="opt-label">dag${d > 1 ? 'en' : ''}/week</div>
+      <div class="opt-cost">€${cost.toFixed(0)}</div>
+      ${isCurrent ? '<div class="opt-save" style="color:var(--accent);font-size:0.6rem">◀ huidig</div>' :
+        diff < 0 ? `<div class="opt-save">− €${Math.abs(diff).toFixed(0)}</div>` :
+        `<div class="opt-extra">+ €${diff.toFixed(0)}</div>`}
+    `;
+    grid.appendChild(col);
+  }
+}
+
+function renderHistory() {
+  const tbody = document.getElementById('historyBody');
+  tbody.innerHTML = '';
+  months.forEach((m, i) => {
+    const { trips, totalKm, liters, cost } = calcMonth(m);
+    const isCurrent = m.key === activeKey;
+    let delta = '—';
+    if (i > 0) {
+      const prev = calcMonth(months[i - 1]);
+      const diff = cost - prev.cost;
+      if (diff > 0.5) delta = `<span style="color:var(--red)">▲ €${diff.toFixed(2)}</span>`;
+      else if (diff < -0.5) delta = `<span style="color:var(--green)">▼ €${Math.abs(diff).toFixed(2)}</span>`;
+      else delta = '<span style="color:var(--muted)">≈</span>';
+    }
+    const tr = document.createElement('tr');
+    tr.className = isCurrent ? 'current-row' : '';
+    tr.innerHTML = `
+      <td>${m.label}${isCurrent ? '<span class="tag">actief</span>' : ''}</td>
+      <td>${m.days}d/week</td>
+      <td>${totalKm} km</td>
+      <td>${liters.toFixed(1)} L</td>
+      <td>€${cost.toFixed(2)}</td>
+      <td>${delta}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+// ---- INPUT LISTENERS ----
+['price','days','km','weeks'].forEach(id => {
+  document.getElementById(id).addEventListener('input', () => {
+    const m = getActive();
+    if (!m) return;
+    m.price = parseFloat(document.getElementById('price').value) || 1.72;
+    m.days = parseInt(document.getElementById('days').value) || 3;
+    m.km = parseInt(document.getElementById('km').value) || 150;
+    m.weeks = parseInt(document.getElementById('weeks').value) || 4;
+    save();
+    renderResults();
+    renderOptimizer();
+    renderHistory();
+  });
+});
+
+// ---- INIT ----
+syncInputsFromActive();
+renderAll();
+
+// ---- PWA ----
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/DieselMonitor/sw.js').catch(() => {});
+}
+</script>
+</body>
+</html>
