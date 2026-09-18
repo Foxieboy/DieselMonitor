@@ -1,0 +1,43 @@
+{
+  "auto": {
+    "file": "1-24076-A-43.wav",
+    "freesound_src": "24076",
+    "bytes": 13626,
+    "dur": 1.6
+  },
+  "trein": {
+    "file": "1-54065-B-45.wav",
+    "freesound_src": "54065",
+    "bytes": 13626,
+    "dur": 1.6
+  },
+  "brandweer": {
+    "file": "1-76831-A-42.wav",
+    "freesound_src": "76831",
+    "bytes": 13626,
+    "dur": 1.6
+  },
+  "traktor": {
+    "file": "1-18527-B-44.wav",
+    "freesound_src": "18527",
+    "bytes": 13626,
+    "dur": 1.6
+  },
+  "vliegtuig": {
+    "file": "1-24796-A-47.wav",
+    "freesound_src": "24796",
+    "bytes": 13626,
+    "dur": 1.6
+  },
+  "helikopter": {
+    "file": "1-172649-A-40.wav",
+    "freesound_src": "172649",
+    "bytes": 13626,
+    "dur": 1.6
+  },
+  "fiets": {
+    "file": "(gesynthetiseerd)",
+    "bytes": 11954,
+    "dur": 1.4
+  }
+}

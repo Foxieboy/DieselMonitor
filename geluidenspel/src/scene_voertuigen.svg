@@ -1,0 +1,173 @@
+<svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Straat met voertuigen">
+  <defs>
+    <style>.hit{fill:transparent;}.animal-node{cursor:pointer;}</style>
+    <linearGradient id="vskyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7ec8f0"/><stop offset="0.7" stop-color="#a9dcf5"/><stop offset="1" stop-color="#dff2fb"/></linearGradient>
+    <radialGradient id="vsunG" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fff6c8"/><stop offset="0.6" stop-color="#ffe27a"/><stop offset="1" stop-color="#ffd23f"/></radialGradient>
+    <linearGradient id="grassG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8ec95c"/><stop offset="1" stop-color="#77bd4b"/></linearGradient>
+    <linearGradient id="roadG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b7078"/><stop offset="1" stop-color="#565b62"/></linearGradient>
+    <linearGradient id="fireG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e5402e"/><stop offset="1" stop-color="#c02a1c"/></linearGradient>
+    <linearGradient id="carG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3fa9e0"/><stop offset="1" stop-color="#2b86bd"/></linearGradient>
+    <linearGradient id="tracG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4fb14a"/><stop offset="1" stop-color="#3a8f38"/></linearGradient>
+    <linearGradient id="trainG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e05a3a"/><stop offset="1" stop-color="#bf4529"/></linearGradient>
+    <linearGradient id="planeG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dbe4ec"/></linearGradient>
+  </defs>
+
+  <!-- SKY -->
+  <rect x="0" y="0" width="1000" height="700" fill="url(#vskyG)"/>
+  <circle cx="120" cy="98" r="52" fill="url(#vsunG)"/>
+  <circle cx="120" cy="98" r="52" fill="none" stroke="#ffe27a" stroke-width="9" opacity="0.35"/>
+  <g fill="#ffffff" opacity="0.92">
+    <ellipse cx="520" cy="90" rx="52" ry="22"/><ellipse cx="562" cy="80" rx="40" ry="20"/><ellipse cx="482" cy="80" rx="32" ry="16"/>
+  </g>
+
+  <!-- GRASS -->
+  <rect x="0" y="430" width="1000" height="270" fill="url(#grassG)"/>
+
+  <!-- HOUSES row -->
+  <g>
+    <g transform="translate(60,300)"><rect x="0" y="40" width="120" height="120" fill="#f3c85a"/><path d="M-8,40 L60,-6 L128,40 Z" fill="#9c4a34"/><rect x="18" y="70" width="30" height="30" fill="#bfe3f5"/><rect x="72" y="70" width="30" height="30" fill="#bfe3f5"/><rect x="45" y="112" width="30" height="48" fill="#7a4a2e"/></g>
+    <g transform="translate(210,320)"><rect x="0" y="30" width="110" height="110" fill="#e88a6a"/><path d="M-8,30 L55,-8 L118,30 Z" fill="#6a3f2c"/><rect x="16" y="58" width="26" height="26" fill="#bfe3f5"/><rect x="66" y="58" width="26" height="26" fill="#bfe3f5"/><rect x="42" y="96" width="26" height="44" fill="#5a3722"/></g>
+    <g transform="translate(720,312)"><rect x="0" y="34" width="115" height="116" fill="#8fb96a"/><path d="M-8,34 L57,-6 L122,34 Z" fill="#4f3a2a"/><rect x="16" y="62" width="28" height="28" fill="#bfe3f5"/><rect x="70" y="62" width="28" height="28" fill="#bfe3f5"/><rect x="44" y="102" width="28" height="48" fill="#5a3722"/></g>
+    <g transform="translate(858,326)"><rect x="0" y="28" width="100" height="122" fill="#c9a2d8"/><path d="M-8,28 L50,-8 L108,28 Z" fill="#5a4064"/><rect x="14" y="54" width="24" height="24" fill="#bfe3f5"/><rect x="60" y="54" width="24" height="24" fill="#bfe3f5"/><rect x="38" y="92" width="24" height="58" fill="#4a3550"/></g>
+  </g>
+
+  <!-- RAILS (behind, train runs here) -->
+  <g>
+    <rect x="0" y="474" width="1000" height="26" fill="#7a6a58"/>
+    <line x1="0" y1="480" x2="1000" y2="480" stroke="#b9c0c6" stroke-width="4"/>
+    <line x1="0" y1="494" x2="1000" y2="494" stroke="#b9c0c6" stroke-width="4"/>
+    <g stroke="#5a4a3a" stroke-width="6">
+      <line x1="40" y1="472" x2="40" y2="502"/><line x1="120" y1="472" x2="120" y2="502"/><line x1="200" y1="472" x2="200" y2="502"/><line x1="800" y1="472" x2="800" y2="502"/><line x1="880" y1="472" x2="880" y2="502"/><line x1="960" y1="472" x2="960" y2="502"/></g>
+  </g>
+
+  <!-- ROAD -->
+  <rect x="0" y="520" width="1000" height="130" fill="url(#roadG)"/>
+  <rect x="0" y="516" width="1000" height="6" fill="#e8c94a"/>
+  <g fill="#f2f2f2"><rect x="40" y="582" width="70" height="10" rx="4"/><rect x="180" y="582" width="70" height="10" rx="4"/><rect x="320" y="582" width="70" height="10" rx="4"/><rect x="460" y="582" width="70" height="10" rx="4"/><rect x="600" y="582" width="70" height="10" rx="4"/><rect x="740" y="582" width="70" height="10" rx="4"/><rect x="880" y="582" width="70" height="10" rx="4"/></g>
+  <!-- sidewalk -->
+  <rect x="0" y="650" width="1000" height="50" fill="#c9c3b6"/>
+
+  <!-- shadows -->
+  <g fill="#3a3f45" opacity="0.20">
+    <ellipse cx="235" cy="632" rx="110" ry="12"/><ellipse cx="640" cy="636" rx="80" ry="11"/><ellipse cx="850" cy="636" rx="72" ry="11"/><ellipse cx="500" cy="686" rx="60" ry="8"/>
+  </g>
+
+  <!-- ============ VEHICLES ============ -->
+
+  <!-- VLIEGTUIG (airplane) sky -->
+  <g transform="translate(778,120) scale(0.92)">
+    <g class="animal-node" data-key="vliegtuig" role="button" aria-label="Vliegtuig" tabindex="0">
+      <rect class="hit" x="-110" y="-56" width="220" height="120"/>
+      <path d="M-30,4 L-96,44 L-40,18 Z" fill="#c6d2dd"/>
+      <path d="M-30,-4 L-96,-44 L-40,-14 Z" fill="#e7eef4"/>
+      <ellipse cx="0" cy="0" rx="100" ry="26" fill="url(#planeG)"/>
+      <path d="M78,-2 q30,2 30,2 q0,0 -30,2 z" fill="#cfd9e2"/>
+      <path d="M-70,-6 L-104,-44 L-78,-6 Z" fill="#3fa9e0"/>
+      <path d="M-96,-40 L-70,-6 L-104,-6 Z" fill="#2b86bd"/>
+      <g fill="#bfe3f5"><circle cx="30" cy="-2" r="7"/><circle cx="10" cy="-2" r="7"/><circle cx="-10" cy="-2" r="7"/><circle cx="-30" cy="-2" r="7"/></g>
+      <path d="M86,-6 q22,6 0,12 z" fill="#2b86bd"/>
+      <rect x="-20" y="20" width="40" height="10" rx="5" fill="#3fa9e0"/>
+    </g>
+  </g>
+
+  <!-- HELIKOPTER (helicopter) sky -->
+  <g transform="translate(215,150) scale(0.92)">
+    <g class="animal-node" data-key="helikopter" role="button" aria-label="Helikopter" tabindex="0">
+      <rect class="hit" x="-70" y="-54" width="176" height="118"/>
+      <rect x="-64" y="-40" width="150" height="8" rx="4" fill="#3a3f45"/>
+      <rect x="-4" y="-40" width="8" height="20" fill="#3a3f45"/>
+      <path d="M-30,-8 q30,-26 74,-2 q10,4 10,18 q0,18 -30,22 l-54,0 q-16,-24 0,-38z" fill="#e5b23a"/>
+      <path d="M40,-6 q28,2 52,8 l0,10 q-24,4 -52,2 z" fill="#d99f2c"/>
+      <path d="M84,4 l40,-4 l0,8 l-40,0 z" fill="#3a3f45"/>
+      <circle cx="120" cy="0" r="10" fill="none" stroke="#3a3f45" stroke-width="4"/>
+      <line x1="120" y1="-10" x2="120" y2="10" stroke="#3a3f45" stroke-width="3"/>
+      <path d="M-24,-6 q18,-14 40,-6 l0,16 l-40,0 z" fill="#bfe3f5"/>
+      <g stroke="#3a3f45" stroke-width="5" stroke-linecap="round"><line x1="-30" y1="34" x2="-30" y2="46"/><line x1="30" y1="34" x2="30" y2="46"/><line x1="-46" y1="48" x2="52" y2="48"/></g>
+    </g>
+  </g>
+
+  <!-- TREIN (train) on rails -->
+  <g transform="translate(500,452) scale(0.82)">
+    <g class="animal-node" data-key="trein" role="button" aria-label="Trein" tabindex="0">
+      <rect class="hit" x="-150" y="-60" width="300" height="120"/>
+      <!-- wagon -->
+      <rect x="-150" y="-42" width="120" height="72" rx="10" fill="#3f6fb0"/>
+      <rect x="-140" y="-30" width="26" height="26" rx="4" fill="#cfe6f5"/><rect x="-104" y="-30" width="26" height="26" rx="4" fill="#cfe6f5"/><rect x="-68" y="-30" width="26" height="26" rx="4" fill="#cfe6f5"/>
+      <!-- loco -->
+      <path d="M-24,-52 q10,-8 40,-8 l70,0 q40,0 44,44 l0,46 l-154,0 z" fill="url(#trainG)"/>
+      <rect x="0" y="-40" width="34" height="28" rx="5" fill="#cfe6f5"/><rect x="46" y="-40" width="34" height="28" rx="5" fill="#cfe6f5"/>
+      <rect x="96" y="-30" width="30" height="30" rx="5" fill="#ffd23f"/>
+      <rect x="-24" y="18" width="154" height="12" fill="#8a2f1c"/>
+      <!-- wheels -->
+      <g fill="#2a2f34"><circle cx="-120" cy="40" r="16"/><circle cx="-70" cy="40" r="16"/><circle cx="10" cy="40" r="18"/><circle cx="70" cy="40" r="18"/><circle cx="112" cy="40" r="18"/></g>
+      <g fill="#8a939b"><circle cx="-120" cy="40" r="6"/><circle cx="-70" cy="40" r="6"/><circle cx="10" cy="40" r="7"/><circle cx="70" cy="40" r="7"/><circle cx="112" cy="40" r="7"/></g>
+    </g>
+  </g>
+
+  <!-- BRANDWEER (fire truck) road left -->
+  <g transform="translate(235,566) scale(0.92)">
+    <g class="animal-node" data-key="brandweer" role="button" aria-label="Brandweer" tabindex="0">
+      <rect class="hit" x="-120" y="-64" width="240" height="130"/>
+      <rect x="-110" y="-22" width="150" height="64" rx="8" fill="url(#fireG)"/>
+      <path d="M40,-22 l40,0 q20,0 24,22 l0,42 l-64,0 z" fill="url(#fireG)"/>
+      <rect x="48" y="-14" width="34" height="26" rx="4" fill="#bfe3f5"/>
+      <rect x="-110" y="8" width="214" height="10" fill="#f2f2f2"/>
+      <!-- ladder -->
+      <g stroke="#d9d9d9" stroke-width="5"><line x1="-100" y1="-30" x2="20" y2="-30"/><line x1="-100" y1="-40" x2="20" y2="-40"/><line x1="-92" y1="-42" x2="-92" y2="-28"/><line x1="-60" y1="-42" x2="-60" y2="-28"/><line x1="-28" y1="-42" x2="-28" y2="-28"/><line x1="4" y1="-42" x2="4" y2="-28"/></g>
+      <!-- blue light -->
+      <rect x="60" y="-34" width="16" height="10" rx="3" fill="#2f6fe0"/>
+      <text x="-40" y="4" font-family="Baloo 2, sans-serif" font-size="22" font-weight="800" fill="#ffffff" text-anchor="middle">112</text>
+      <g fill="#2a2f34"><circle cx="-70" cy="46" r="20"/><circle cx="66" cy="46" r="20"/></g>
+      <g fill="#9aa1a8"><circle cx="-70" cy="46" r="8"/><circle cx="66" cy="46" r="8"/></g>
+    </g>
+  </g>
+
+  <!-- AUTO (car) road right -->
+  <g transform="translate(645,586) scale(0.92)">
+    <g class="animal-node" data-key="auto" role="button" aria-label="Auto" tabindex="0">
+      <rect class="hit" x="-92" y="-56" width="184" height="118"/>
+      <path d="M-78,20 q-6,-26 18,-30 q10,-24 34,-24 q30,0 44,24 q28,2 40,30 z" fill="url(#carG)"/>
+      <path d="M-24,-30 q8,-16 26,-16 q22,0 32,16 l-6,14 l-52,0 z" fill="#cfeaf8"/>
+      <line x1="10" y1="-34" x2="10" y2="-2" stroke="#9fc7dd" stroke-width="3"/>
+      <circle cx="66" cy="6" r="6" fill="#ffe27a"/>
+      <rect x="-84" y="4" width="10" height="10" rx="3" fill="#ffd23f"/>
+      <g fill="#2a2f34"><circle cx="-42" cy="26" r="19"/><circle cx="44" cy="26" r="19"/></g>
+      <g fill="#9aa1a8"><circle cx="-42" cy="26" r="8"/><circle cx="44" cy="26" r="8"/></g>
+    </g>
+  </g>
+
+  <!-- TRAKTOR (tractor) road far-right -->
+  <g transform="translate(855,576) scale(0.9)">
+    <g class="animal-node" data-key="traktor" role="button" aria-label="Traktor" tabindex="0">
+      <rect class="hit" x="-80" y="-70" width="164" height="140"/>
+      <rect x="-58" y="-52" width="8" height="30" fill="#2a2f34"/>
+      <circle cx="-54" cy="-56" r="6" fill="#6b7078"/>
+      <rect x="-40" y="-46" width="52" height="40" rx="6" fill="url(#tracG)"/>
+      <rect x="-30" y="-40" width="34" height="24" rx="4" fill="#bfe3f5"/>
+      <path d="M-52,-6 l84,0 q16,0 16,22 l0,10 l-100,0 z" fill="url(#tracG)"/>
+      <circle cx="48" cy="12" r="8" fill="#ffe27a"/>
+      <circle cx="-40" cy="34" r="20" fill="#2a2f34"/><circle cx="-40" cy="34" r="9" fill="#c9a24a"/>
+      <circle cx="34" cy="30" r="38" fill="#2a2f34"/><circle cx="34" cy="30" r="16" fill="#c9a24a"/>
+      <circle cx="34" cy="30" r="6" fill="#2a2f34"/>
+    </g>
+  </g>
+
+  <!-- FIETS (bicycle) sidewalk front -->
+  <g transform="translate(500,662) scale(0.62)">
+    <g class="animal-node" data-key="fiets" role="button" aria-label="Fiets" tabindex="0">
+      <rect class="hit" x="-80" y="-70" width="160" height="120"/>
+      <circle cx="-50" cy="18" r="34" fill="none" stroke="#2a2f34" stroke-width="7"/>
+      <circle cx="50" cy="18" r="34" fill="none" stroke="#2a2f34" stroke-width="7"/>
+      <g stroke="#9aa1a8" stroke-width="2">
+        <line x1="-50" y1="18" x2="-50" y2="-16"/><line x1="-50" y1="18" x2="-18" y2="30"/><line x1="-50" y1="18" x2="-80" y2="26"/><line x1="-50" y1="18" x2="-30" y2="-8"/>
+        <line x1="50" y1="18" x2="50" y2="-16"/><line x1="50" y1="18" x2="18" y2="30"/><line x1="50" y1="18" x2="80" y2="26"/><line x1="50" y1="18" x2="30" y2="-8"/>
+      </g>
+      <path d="M-50,18 L0,18 L28,-30 L-16,-30 Z" fill="none" stroke="#e5402e" stroke-width="7" stroke-linejoin="round"/>
+      <line x1="0" y1="18" x2="50" y2="18" stroke="#e5402e" stroke-width="7"/>
+      <line x1="28" y1="-30" x2="50" y2="18" stroke="#e5402e" stroke-width="7"/>
+      <line x1="28" y1="-34" x2="46" y2="-42" stroke="#2a2f34" stroke-width="6" stroke-linecap="round"/>
+      <path d="M-22,-30 l-12,-6" stroke="#2a2f34" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="0" cy="18" r="6" fill="#2a2f34"/>
+    </g>
+  </g>
+</svg>
