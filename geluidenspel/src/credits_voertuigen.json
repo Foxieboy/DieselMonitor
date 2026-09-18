@@ -41,13 +41,13 @@
     "dur": 1.4
   },
   "motor": {
-    "file": "(gesynthetiseerd)",
-    "bytes": 14462,
-    "dur": 1.7
+    "file": "gesynthetiseerd (motor met ontstekingspulsen)",
+    "bytes": 20942,
+    "dur": 2.0
   },
   "boot": {
-    "file": "(gesynthetiseerd)",
-    "bytes": 13626,
-    "dur": 1.6
+    "file": "gesynthetiseerd (tweetonige scheepshoorn)",
+    "bytes": 20942,
+    "dur": 2.0
   }
 }
