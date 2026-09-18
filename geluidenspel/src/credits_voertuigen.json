@@ -39,5 +39,15 @@
     "file": "(gesynthetiseerd)",
     "bytes": 11954,
     "dur": 1.4
+  },
+  "motor": {
+    "file": "(gesynthetiseerd)",
+    "bytes": 14462,
+    "dur": 1.7
+  },
+  "boot": {
+    "file": "(gesynthetiseerd)",
+    "bytes": 13626,
+    "dur": 1.6
   }
 }

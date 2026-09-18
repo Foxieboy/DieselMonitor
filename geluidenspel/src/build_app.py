@@ -170,14 +170,13 @@ var SOUNDS = __SOUNDS__;
       ]},
     voertuigen: { title:"Voertuigen", emoji:"🚗", sceneTab:"🌳 Straat", sceneName:"straat",
       items:[
-        {emoji:"🚗",name:"Auto",key:"auto"},{emoji:"🚲",name:"Fiets",key:"fiets"},
-        {emoji:"🚌",name:"Trein",key:"trein"},{emoji:"🚒",name:"Brandweer",key:"brandweer"},
-        {emoji:"🚜",name:"Traktor",key:"traktor"},{emoji:"✈️",name:"Vliegtuig",key:"vliegtuig"},
+        {emoji:"🚗",name:"Auto",key:"auto"},{emoji:"🏍️",name:"Motor",key:"motor"},
+        {emoji:"🚲",name:"Fiets",key:"fiets"},{emoji:"🚂",name:"Trein",key:"trein"},
+        {emoji:"🚒",name:"Brandweer",key:"brandweer"},{emoji:"🚜",name:"Traktor",key:"traktor"},
+        {emoji:"🚤",name:"Boot",key:"boot"},{emoji:"✈️",name:"Vliegtuig",key:"vliegtuig"},
         {emoji:"🚁",name:"Helikopter",key:"helikopter"}
       ]}
   };
-  // fix train emoji
-  THEMES.voertuigen.items[2].emoji="🚂";
   var THEME_ORDER=["dieren","voertuigen"];
   var colors=["#FFE5EC","#E5F6FF","#FFF3D6","#E8FBE0","#F3E8FF","#FFEAD6","#E0F7F4","#FDE7F3","#EAF0FF","#FFF0E8"];
 

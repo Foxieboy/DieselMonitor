@@ -47,9 +47,15 @@
   <!-- sidewalk -->
   <rect x="0" y="650" width="1000" height="50" fill="#c9c3b6"/>
 
+  <!-- WATER (kanaal) bottom-left for the boat -->
+  <g>
+    <ellipse cx="140" cy="684" rx="172" ry="34" fill="#4aa6cf"/>
+    <ellipse cx="108" cy="676" rx="72" ry="9" fill="#ffffff" opacity="0.20"/>
+  </g>
+
   <!-- shadows -->
   <g fill="#3a3f45" opacity="0.20">
-    <ellipse cx="235" cy="632" rx="110" ry="12"/><ellipse cx="640" cy="636" rx="80" ry="11"/><ellipse cx="850" cy="636" rx="72" ry="11"/><ellipse cx="500" cy="686" rx="60" ry="8"/>
+    <ellipse cx="235" cy="632" rx="110" ry="12"/><ellipse cx="645" cy="636" rx="80" ry="11"/><ellipse cx="855" cy="636" rx="72" ry="11"/><ellipse cx="455" cy="636" rx="52" ry="9"/><ellipse cx="720" cy="694" rx="46" ry="7"/>
   </g>
 
   <!-- ============ VEHICLES ============ -->
@@ -153,7 +159,7 @@
   </g>
 
   <!-- FIETS (bicycle) sidewalk front -->
-  <g transform="translate(500,662) scale(0.62)">
+  <g transform="translate(720,668) scale(0.58)">
     <g class="animal-node" data-key="fiets" role="button" aria-label="Fiets" tabindex="0">
       <rect class="hit" x="-80" y="-70" width="160" height="120"/>
       <circle cx="-50" cy="18" r="34" fill="none" stroke="#2a2f34" stroke-width="7"/>
@@ -168,6 +174,38 @@
       <line x1="28" y1="-34" x2="46" y2="-42" stroke="#2a2f34" stroke-width="6" stroke-linecap="round"/>
       <path d="M-22,-30 l-12,-6" stroke="#2a2f34" stroke-width="7" stroke-linecap="round"/>
       <circle cx="0" cy="18" r="6" fill="#2a2f34"/>
+    </g>
+  </g>
+
+  <!-- MOTOR (motorbike) road center -->
+  <g transform="translate(455,602) scale(0.6)">
+    <g class="animal-node" data-key="motor" role="button" aria-label="Motor" tabindex="0">
+      <rect class="hit" x="-82" y="-64" width="164" height="122"/>
+      <circle cx="-46" cy="22" r="30" fill="#2a2f34"/><circle cx="-46" cy="22" r="12" fill="#8a939b"/>
+      <circle cx="48" cy="22" r="30" fill="#2a2f34"/><circle cx="48" cy="22" r="12" fill="#8a939b"/>
+      <path d="M-46,22 q-4,-40 26,-40 l24,0 q26,0 44,40 z" fill="#e5402e"/>
+      <rect x="-24" y="-26" width="50" height="16" rx="7" fill="#c02a1c"/>
+      <path d="M22,-20 q26,-2 30,8 l-30,0 z" fill="#2a2f34"/>
+      <line x1="-40" y1="-14" x2="-62" y2="-32" stroke="#2a2f34" stroke-width="7" stroke-linecap="round"/>
+      <line x1="-62" y1="-32" x2="-74" y2="-30" stroke="#2a2f34" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="-66" cy="-6" r="7" fill="#ffe27a"/>
+      <rect x="30" y="20" width="34" height="9" rx="4" fill="#9aa1a8"/>
+      <circle cx="0" cy="22" r="10" fill="#3a3f45"/>
+    </g>
+  </g>
+
+  <!-- BOOT (boat) on water -->
+  <g transform="translate(150,662) scale(0.74)">
+    <g class="animal-node" data-key="boot" role="button" aria-label="Boot" tabindex="0">
+      <rect class="hit" x="-82" y="-72" width="164" height="124"/>
+      <line x1="-6" y1="-8" x2="-6" y2="-60" stroke="#7a5a34" stroke-width="5"/>
+      <path d="M-6,-58 l36,15 l-36,13 z" fill="#e5402e"/>
+      <rect x="-36" y="-24" width="48" height="28" rx="5" fill="#f4f4f4"/>
+      <rect x="-30" y="-17" width="15" height="15" fill="#bfe3f5"/><rect x="-10" y="-17" width="15" height="15" fill="#bfe3f5"/>
+      <rect x="22" y="-34" width="15" height="30" rx="3" fill="#e5402e"/>
+      <rect x="22" y="-34" width="15" height="8" fill="#2a2f34"/>
+      <path d="M-66,4 l132,0 l-22,32 l-88,0 z" fill="#2b6fa0"/>
+      <rect x="-66" y="0" width="132" height="8" fill="#e5402e"/>
     </g>
   </g>
 </svg>

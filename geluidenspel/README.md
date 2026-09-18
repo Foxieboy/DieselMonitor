@@ -10,7 +10,7 @@ Live (via GitHub Pages): `…/DieselMonitor/geluidenspel/`
 ## Thema's
 
 - 🐾 **Dieren** — koe, hond, poes, varken, schaap, kip, haan, kikker, kraai, bij
-- 🚗 **Voertuigen** — auto, fiets, trein, brandweer, traktor, vliegtuig, helikopter
+- 🚗 **Voertuigen** — auto, motor, fiets, trein, brandweer, traktor, boot, vliegtuig, helikopter
 - ➕ ruimte voor meer thema's (zie *Nieuw thema toevoegen*)
 
 ## Speelvormen (per thema)
@@ -33,8 +33,9 @@ het toestel; de geluiden zelf zijn opnames en spelen altijd af.
 Echte opnames komen uit de **ESC-50 dataset**
 (https://github.com/karolpiczak/ESC-50), **CC BY-NC 3.0** (niet-commercieel,
 met naamsvermelding). Per item is één fragment gekozen, kort geknipt en
-genormaliseerd. De **fietsbel** is gesynthetiseerd (geen opname nodig).
-Exacte bronbestanden staan in `src/credits*.json`.
+genormaliseerd. Enkele geluiden zonder ESC-50-bron zijn **gesynthetiseerd**
+(`src/add_synth.py`): de **fietsbel**, de **motor** (optrekkend motorgeluid) en
+de **boottoeter**. Exacte bronbestanden staan in `src/credits*.json`.
 
 ## Opnieuw bouwen
 
