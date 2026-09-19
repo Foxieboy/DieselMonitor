@@ -1,0 +1,22 @@
+{
+  "leeuw": {
+    "file": "leeuw_40.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "aap": {
+    "file": "aap_20.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "olifant": {
+    "file": "olifant_40.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "uil": {
+    "file": "(gesynthetiseerd)",
+    "bytes": 18852,
+    "dur": 1.8
+  }
+}

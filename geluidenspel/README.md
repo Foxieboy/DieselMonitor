@@ -9,7 +9,8 @@ Live (via GitHub Pages): `…/DieselMonitor/geluidenspel/`
 
 ## Thema's
 
-- 🐾 **Dieren** — koe, hond, poes, varken, schaap, kip, haan, kikker, kraai, bij
+- 🐮 **Boerderij** — koe, hond, poes, varken, schaap, ezel, kip, haan, kikker, kraai, bij
+- 🦁 **Wilde dieren** — leeuw, aap, olifant, uil
 - 🚗 **Voertuigen** — auto, motor, fiets, trein, brandweer, traktor, boot, vliegtuig, helikopter
 - ➕ ruimte voor meer thema's (zie *Nieuw thema toevoegen*)
 
@@ -30,10 +31,12 @@ het toestel; de geluiden zelf zijn opnames en spelen altijd af.
 
 ## Geluiden — bron & licentie
 
-Echte opnames komen uit de **ESC-50 dataset**
-(https://github.com/karolpiczak/ESC-50), **CC BY-NC 3.0** (niet-commercieel,
-met naamsvermelding). Per item is één fragment gekozen, kort geknipt en
-genormaliseerd. Enkele geluiden zonder ESC-50-bron zijn **gesynthetiseerd**
+Echte opnames komen uit meerdere vrij gelicentieerde bronnen:
+- **ESC-50** (https://github.com/karolpiczak/ESC-50) — boerderijdieren, **CC BY-NC 3.0**
+- **YashNita/Animal-Sound-Dataset** — leeuw, aap, ezel
+- **Animal-Sound-Dataset-Research-2019-Sri-Lanka** — olifant, **CC BY-4.0**
+
+Per item is één fragment gekozen, kort geknipt en genormaliseerd. Enkele geluiden zonder ESC-50-bron zijn **gesynthetiseerd**
 (`src/add_synth.py`): de **fietsbel**, de **motor** (optrekkend motorgeluid) en
 de **boottoeter**. Exacte bronbestanden staan in `src/credits*.json`.
 

@@ -1,0 +1,132 @@
+<svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Jungle en savanne met wilde dieren">
+  <defs>
+    <style>.hit{fill:transparent;}.animal-node{cursor:pointer;}</style>
+    <linearGradient id="wskyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd0ef"/><stop offset="0.6" stop-color="#cfeff0"/><stop offset="1" stop-color="#f6e9b8"/></linearGradient>
+    <radialGradient id="wsunG" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fff3c4"/><stop offset="0.6" stop-color="#ffe07a"/><stop offset="1" stop-color="#ffcf46"/></radialGradient>
+    <linearGradient id="savHill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9c874"/><stop offset="1" stop-color="#c3b25c"/></linearGradient>
+    <linearGradient id="savG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9c96a"/><stop offset="1" stop-color="#a9bd54"/></linearGradient>
+    <linearGradient id="jung1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f8f43"/><stop offset="1" stop-color="#2f7a37"/></linearGradient>
+    <linearGradient id="eleG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9aa1a8"/><stop offset="1" stop-color="#7d848b"/></linearGradient>
+    <linearGradient id="lionG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e7b25c"/><stop offset="1" stop-color="#d29a40"/></linearGradient>
+  </defs>
+
+  <!-- SKY -->
+  <rect x="0" y="0" width="1000" height="700" fill="url(#wskyG)"/>
+  <circle cx="835" cy="112" r="54" fill="url(#wsunG)"/>
+  <circle cx="835" cy="112" r="54" fill="none" stroke="#ffe07a" stroke-width="9" opacity="0.35"/>
+  <g fill="#ffffff" opacity="0.85"><ellipse cx="470" cy="96" rx="52" ry="20"/><ellipse cx="515" cy="86" rx="38" ry="18"/></g>
+
+  <!-- savanna hills -->
+  <path d="M0,430 Q250,360 520,410 T1000,398 L1000,470 L0,470 Z" fill="url(#savHill)"/>
+  <path d="M0,470 Q300,420 620,458 T1000,452 L1000,520 L0,520 Z" fill="#bcae5e"/>
+
+  <!-- GROUND (savanne) -->
+  <rect x="0" y="470" width="1000" height="230" fill="url(#savG)"/>
+
+  <!-- watering hole -->
+  <ellipse cx="520" cy="600" rx="150" ry="34" fill="#5db4d6"/>
+  <ellipse cx="500" cy="592" rx="70" ry="12" fill="#ffffff" opacity="0.18"/>
+
+  <!-- JUNGLE TREE (left) - aap + tak -->
+  <g>
+    <rect x="118" y="300" width="30" height="220" rx="9" fill="#6b4a30"/>
+    <path d="M133,380 q-46,-4 -70,-30" stroke="#6b4a30" stroke-width="14" fill="none" stroke-linecap="round"/>
+    <circle cx="120" cy="250" r="92" fill="url(#jung1)"/>
+    <circle cx="55" cy="290" r="58" fill="#48993f"/>
+    <circle cx="185" cy="285" r="62" fill="#3f8f43"/>
+    <circle cx="120" cy="300" r="66" fill="#53a747"/>
+  </g>
+
+  <!-- ACACIA (right) - uil -->
+  <g>
+    <rect x="838" y="300" width="24" height="180" rx="7" fill="#7a5a3a"/>
+    <path d="M850,360 q40,-6 66,-2" stroke="#7a5a3a" stroke-width="11" fill="none" stroke-linecap="round"/>
+    <ellipse cx="852" cy="292" rx="120" ry="40" fill="#6fae49"/>
+    <ellipse cx="852" cy="276" rx="90" ry="26" fill="#7cbb56"/>
+  </g>
+
+  <!-- grass tufts -->
+  <g stroke="#8a9a3a" stroke-width="5" stroke-linecap="round" opacity="0.8">
+    <path d="M300,690 q4,-24 10,-32 M312,690 q0,-22 -4,-36 M324,690 q2,-26 12,-32"/>
+    <path d="M690,692 q4,-24 10,-32 M702,692 q0,-22 -4,-36"/>
+  </g>
+
+  <!-- shadows -->
+  <g fill="#5a5a2a" opacity="0.16">
+    <ellipse cx="340" cy="646" rx="120" ry="16"/><ellipse cx="720" cy="648" rx="86" ry="13"/>
+  </g>
+
+  <!-- ============ DIEREN ============ -->
+
+  <!-- AAP (monkey) in de boom -->
+  <g transform="translate(150,352) scale(0.62)">
+    <g class="animal-node" data-key="aap" role="button" aria-label="Aap" tabindex="0">
+      <rect class="hit" x="-58" y="-58" width="120" height="128"/>
+      <path d="M28,18 q52,10 40,58 q-14,20 -26,2 q10,-30 -20,-42z" fill="#7a5230" stroke="#7a5230"/>
+      <ellipse cx="0" cy="18" rx="30" ry="34" fill="#875b34"/>
+      <g fill="#875b34"><path d="M-26,4 q-24,10 -22,40 q10,6 20,-6z"/><path d="M26,4 q24,10 22,40 q-10,6 -20,-6z"/></g>
+      <circle cx="0" cy="-22" r="26" fill="#875b34"/>
+      <circle cx="-24" cy="-22" r="10" fill="#875b34"/><circle cx="24" cy="-22" r="10" fill="#875b34"/>
+      <ellipse cx="0" cy="-16" rx="18" ry="20" fill="#e6c9a3"/>
+      <circle cx="-7" cy="-24" r="3.2" fill="#2a1c12"/><circle cx="7" cy="-24" r="3.2" fill="#2a1c12"/>
+      <ellipse cx="0" cy="-8" rx="8" ry="6" fill="#d8b58c"/>
+      <circle cx="-3" cy="-9" r="1.4" fill="#5a3a24"/><circle cx="3" cy="-9" r="1.4" fill="#5a3a24"/>
+      <g fill="#e6c9a3"><circle cx="-26" cy="6" r="5"/><circle cx="26" cy="6" r="5"/></g>
+    </g>
+  </g>
+
+  <!-- UIL (owl) op acaciatak -->
+  <g transform="translate(884,300) scale(0.5)">
+    <g class="animal-node" data-key="uil" role="button" aria-label="Uil" tabindex="0">
+      <rect class="hit" x="-52" y="-58" width="104" height="120"/>
+      <path d="M-24,-40 l-10,-18 l16,8 z" fill="#8a6a44"/><path d="M24,-40 l10,-18 l-16,8 z" fill="#8a6a44"/>
+      <ellipse cx="0" cy="6" rx="34" ry="40" fill="#9a7a4e"/>
+      <path d="M-30,-6 q-14,20 -6,44 q18,10 36,0 q8,-24 -6,-44 q-14,10 -24,0z" fill="#d8c39a"/>
+      <g fill="#8a6a44"><path d="M-30,-4 q-18,14 -14,44 q10,4 16,-6z"/><path d="M30,-4 q18,14 14,44 q-10,4 -16,-6z"/></g>
+      <circle cx="-14" cy="-10" r="15" fill="#f6f1e6"/><circle cx="14" cy="-10" r="15" fill="#f6f1e6"/>
+      <circle cx="-14" cy="-10" r="8" fill="#2a1c12"/><circle cx="14" cy="-10" r="8" fill="#2a1c12"/>
+      <circle cx="-11" cy="-13" r="2.4" fill="#fff"/><circle cx="17" cy="-13" r="2.4" fill="#fff"/>
+      <path d="M-6,-2 l6,10 l6,-10 z" fill="#f0a52e"/>
+      <g stroke="#e0a021" stroke-width="4" stroke-linecap="round"><line x1="-10" y1="44" x2="-10" y2="54"/><line x1="10" y1="44" x2="10" y2="54"/></g>
+    </g>
+  </g>
+
+  <!-- OLIFANT (elephant) -->
+  <g transform="translate(345,540) scale(1.05)">
+    <g class="animal-node" data-key="olifant" role="button" aria-label="Olifant" tabindex="0">
+      <rect class="hit" x="-116" y="-84" width="220" height="180"/>
+      <g fill="#6f767d"><rect x="-58" y="26" width="22" height="56" rx="8"/><rect x="-22" y="30" width="22" height="52" rx="8"/><rect x="22" y="26" width="22" height="56" rx="8"/><rect x="52" y="30" width="22" height="52" rx="8"/></g>
+      <ellipse cx="0" cy="-4" rx="86" ry="58" fill="url(#eleG)"/>
+      <path d="M84,-30 q22,4 14,30" stroke="#6f767d" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <g transform="translate(-78,-14)">
+        <circle cx="0" cy="0" r="46" fill="url(#eleG)"/>
+        <path d="M-44,-6 q-40,2 -34,40 q30,6 40,-16z" fill="#7d848b"/>
+        <path d="M-10,30 q-6,40 -2,72 q-14,6 -20,-6 q-6,-34 6,-66z" fill="#8a9199"/>
+        <path d="M-14,96 q-2,10 6,12 q10,-2 8,-12z" fill="#8a9199"/>
+        <path d="M6,44 q22,4 18,24" stroke="#f4f0e6" stroke-width="7" fill="none" stroke-linecap="round"/>
+        <circle cx="8" cy="-6" r="4" fill="#2a2622"/>
+      </g>
+      <path d="M78,-24 q10,-10 18,-4 q-2,10 -12,12z" fill="#7d848b"/>
+    </g>
+  </g>
+
+  <!-- LEEUW (lion) -->
+  <g transform="translate(720,572) scale(0.9)">
+    <g class="animal-node" data-key="leeuw" role="button" aria-label="Leeuw" tabindex="0">
+      <rect class="hit" x="-100" y="-66" width="196" height="150"/>
+      <g fill="#c99038"><rect x="-40" y="22" width="16" height="46" rx="6"/><rect x="-12" y="26" width="16" height="46" rx="6"/><rect x="22" y="22" width="16" height="46" rx="6"/><rect x="48" y="26" width="16" height="46" rx="6"/></g>
+      <path d="M60,-18 q40,-4 44,30 q-2,26 -22,20 q6,-30 -22,-36z" fill="#c99038"/>
+      <path d="M92,26 q16,4 8,22 l-14,-6z" fill="#7a4a24"/>
+      <ellipse cx="0" cy="0" rx="64" ry="40" fill="url(#lionG)"/>
+      <g transform="translate(-64,-14)">
+        <g fill="#8a5a2a"><circle cx="0" cy="-30" r="10"/><circle cx="26" cy="-20" r="11"/><circle cx="36" cy="6" r="11"/><circle cx="30" cy="30" r="11"/><circle cx="4" cy="40" r="11"/><circle cx="-24" cy="34" r="11"/><circle cx="-40" cy="10" r="11"/><circle cx="-34" cy="-18" r="11"/></g>
+        <circle cx="0" cy="4" r="34" fill="#eab863"/>
+        <ellipse cx="0" cy="14" rx="20" ry="15" fill="#f4d79b"/>
+        <circle cx="-11" cy="-2" r="3.4" fill="#2a1c12"/><circle cx="11" cy="-2" r="3.4" fill="#2a1c12"/>
+        <path d="M-5,10 l5,5 l5,-5 z" fill="#6a3a22"/>
+        <path d="M0,15 q0,8 -7,10 M0,15 q0,8 7,10" stroke="#a06a34" stroke-width="2.4" fill="none"/>
+        <g fill="#c99038"><circle cx="-30" cy="-26" r="9"/><circle cx="30" cy="-26" r="9"/></g>
+      </g>
+    </g>
+  </g>
+</svg>

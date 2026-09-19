@@ -68,5 +68,10 @@
     "bytes": 12372,
     "dur": 1.45,
     "rms": 0.09
+  },
+  "ezel": {
+    "file": "ezel_3.wav",
+    "bytes": 17024,
+    "dur": 1.6
   }
 }

@@ -2,10 +2,12 @@ import json, os
 
 sounds = {
   "dieren": json.load(open("sounds_dieren.json")),
+  "wild": json.load(open("sounds_wild.json")),
   "voertuigen": json.load(open("sounds_voertuigen.json")),
 }
 SOUNDS_JS = json.dumps(sounds, separators=(",",":"))
 SCENE_DIEREN = open("scene_dieren.svg").read()
+SCENE_WILD   = open("scene_wild.svg").read()
 SCENE_VOERT  = open("scene_voertuigen.svg").read()
 
 HTML = r'''<title>Geluidenspel</title>
@@ -153,6 +155,7 @@ HTML = r'''<title>Geluidenspel</title>
 
 <!-- scenes (hidden templates) -->
 <div id="scene-dieren" hidden>__SCENE_DIEREN__</div>
+<div id="scene-wild" hidden>__SCENE_WILD__</div>
 <div id="scene-voertuigen" hidden>__SCENE_VOERTUIGEN__</div>
 
 <script>
@@ -160,13 +163,19 @@ var SOUNDS = __SOUNDS__;
 (function(){
   "use strict";
   var THEMES = {
-    dieren: { title:"Dieren", emoji:"🐾", sceneTab:"🌳 Boerderij", sceneName:"boerderij",
+    dieren: { title:"Boerderij", emoji:"🐮", sceneTab:"🌳 Boerderij", sceneName:"boerderij",
       items:[
         {emoji:"🐄",name:"Koe",key:"koe"},{emoji:"🐶",name:"Hond",key:"hond"},
         {emoji:"🐱",name:"Poes",key:"poes"},{emoji:"🐷",name:"Varken",key:"varken"},
-        {emoji:"🐑",name:"Schaap",key:"schaap"},{emoji:"🐔",name:"Kip",key:"kip"},
-        {emoji:"🐓",name:"Haan",key:"haan"},{emoji:"🐸",name:"Kikker",key:"kikker"},
-        {emoji:"🐦‍⬛",name:"Kraai",key:"kraai"},{emoji:"🐝",name:"Bij",key:"bij"}
+        {emoji:"🐑",name:"Schaap",key:"schaap"},{emoji:"🫏",name:"Ezel",key:"ezel"},
+        {emoji:"🐔",name:"Kip",key:"kip"},{emoji:"🐓",name:"Haan",key:"haan"},
+        {emoji:"🐸",name:"Kikker",key:"kikker"},{emoji:"🐦‍⬛",name:"Kraai",key:"kraai"},
+        {emoji:"🐝",name:"Bij",key:"bij"}
+      ]},
+    wild: { title:"Wilde dieren", emoji:"🦁", sceneTab:"🌳 Jungle", sceneName:"jungle",
+      items:[
+        {emoji:"🦁",name:"Leeuw",key:"leeuw"},{emoji:"🐵",name:"Aap",key:"aap"},
+        {emoji:"🐘",name:"Olifant",key:"olifant"},{emoji:"🦉",name:"Uil",key:"uil"}
       ]},
     voertuigen: { title:"Voertuigen", emoji:"🚗", sceneTab:"🌳 Straat", sceneName:"straat",
       items:[
@@ -177,7 +186,7 @@ var SOUNDS = __SOUNDS__;
         {emoji:"🚁",name:"Helikopter",key:"helikopter"}
       ]}
   };
-  var THEME_ORDER=["dieren","voertuigen"];
+  var THEME_ORDER=["dieren","wild","voertuigen"];
   var colors=["#FFE5EC","#E5F6FF","#FFF3D6","#E8FBE0","#F3E8FF","#FFEAD6","#E0F7F4","#FDE7F3","#EAF0FF","#FFF0E8"];
 
   /* ---- audio ---- */
@@ -258,7 +267,7 @@ var SOUNDS = __SOUNDS__;
   function renderStars(){var n=Math.min(stars,10);starsEl.textContent=stars>0?(Array(n+1).join("⭐")+(stars>10?" +"+(stars-10):"")):"";}
 
   /* ---- HOME grid ---- */
-  var themeColors={dieren:"#B7E38C",voertuigen:"#A9DCF5"};
+  var themeColors={dieren:"#B7E38C",wild:"#F6D98A",voertuigen:"#A9DCF5"};
   THEME_ORDER.forEach(function(tid){
     var t=THEMES[tid];
     var c=document.createElement("button"); c.className="theme-card"; c.type="button";
@@ -392,6 +401,7 @@ var SOUNDS = __SOUNDS__;
 
 out = (HTML
   .replace("__SCENE_DIEREN__", SCENE_DIEREN)
+  .replace("__SCENE_WILD__", SCENE_WILD)
   .replace("__SCENE_VOERTUIGEN__", SCENE_VOERT)
   .replace("__SOUNDS__", SOUNDS_JS))
 open("app.html","w").write(out)
