@@ -73,5 +73,17 @@
     "file": "ezel_3.wav",
     "bytes": 17024,
     "dur": 1.6
+  },
+  "eend": {
+    "file": "Ente_quackt.wav",
+    "source": "https://github.com/raimonvibe/animalguesses-web (MIT)",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "paard": {
+    "file": "pferd_whinnert.wav",
+    "source": "https://github.com/raimonvibe/animalguesses-web (MIT)",
+    "bytes": 17024,
+    "dur": 1.6
   }
 }

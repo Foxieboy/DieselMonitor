@@ -168,6 +168,7 @@ var SOUNDS = __SOUNDS__;
         {emoji:"🐄",name:"Koe",key:"koe"},{emoji:"🐶",name:"Hond",key:"hond"},
         {emoji:"🐱",name:"Poes",key:"poes"},{emoji:"🐷",name:"Varken",key:"varken"},
         {emoji:"🐑",name:"Schaap",key:"schaap"},{emoji:"🫏",name:"Ezel",key:"ezel"},
+        {emoji:"🐴",name:"Paard",key:"paard"},{emoji:"🦆",name:"Eend",key:"eend"},
         {emoji:"🐔",name:"Kip",key:"kip"},{emoji:"🐓",name:"Haan",key:"haan"},
         {emoji:"🐸",name:"Kikker",key:"kikker"},{emoji:"🐦‍⬛",name:"Kraai",key:"kraai"},
         {emoji:"🐝",name:"Bij",key:"bij"}
@@ -175,7 +176,8 @@ var SOUNDS = __SOUNDS__;
     wild: { title:"Wilde dieren", emoji:"🦁", sceneTab:"🌳 Jungle", sceneName:"jungle",
       items:[
         {emoji:"🦁",name:"Leeuw",key:"leeuw"},{emoji:"🐵",name:"Aap",key:"aap"},
-        {emoji:"🐘",name:"Olifant",key:"olifant"},{emoji:"🦉",name:"Uil",key:"uil"}
+        {emoji:"🐘",name:"Olifant",key:"olifant"},{emoji:"🐯",name:"Tijger",key:"tijger"},
+        {emoji:"🦉",name:"Uil",key:"uil"}
       ]},
     voertuigen: { title:"Voertuigen", emoji:"🚗", sceneTab:"🌳 Straat", sceneName:"straat",
       items:[

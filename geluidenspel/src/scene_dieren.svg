@@ -1,4 +1,4 @@
-<svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Boerderij met dieren">
+<svg viewBox="0 0 1000 790" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Boerderij met dieren">
   <defs>
     <style>.hit{fill:transparent;}.animal-node{cursor:pointer;}</style>
     <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1">
@@ -15,7 +15,7 @@
   </defs>
 
   <!-- SKY -->
-  <rect x="0" y="0" width="1000" height="700" fill="url(#skyG)"/>
+  <rect x="0" y="0" width="1000" height="790" fill="url(#skyG)"/>
   <circle cx="150" cy="115" r="58" fill="url(#sunG)"/>
   <circle cx="150" cy="115" r="58" fill="none" stroke="#ffe27a" stroke-width="10" opacity="0.35"/>
   <g fill="#ffffff" opacity="0.92">
@@ -28,7 +28,7 @@
   <path d="M0,470 Q260,405 560,455 T1000,448 L1000,520 L0,520 Z" fill="url(#hillNear)"/>
 
   <!-- GROUND -->
-  <rect x="0" y="470" width="1000" height="230" fill="url(#groundG)"/>
+  <rect x="0" y="470" width="1000" height="320" fill="url(#groundG)"/>
 
   <!-- BIG TREE (left) -->
   <g>
@@ -82,7 +82,7 @@
 
   <!-- soft shadows -->
   <g fill="#2f6b2a" opacity="0.16">
-    <ellipse cx="300" cy="642" rx="92" ry="15"/><ellipse cx="130" cy="662" rx="58" ry="11"/>
+    <ellipse cx="300" cy="642" rx="92" ry="15"/><ellipse cx="110" cy="778" rx="58" ry="11"/>
     <ellipse cx="675" cy="602" rx="76" ry="12"/><ellipse cx="815" cy="646" rx="70" ry="12"/>
     <ellipse cx="475" cy="694" rx="38" ry="7"/><ellipse cx="600" cy="666" rx="44" ry="8"/>
   </g>
@@ -143,7 +143,7 @@
   </g>
 
   <!-- HOND (dog) -->
-  <g transform="translate(130,600) scale(0.72)">
+  <g transform="translate(110,716) scale(0.72)">
     <g class="animal-node" data-key="hond" role="button" aria-label="Hond" tabindex="0">
       <rect class="hit" x="-90" y="-60" width="176" height="146"/>
       <g fill="#a9713e"><rect x="-38" y="22" width="15" height="46" rx="6"/><rect x="-8" y="26" width="15" height="46" rx="6"/><rect x="22" y="22" width="15" height="46" rx="6"/><rect x="50" y="26" width="15" height="46" rx="6"/></g>
@@ -283,6 +283,44 @@
         <path d="M-9,-32 q5,-28 13,-30 q5,9 -6,32z" fill="#9a9a9a"/>
         <path d="M-23,-34 q-3,-18 1,-22 q4,4 3,20z" fill="#cbbba9"/>
         <path d="M-8,-34 q3,-18 8,-20 q3,5 -3,22z" fill="#cbbba9"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- EEND (duck) op de vijver -->
+  <g transform="translate(140,606) scale(0.62)">
+    <g class="animal-node" data-key="eend" role="button" aria-label="Eend" tabindex="0">
+      <rect class="hit" x="-72" y="-72" width="146" height="124"/>
+      <path d="M40,2 q24,-10 28,4 q-15,7 -28,2z" fill="#ddd7c7"/>
+      <ellipse cx="0" cy="10" rx="46" ry="26" fill="#eeeade"/>
+      <path d="M-6,4 q26,-11 36,6 q-19,11 -36,-2z" fill="#ddd7c7"/>
+      <path d="M-26,6 q-11,-26 -2,-40 l17,2 q-2,21 4,36z" fill="#3e8e5f"/>
+      <circle cx="-22" cy="-42" r="17" fill="#3e8e5f"/>
+      <path d="M-33,-10 q10,5 19,1 l0,8 q-11,4 -20,-1z" fill="#f4f1e6"/>
+      <path d="M-38,-38 q-21,2 -21,8 q2,7 21,4 z" fill="#f0a52e"/>
+      <circle cx="-16" cy="-46" r="3" fill="#1c1c1c"/>
+      <path d="M-54,28 q22,9 48,0 q23,-7 46,2" stroke="#9fdcef" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.9"/>
+    </g>
+  </g>
+
+  <!-- PAARD (horse) op de voorgrond -->
+  <ellipse cx="640" cy="780" rx="82" ry="13" fill="#2f6b2a" opacity="0.16"/>
+  <g transform="translate(640,716) scale(0.74)">
+    <g class="animal-node" data-key="paard" role="button" aria-label="Paard" tabindex="0">
+      <rect class="hit" x="-104" y="-86" width="200" height="176"/>
+      <g fill="#7a4a24"><rect x="-44" y="22" width="16" height="56" rx="7"/><rect x="-12" y="26" width="16" height="56" rx="7"/><rect x="24" y="22" width="16" height="56" rx="7"/><rect x="52" y="26" width="16" height="56" rx="7"/></g>
+      <g fill="#3a2410"><rect x="-45" y="70" width="18" height="9" rx="3"/><rect x="-13" y="74" width="18" height="9" rx="3"/><rect x="23" y="70" width="18" height="9" rx="3"/><rect x="51" y="74" width="18" height="9" rx="3"/></g>
+      <ellipse cx="0" cy="0" rx="70" ry="40" fill="#9c6233"/>
+      <path d="M64,-20 q28,12 24,56" stroke="#4a2c16" stroke-width="11" fill="none" stroke-linecap="round"/>
+      <g transform="translate(-62,-26)">
+        <path d="M-2,32 q-20,-10 -12,-38 l22,-8 q12,26 4,46z" fill="#9c6233"/>
+        <ellipse cx="-18" cy="-20" rx="17" ry="25" fill="#9c6233"/>
+        <ellipse cx="-19" cy="0" rx="12" ry="12" fill="#8a552c"/>
+        <circle cx="-23" cy="3" r="2.2" fill="#3a2a1c"/><circle cx="-14" cy="3" r="2.2" fill="#3a2a1c"/>
+        <circle cx="-10" cy="-24" r="3.2" fill="#2a1c12"/>
+        <path d="M-27,-40 q-5,-18 1,-20 q6,4 5,20z" fill="#9c6233"/>
+        <path d="M-11,-40 q4,-18 10,-18 q4,6 -3,20z" fill="#9c6233"/>
+        <path d="M1,-31 q11,3 13,17 q-2,17 -9,25 q-4,-21 -11,-35z" fill="#4a2c16"/>
       </g>
     </g>
   </g>

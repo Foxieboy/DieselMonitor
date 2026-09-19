@@ -15,8 +15,15 @@
     "dur": 1.6
   },
   "uil": {
-    "file": "(gesynthetiseerd)",
-    "bytes": 18852,
-    "dur": 1.8
+    "file": "owl.wav",
+    "source": "https://github.com/raimonvibe/animalguesses-web (MIT)",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "tijger": {
+    "file": "tiger.wav",
+    "source": "https://github.com/raimonvibe/animalguesses-web (MIT)",
+    "bytes": 17024,
+    "dur": 1.6
   }
 }

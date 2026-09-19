@@ -129,4 +129,33 @@
       </g>
     </g>
   </g>
+
+  <!-- TIJGER (tiger) -->
+  <ellipse cx="165" cy="672" rx="76" ry="12" fill="#5a5a2a" opacity="0.16"/>
+  <g transform="translate(165,618) scale(0.72)">
+    <g class="animal-node" data-key="tijger" role="button" aria-label="Tijger" tabindex="0">
+      <rect class="hit" x="-104" y="-70" width="200" height="156"/>
+      <g fill="#e08a2a"><rect x="-40" y="24" width="16" height="46" rx="6"/><rect x="-12" y="28" width="16" height="46" rx="6"/><rect x="22" y="24" width="16" height="46" rx="6"/><rect x="48" y="28" width="16" height="46" rx="6"/></g>
+      <path d="M62,-16 q42,-2 44,34" stroke="#e79a35" stroke-width="11" fill="none" stroke-linecap="round"/>
+      <g stroke="#2a221c" stroke-width="5" stroke-linecap="round"><path d="M88,-6 l9,5"/><path d="M96,6 l10,4"/></g>
+      <ellipse cx="0" cy="0" rx="66" ry="40" fill="#ef9c33"/>
+      <ellipse cx="4" cy="15" rx="46" ry="21" fill="#f8ddb0"/>
+      <g stroke="#2a221c" stroke-width="7" stroke-linecap="round" fill="none">
+        <path d="M-28,-32 q4,14 0,26"/><path d="M-8,-36 q5,16 1,30"/><path d="M14,-36 q5,16 1,30"/><path d="M36,-30 q5,14 1,24"/>
+      </g>
+      <g transform="translate(-66,-16)">
+        <circle cx="0" cy="0" r="34" fill="#ef9c33"/>
+        <path d="M-30,-22 l-6,-18 l20,8 z" fill="#ef9c33"/><path d="M26,-24 l10,-16 l-20,6 z" fill="#ef9c33"/>
+        <path d="M-27,-21 l-3,-10 l11,5 z" fill="#f8ddb0"/><path d="M24,-22 l6,-9 l-12,4 z" fill="#f8ddb0"/>
+        <ellipse cx="0" cy="10" rx="20" ry="15" fill="#f8ddb0"/>
+        <circle cx="-11" cy="-4" r="4" fill="#2a1c12"/><circle cx="11" cy="-4" r="4" fill="#2a1c12"/>
+        <path d="M-5,8 l5,5 l5,-5 z" fill="#6a3a22"/>
+        <path d="M0,13 q0,9 -8,11 M0,13 q0,9 8,11" stroke="#a06a34" stroke-width="2.6" fill="none"/>
+        <g stroke="#2a221c" stroke-width="5" stroke-linecap="round" fill="none">
+          <path d="M-24,-14 q-6,4 -9,10"/><path d="M24,-14 q6,4 9,10"/>
+          <path d="M-14,-28 q-2,8 -1,12"/><path d="M14,-28 q2,8 1,12"/>
+        </g>
+      </g>
+    </g>
+  </g>
 </svg>
