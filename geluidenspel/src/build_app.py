@@ -2,6 +2,7 @@ import json, os
 
 sounds = {
   "dieren": json.load(open("sounds_dieren.json")),
+  "erf": json.load(open("sounds_erf.json")),
   "wild": json.load(open("sounds_wild.json")),
   "voertuigen": json.load(open("sounds_voertuigen.json")),
   "huis": json.load(open("sounds_huis.json")),
@@ -9,7 +10,9 @@ sounds = {
 }
 SOUNDS_JS = json.dumps(sounds, separators=(",",":"))
 SCENE_DIEREN = open("scene_dieren.svg").read()
+SCENE_ERF    = open("scene_erf.svg").read()
 SCENE_WILD   = open("scene_wild.svg").read()
+SCENE_HUIS   = open("scene_huis.svg").read()
 SCENE_VOERT  = open("scene_voertuigen.svg").read()
 
 HTML = r'''<title>Geluidenspel</title>
@@ -157,7 +160,9 @@ HTML = r'''<title>Geluidenspel</title>
 
 <!-- scenes (hidden templates) -->
 <div id="scene-dieren" hidden>__SCENE_DIEREN__</div>
+<div id="scene-erf" hidden>__SCENE_ERF__</div>
 <div id="scene-wild" hidden>__SCENE_WILD__</div>
+<div id="scene-huis" hidden>__SCENE_HUIS__</div>
 <div id="scene-voertuigen" hidden>__SCENE_VOERTUIGEN__</div>
 
 <script>
@@ -167,15 +172,18 @@ var SOUNDS = __SOUNDS__;
   var THEMES = {
     dieren: { title:"Boerderij", emoji:"🐮", sceneTab:"🌳 Boerderij", sceneName:"boerderij",
       items:[
-        {emoji:"🐄",name:"Koe",key:"koe"},{emoji:"🐶",name:"Hond",key:"hond"},
-        {emoji:"🐱",name:"Poes",key:"poes"},{emoji:"🐷",name:"Varken",key:"varken"},
-        {emoji:"🐑",name:"Schaap",key:"schaap"},{emoji:"🫏",name:"Ezel",key:"ezel"},
-        {emoji:"🐴",name:"Paard",key:"paard"},{emoji:"🦆",name:"Eend",key:"eend"},
+        {emoji:"🐄",name:"Koe",key:"koe"},{emoji:"🐴",name:"Paard",key:"paard"},
+        {emoji:"🫏",name:"Ezel",key:"ezel"},{emoji:"🐷",name:"Varken",key:"varken"},
+        {emoji:"🐑",name:"Schaap",key:"schaap"},{emoji:"🐐",name:"Geit",key:"geit"},
+        {emoji:"🐶",name:"Hond",key:"hond"},{emoji:"🐱",name:"Poes",key:"poes"}
+      ]},
+    erf: { title:"Het erf", emoji:"🐔", sceneTab:"🌾 Het erf", sceneName:"erf",
+      items:[
         {emoji:"🐔",name:"Kip",key:"kip"},{emoji:"🐓",name:"Haan",key:"haan"},
-        {emoji:"🐸",name:"Kikker",key:"kikker"},{emoji:"🐦‍⬛",name:"Kraai",key:"kraai"},
-        {emoji:"🐝",name:"Bij",key:"bij"},{emoji:"🐐",name:"Geit",key:"geit"},
-        {emoji:"🦢",name:"Gans",key:"gans"},{emoji:"🦃",name:"Kalkoen",key:"kalkoen"},
-        {emoji:"🕊️",name:"Duif",key:"duif"},{emoji:"🐭",name:"Muis",key:"muis"}
+        {emoji:"🦆",name:"Eend",key:"eend"},{emoji:"🦢",name:"Gans",key:"gans"},
+        {emoji:"🦃",name:"Kalkoen",key:"kalkoen"},{emoji:"🕊️",name:"Duif",key:"duif"},
+        {emoji:"🐦‍⬛",name:"Kraai",key:"kraai"},{emoji:"🐸",name:"Kikker",key:"kikker"},
+        {emoji:"🐝",name:"Bij",key:"bij"},{emoji:"🐭",name:"Muis",key:"muis"}
       ]},
     wild: { title:"Wilde dieren", emoji:"🦁", sceneTab:"🌳 Jungle", sceneName:"jungle",
       items:[
@@ -186,7 +194,7 @@ var SOUNDS = __SOUNDS__;
         {emoji:"🦏",name:"Neushoorn",key:"neushoorn"},{emoji:"🦍",name:"Gorilla",key:"gorilla"},
         {emoji:"🦜",name:"Papegaai",key:"papegaai"},{emoji:"🦅",name:"Adelaar",key:"adelaar"}
       ]},
-    huis: { title:"In huis", emoji:"🏠",
+    huis: { title:"In huis", emoji:"🏠", sceneTab:"🏠 Het huis", sceneName:"huis",
       items:[
         {emoji:"🚪",name:"Kloppen",key:"kloppen"},{emoji:"⏰",name:"Wekker",key:"wekker"},
         {emoji:"🕰️",name:"Klok",key:"klok"},{emoji:"🧹",name:"Stofzuiger",key:"stofzuiger"},
@@ -210,7 +218,7 @@ var SOUNDS = __SOUNDS__;
         {emoji:"🚁",name:"Helikopter",key:"helikopter"}
       ]}
   };
-  var THEME_ORDER=["dieren","wild","voertuigen","huis","mensen"];
+  var THEME_ORDER=["dieren","erf","wild","voertuigen","huis","mensen"];
   var colors=["#FFE5EC","#E5F6FF","#FFF3D6","#E8FBE0","#F3E8FF","#FFEAD6","#E0F7F4","#FDE7F3","#EAF0FF","#FFF0E8"];
 
   /* ---- audio ---- */
@@ -293,7 +301,7 @@ var SOUNDS = __SOUNDS__;
   function renderStars(){var n=Math.min(stars,10);starsEl.textContent=stars>0?(Array(n+1).join("⭐")+(stars>10?" +"+(stars-10):"")):"";}
 
   /* ---- HOME grid ---- */
-  var themeColors={dieren:"#B7E38C",wild:"#F6D98A",voertuigen:"#A9DCF5",huis:"#F7C9D8",mensen:"#D6CCF2"};
+  var themeColors={dieren:"#B7E38C",erf:"#FBE3A0",wild:"#F6D98A",voertuigen:"#A9DCF5",huis:"#F7C9D8",mensen:"#D6CCF2"};
   THEME_ORDER.forEach(function(tid){
     var t=THEMES[tid];
     var c=document.createElement("button"); c.className="theme-card"; c.type="button";
@@ -440,7 +448,9 @@ var SOUNDS = __SOUNDS__;
 
 out = (HTML
   .replace("__SCENE_DIEREN__", SCENE_DIEREN)
+  .replace("__SCENE_ERF__", SCENE_ERF)
   .replace("__SCENE_WILD__", SCENE_WILD)
+  .replace("__SCENE_HUIS__", SCENE_HUIS)
   .replace("__SCENE_VOERTUIGEN__", SCENE_VOERT)
   .replace("__SOUNDS__", SOUNDS_JS))
 open("app.html","w").write(out)

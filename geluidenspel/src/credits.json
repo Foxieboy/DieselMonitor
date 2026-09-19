@@ -6,19 +6,16 @@
     "dur": 1.58,
     "rms": 0.431
   },
-  "hond": {
-    "file": "1-30344-A-0.wav",
-    "freesound_src": "30344",
-    "bytes": 10074,
-    "dur": 1.16,
-    "rms": 0.117
+  "paard": {
+    "file": "pferd_whinnert.wav",
+    "source": "https://github.com/raimonvibe/animalguesses-web (MIT)",
+    "bytes": 17024,
+    "dur": 1.6
   },
-  "poes": {
-    "file": "1-34094-A-5.wav",
-    "freesound_src": "34094",
-    "bytes": 13626,
-    "dur": 1.6,
-    "rms": 0.161
+  "ezel": {
+    "file": "ezel_3.wav",
+    "bytes": 17024,
+    "dur": 1.6
   },
   "varken": {
     "file": "1-208757-A-2.wav",
@@ -34,81 +31,23 @@
     "dur": 1.6,
     "rms": 0.068
   },
-  "kip": {
-    "file": "1-18074-B-6.wav",
-    "freesound_src": "18074",
-    "bytes": 8402,
-    "dur": 0.95,
-    "rms": 0.152
-  },
-  "haan": {
-    "file": "1-26806-A-1.wav",
-    "freesound_src": "26806",
-    "bytes": 13626,
-    "dur": 1.6,
-    "rms": 0.283
-  },
-  "kikker": {
-    "file": "1-17970-A-4.wav",
-    "freesound_src": "17970",
-    "bytes": 13626,
-    "dur": 1.6,
-    "rms": 0.206
-  },
-  "kraai": {
-    "file": "1-39835-A-9.wav",
-    "freesound_src": "39835",
-    "bytes": 13626,
-    "dur": 1.6,
-    "rms": 0.256
-  },
-  "bij": {
-    "file": "1-19501-A-7.wav",
-    "freesound_src": "19501",
-    "bytes": 12372,
-    "dur": 1.45,
-    "rms": 0.09
-  },
-  "ezel": {
-    "file": "ezel_3.wav",
-    "bytes": 17024,
-    "dur": 1.6
-  },
-  "eend": {
-    "file": "Ente_quackt.wav",
-    "source": "https://github.com/raimonvibe/animalguesses-web (MIT)",
-    "bytes": 17024,
-    "dur": 1.6
-  },
-  "paard": {
-    "file": "pferd_whinnert.wav",
-    "source": "https://github.com/raimonvibe/animalguesses-web (MIT)",
-    "bytes": 17024,
-    "dur": 1.6
-  },
   "geit": {
     "file": "Ziege.wav",
     "bytes": 17024,
     "dur": 1.6
   },
-  "gans": {
-    "file": "Gaense.wav",
-    "bytes": 17024,
-    "dur": 1.6
+  "hond": {
+    "file": "1-30344-A-0.wav",
+    "freesound_src": "30344",
+    "bytes": 10074,
+    "dur": 1.16,
+    "rms": 0.117
   },
-  "kalkoen": {
-    "file": "truthahn.wav",
-    "bytes": 17024,
-    "dur": 1.6
-  },
-  "duif": {
-    "file": "pigeons.wav",
-    "bytes": 17024,
-    "dur": 1.6
-  },
-  "muis": {
-    "file": "mouse.wav",
-    "bytes": 17024,
-    "dur": 1.6
+  "poes": {
+    "file": "1-34094-A-5.wav",
+    "freesound_src": "34094",
+    "bytes": 13626,
+    "dur": 1.6,
+    "rms": 0.161
   }
 }

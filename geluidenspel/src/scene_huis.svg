@@ -1,0 +1,156 @@
+<svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Doorsnede van een huis met geluiden">
+  <defs>
+    <style>.hit{fill:transparent;}.animal-node{cursor:pointer;}</style>
+    <linearGradient id="hSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ad8f2"/><stop offset="1" stop-color="#d9f0fa"/></linearGradient>
+    <linearGradient id="hRoof" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9c4a34"/><stop offset="1" stop-color="#7a3526"/></linearGradient>
+    <linearGradient id="hWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf3e2"/><stop offset="1" stop-color="#f2e6cf"/></linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="700" fill="url(#hSky)"/>
+  <circle cx="880" cy="90" r="44" fill="#ffe27a"/>
+  <g fill="#ffffff" opacity="0.9"><ellipse cx="180" cy="92" rx="48" ry="20"/><ellipse cx="222" cy="82" rx="34" ry="17"/></g>
+  <rect x="0" y="655" width="1000" height="45" fill="#8ec95c"/>
+
+  <!-- huis -->
+  <rect x="70" y="190" width="860" height="470" fill="url(#hWall)"/>
+  <path d="M40,192 L500,58 L960,192 Z" fill="url(#hRoof)"/>
+  <rect x="470" y="96" width="46" height="60" rx="5" fill="#8a5a34"/>
+  <!-- kamerscheidingen -->
+  <g fill="#c9a98a">
+    <rect x="70" y="418" width="860" height="12"/>
+    <rect x="351" y="190" width="12" height="470"/>
+    <rect x="637" y="190" width="12" height="470"/>
+    <rect x="70" y="648" width="860" height="12"/>
+  </g>
+  <!-- vloerkleuren per kamer -->
+  <g opacity="0.5">
+    <rect x="82" y="382" width="269" height="36" fill="#e6d3b3"/>
+    <rect x="363" y="382" width="274" height="36" fill="#dfcdaa"/>
+    <rect x="649" y="382" width="281" height="36" fill="#cfe3ea"/>
+    <rect x="82" y="612" width="269" height="36" fill="#e6d3b3"/>
+    <rect x="363" y="612" width="274" height="36" fill="#dfcdaa"/>
+    <rect x="649" y="612" width="281" height="36" fill="#cfe3ea"/>
+  </g>
+
+  <!-- ============ VOORWERPEN ============ -->
+
+  <!-- WEKKER (slaapkamer) -->
+  <g transform="translate(215,318) scale(0.95)">
+    <g class="animal-node" data-key="wekker" role="button" aria-label="Wekker" tabindex="0">
+      <rect class="hit" x="-66" y="-76" width="132" height="152"/>
+      <circle cx="-30" cy="-40" r="15" fill="#c9502f"/><circle cx="30" cy="-40" r="15" fill="#c9502f"/>
+      <rect x="-7" y="-54" width="14" height="12" rx="4" fill="#8a3a22"/>
+      <circle cx="0" cy="4" r="43" fill="#e4553a"/>
+      <circle cx="0" cy="4" r="33" fill="#fdf6e6"/>
+      <line x1="0" y1="4" x2="0" y2="-19" stroke="#3a2a22" stroke-width="5" stroke-linecap="round"/>
+      <line x1="0" y1="4" x2="17" y2="13" stroke="#3a2a22" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="0" cy="4" r="4" fill="#3a2a22"/>
+      <path d="M-30,41 l-13,19 M30,41 l13,19" stroke="#c9502f" stroke-width="10" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- KLOK (woonkamer) -->
+  <g transform="translate(500,300) scale(0.95)">
+    <g class="animal-node" data-key="klok" role="button" aria-label="Klok" tabindex="0">
+      <rect class="hit" x="-60" y="-66" width="120" height="164"/>
+      <circle cx="0" cy="-8" r="43" fill="#8a5a34"/>
+      <circle cx="0" cy="-8" r="33" fill="#fdf6e6"/>
+      <line x1="0" y1="-8" x2="0" y2="-31" stroke="#3a2a22" stroke-width="5" stroke-linecap="round"/>
+      <line x1="0" y1="-8" x2="19" y2="-2" stroke="#3a2a22" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="0" cy="-8" r="4" fill="#3a2a22"/>
+      <rect x="-17" y="33" width="34" height="48" rx="5" fill="#8a5a34"/>
+      <line x1="0" y1="38" x2="0" y2="64" stroke="#c9a24a" stroke-width="4"/>
+      <circle cx="0" cy="69" r="10" fill="#c9a24a"/>
+    </g>
+  </g>
+
+  <!-- TANDENBORSTEL (badkamer) -->
+  <g transform="translate(706,320) scale(0.95)">
+    <g class="animal-node" data-key="tandenborstel" role="button" aria-label="Tandenborstel" tabindex="0">
+      <rect class="hit" x="-54" y="-76" width="108" height="148"/>
+      <rect x="-48" y="44" width="96" height="10" rx="5" fill="#cbb79a"/>
+      <rect x="-15" y="-54" width="10" height="58" rx="5" fill="#e4553a"/>
+      <rect x="-19" y="-64" width="18" height="13" rx="5" fill="#fdf6e6"/>
+      <rect x="6" y="-46" width="10" height="50" rx="5" fill="#4fae56"/>
+      <rect x="2" y="-56" width="18" height="13" rx="5" fill="#fdf6e6"/>
+      <path d="M-26,-2 l52,0 l-7,44 l-38,0z" fill="#7cc7e8"/>
+      <path d="M-26,-2 l52,0 l-2,10 l-48,0z" fill="#a8dcf0"/>
+    </g>
+  </g>
+
+  <!-- WC (badkamer) -->
+  <g transform="translate(862,336) scale(0.95)">
+    <g class="animal-node" data-key="wc" role="button" aria-label="Wc" tabindex="0">
+      <rect class="hit" x="-60" y="-72" width="120" height="146"/>
+      <rect x="-32" y="-60" width="64" height="46" rx="6" fill="#eef3f6"/>
+      <rect x="10" y="-54" width="14" height="9" rx="3" fill="#b9c2cc"/>
+      <path d="M-36,-8 q36,-11 72,0 q-5,36 -15,45 l-40,0 q-13,-11 -17,-45z" fill="#f7fafc"/>
+      <ellipse cx="0" cy="-2" rx="29" ry="12" fill="#cfe0ea"/>
+      <rect x="-24" y="48" width="48" height="12" rx="4" fill="#dde6ec"/>
+    </g>
+  </g>
+
+  <!-- KLOPPEN op de deur (hal) -->
+  <g transform="translate(215,540) scale(0.95)">
+    <g class="animal-node" data-key="kloppen" role="button" aria-label="Kloppen op de deur" tabindex="0">
+      <rect class="hit" x="-62" y="-92" width="124" height="190"/>
+      <rect x="-46" y="-80" width="92" height="162" rx="6" fill="#8a5a34"/>
+      <rect x="-35" y="-68" width="70" height="62" rx="4" fill="#a97a46"/>
+      <rect x="-35" y="10" width="70" height="60" rx="4" fill="#a97a46"/>
+      <circle cx="30" cy="4" r="7" fill="#f0c04a"/>
+      <circle cx="0" cy="-30" r="11" fill="none" stroke="#c9a24a" stroke-width="5"/>
+      <circle cx="0" cy="-43" r="6" fill="#c9a24a"/>
+    </g>
+  </g>
+
+  <!-- WATER / kraan (keuken) -->
+  <g transform="translate(452,548) scale(0.95)">
+    <g class="animal-node" data-key="water" role="button" aria-label="Water" tabindex="0">
+      <rect class="hit" x="-70" y="-76" width="140" height="150"/>
+      <rect x="-7" y="-60" width="11" height="32" rx="4" fill="#b9c2cc"/>
+      <path d="M-2,-58 q32,0 32,24" stroke="#b9c2cc" stroke-width="11" fill="none" stroke-linecap="round"/>
+      <path d="M30,-28 l0,36" stroke="#7cc7e8" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+      <path d="M-52,8 l104,0 l-11,46 l-82,0z" fill="#eef3f6"/>
+      <ellipse cx="0" cy="9" rx="52" ry="11" fill="#dde6ec"/>
+      <ellipse cx="30" cy="14" rx="13" ry="6" fill="#9fd8ee"/>
+    </g>
+  </g>
+
+  <!-- BLIKJE (keuken) -->
+  <g transform="translate(588,556) scale(0.95)">
+    <g class="animal-node" data-key="blikje" role="button" aria-label="Blikje" tabindex="0">
+      <rect class="hit" x="-48" y="-62" width="96" height="124"/>
+      <rect x="-25" y="-40" width="50" height="80" rx="10" fill="#c9502f"/>
+      <rect x="-25" y="-10" width="50" height="18" fill="#fdf6e6"/>
+      <ellipse cx="0" cy="-40" rx="25" ry="9" fill="#e8a13a"/>
+      <ellipse cx="0" cy="-40" rx="17" ry="6" fill="#b9c2cc"/>
+      <path d="M5,-42 q11,-5 11,-12" stroke="#8a939b" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- WASMACHINE (washok) -->
+  <g transform="translate(722,548) scale(0.95)">
+    <g class="animal-node" data-key="wasmachine" role="button" aria-label="Wasmachine" tabindex="0">
+      <rect class="hit" x="-64" y="-74" width="128" height="156"/>
+      <rect x="-50" y="-58" width="100" height="124" rx="10" fill="#eef3f6"/>
+      <rect x="-50" y="-58" width="100" height="24" rx="10" fill="#dbe4ea"/>
+      <circle cx="-32" cy="-47" r="5" fill="#8a939b"/><circle cx="-17" cy="-47" r="5" fill="#8a939b"/>
+      <circle cx="32" cy="-46" r="7" fill="#4fae56"/>
+      <circle cx="0" cy="20" r="33" fill="#b9c2cc"/>
+      <circle cx="0" cy="20" r="25" fill="#7cc7e8"/>
+      <path d="M-17,20 q9,-11 17,0 q9,11 17,0" stroke="#fdf6e6" stroke-width="5" fill="none"/>
+    </g>
+  </g>
+
+  <!-- STOFZUIGER (washok) -->
+  <g transform="translate(866,556) scale(0.95)">
+    <g class="animal-node" data-key="stofzuiger" role="button" aria-label="Stofzuiger" tabindex="0">
+      <rect class="hit" x="-68" y="-70" width="136" height="140"/>
+      <path d="M-30,-6 q-28,-42 6,-48 q32,-6 32,17" stroke="#3a3f45" stroke-width="9" fill="none" stroke-linecap="round"/>
+      <path d="M12,-46 l24,-9 l7,13 l-24,11z" fill="#3a3f45"/>
+      <ellipse cx="-4" cy="22" rx="47" ry="31" fill="#c9502f"/>
+      <rect x="-32" y="-2" width="32" height="17" rx="7" fill="#8a3a22"/>
+      <circle cx="-35" cy="46" r="12" fill="#3a3f45"/><circle cx="29" cy="46" r="12" fill="#3a3f45"/>
+    </g>
+  </g>
+</svg>

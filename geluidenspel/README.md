@@ -9,12 +9,12 @@ Live (via GitHub Pages): `…/DieselMonitor/geluidenspel/`
 
 ## Thema's
 
-- 🐮 **Boerderij** (18) — koe, hond, poes, varken, schaap, ezel, paard, eend, kip, haan, kikker,
-  kraai, bij, geit, gans, kalkoen, duif, muis
+- 🐮 **Boerderij** (8) — koe, paard, ezel, varken, schaap, geit, hond, poes
+- 🐔 **Het erf** (10) — kip, haan, eend, gans, kalkoen, duif, kraai, kikker, bij, muis
 - 🦁 **Wilde dieren** (12) — leeuw, tijger, aap, olifant, uil, wolf, vos, nijlpaard, neushoorn,
   gorilla, papegaai, adelaar
 - 🚗 **Voertuigen** (9) — auto, motor, fiets, trein, brandweer, traktor, boot, vliegtuig, helikopter
-- 🏠 **In huis** (9) — kloppen, wekker, klok, stofzuiger, wasmachine, tandenborstel, wc, water, blikje
+- 🏠 **In huis** (9, met huistekening) — kloppen, wekker, klok, stofzuiger, wasmachine, tandenborstel, wc, water, blikje
 - 👶 **Mensen** (8) — lachen, niezen, hoesten, klappen, baby, voetstappen, snurken, drinken
 - ➕ ruimte voor meer thema's (zie *Nieuw thema toevoegen*)
 

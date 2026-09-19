@@ -1,0 +1,264 @@
+<svg viewBox="0 0 1000 790" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Het erf met pluimvee en kleine dieren">
+  <defs>
+    <style>.hit{fill:transparent;}.animal-node{cursor:pointer;}</style>
+    <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7ec8f0"/><stop offset="0.7" stop-color="#a9dcf5"/><stop offset="1" stop-color="#d8f0fb"/>
+    </linearGradient>
+    <linearGradient id="hillFar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a7d47a"/><stop offset="1" stop-color="#8bc061"/></linearGradient>
+    <linearGradient id="hillNear" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fc75f"/><stop offset="1" stop-color="#6fae49"/></linearGradient>
+    <linearGradient id="groundG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8ec95c"/><stop offset="1" stop-color="#6fb246"/></linearGradient>
+    <linearGradient id="barnG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cf4436"/><stop offset="1" stop-color="#a5301f"/></linearGradient>
+    <linearGradient id="roofG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#59392e"/><stop offset="1" stop-color="#3f281f"/></linearGradient>
+    <radialGradient id="sunG" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fff6c8"/><stop offset="0.6" stop-color="#ffe27a"/><stop offset="1" stop-color="#ffd23f"/></radialGradient>
+    <radialGradient id="pondG" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stop-color="#7fd0e8"/><stop offset="1" stop-color="#3f9ac6"/></radialGradient>
+    <linearGradient id="siloG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c7cdd2"/><stop offset="0.5" stop-color="#eef1f3"/><stop offset="1" stop-color="#b7bec4"/></linearGradient>
+  </defs>
+
+  <!-- SKY -->
+  <rect x="0" y="0" width="1000" height="790" fill="url(#skyG)"/>
+  <circle cx="150" cy="115" r="58" fill="url(#sunG)"/>
+  <circle cx="150" cy="115" r="58" fill="none" stroke="#ffe27a" stroke-width="10" opacity="0.35"/>
+  <g fill="#ffffff" opacity="0.92">
+    <ellipse cx="440" cy="110" rx="60" ry="26"/><ellipse cx="490" cy="96" rx="46" ry="24"/><ellipse cx="390" cy="98" rx="40" ry="22"/>
+    <ellipse cx="900" cy="120" rx="52" ry="22"/><ellipse cx="945" cy="108" rx="38" ry="20"/><ellipse cx="862" cy="110" rx="34" ry="18"/>
+  </g>
+
+  <!-- HILLS -->
+  <path d="M0,430 Q220,350 470,410 T1000,392 L1000,470 L0,470 Z" fill="url(#hillFar)"/>
+  <path d="M0,470 Q260,405 560,455 T1000,448 L1000,520 L0,520 Z" fill="url(#hillNear)"/>
+
+  <!-- GROUND -->
+  <rect x="0" y="470" width="1000" height="320" fill="url(#groundG)"/>
+
+  <!-- BIG TREE (left) -->
+  <g>
+    <rect x="112" y="300" width="26" height="150" rx="8" fill="#6b4a30"/>
+    <circle cx="125" cy="270" r="82" fill="#4e9a3f"/><circle cx="70" cy="300" r="52" fill="#5aa848"/>
+    <circle cx="180" cy="300" r="56" fill="#57a446"/><circle cx="125" cy="315" r="60" fill="#62b34f"/>
+  </g>
+
+  <!-- BARN + SILO (right) -->
+  <g>
+    <rect x="586" y="292" width="56" height="150" rx="6" fill="url(#siloG)"/>
+    <path d="M586,292 a28,20 0 0 1 56,0 Z" fill="#9aa2a8"/>
+    <rect x="648" y="300" width="248" height="146" fill="url(#barnG)"/>
+    <path d="M636,300 L772,232 L908,300 Z" fill="url(#roofG)"/>
+    <rect x="726" y="356" width="92" height="90" fill="#7a2416"/>
+    <path d="M772,356 L772,446 M726,356 L818,446 M818,356 L726,446" stroke="#e9d7b0" stroke-width="5"/>
+    <rect x="690" y="322" width="34" height="30" fill="#f4e6b8"/><rect x="820" y="322" width="34" height="30" fill="#f4e6b8"/>
+    <path d="M636,300 L908,300" stroke="#e9d7b0" stroke-width="4"/>
+  </g>
+
+  <!-- FENCE (right, cat sits here) -->
+  <g stroke="#8a6440" stroke-width="10" stroke-linecap="round">
+    <line x1="792" y1="452" x2="792" y2="512"/><line x1="856" y1="452" x2="856" y2="512"/><line x1="920" y1="452" x2="920" y2="512"/>
+    <line x1="776" y1="466" x2="936" y2="466"/><line x1="776" y1="492" x2="936" y2="492"/>
+  </g>
+
+  <!-- POND (bottom-left) -->
+  <g>
+    <ellipse cx="185" cy="628" rx="170" ry="56" fill="url(#pondG)"/>
+    <ellipse cx="150" cy="612" rx="70" ry="18" fill="#ffffff" opacity="0.18"/>
+    <g stroke="#3f8a3a" stroke-width="6" stroke-linecap="round">
+      <line x1="55" y1="638" x2="47" y2="590"/><line x1="67" y1="640" x2="65" y2="596"/>
+      <line x1="322" y1="624" x2="330" y2="584"/><line x1="334" y1="626" x2="338" y2="596"/>
+    </g>
+    <ellipse cx="245" cy="650" rx="46" ry="16" fill="#4fae56"/>
+  </g>
+
+  <!-- grass tufts + flowers -->
+  <g stroke="#5aa23f" stroke-width="5" stroke-linecap="round" opacity="0.8">
+    <path d="M410,690 q4,-22 10,-30 M422,690 q0,-20 -4,-34 M434,690 q2,-24 12,-30"/>
+    <path d="M700,692 q4,-22 10,-30 M712,692 q0,-20 -4,-34"/>
+  </g>
+  <g>
+    <g transform="translate(902,628)"><line x1="0" y1="0" x2="0" y2="40" stroke="#3f8a3a" stroke-width="6"/>
+      <g fill="#ff7aa8"><circle cx="-12" cy="-4" r="9"/><circle cx="12" cy="-4" r="9"/><circle cx="0" cy="-16" r="9"/><circle cx="0" cy="8" r="9"/></g>
+      <circle cx="0" cy="-4" r="7" fill="#ffd23f"/></g>
+    <g transform="translate(958,650)"><line x1="0" y1="0" x2="0" y2="34" stroke="#3f8a3a" stroke-width="6"/>
+      <g fill="#c58cff"><circle cx="-10" cy="-3" r="7.5"/><circle cx="10" cy="-3" r="7.5"/><circle cx="0" cy="-13" r="7.5"/><circle cx="0" cy="7" r="7.5"/></g>
+      <circle cx="0" cy="-3" r="6" fill="#ffd23f"/></g>
+  </g>
+
+  <!-- soft shadows -->
+  <g fill="#2f6b2a" opacity="0.16">
+    <ellipse cx="475" cy="694" rx="38" ry="7"/><ellipse cx="600" cy="666" rx="44" ry="8"/>
+  </g>
+
+
+  <!-- KIPPENHOK -->
+  <g transform="translate(250,520)">
+    <rect x="-70" y="-30" width="140" height="70" rx="6" fill="#b5713f"/>
+    <path d="M-84,-30 L0,-74 L84,-30 Z" fill="#7a4a24"/>
+    <rect x="-20" y="-6" width="40" height="46" rx="4" fill="#5a3722"/>
+    <circle cx="-42" cy="2" r="12" fill="#f4e6b8"/>
+    <rect x="-72" y="36" width="144" height="8" rx="3" fill="#8a5a34"/>
+  </g>
+
+  <!-- ================= ANIMALS ================= -->
+
+  <!-- KRAAI (crow) on barn roof -->
+  <g transform="translate(752,214) scale(0.8)">
+    <g class="animal-node" data-key="kraai" role="button" aria-label="Kraai" tabindex="0">
+      <rect class="hit" x="-40" y="-46" width="86" height="80"/>
+      <ellipse cx="0" cy="0" rx="26" ry="17" fill="#20242b"/>
+      <circle cx="20" cy="-14" r="14" fill="#20242b"/>
+      <path d="M32,-16 l20,4 l-20,6 z" fill="#f0a52e"/>
+      <circle cx="24" cy="-16" r="3.2" fill="#fff"/><circle cx="25" cy="-16" r="1.8" fill="#000"/>
+      <path d="M-24,-4 q-22,4 -30,16 q20,-2 30,-6 z" fill="#12151a"/>
+      <line x1="-6" y1="16" x2="-8" y2="30" stroke="#3a2f28" stroke-width="4" stroke-linecap="round"/>
+      <line x1="8" y1="16" x2="8" y2="30" stroke="#3a2f28" stroke-width="4" stroke-linecap="round"/>
+    </g>
+  </g>
+
+
+
+
+  <!-- KIKKER (frog) on lily pad -->
+  <g transform="translate(245,646) scale(0.6)">
+    <g class="animal-node" data-key="kikker" role="button" aria-label="Kikker" tabindex="0">
+      <rect class="hit" x="-56" y="-56" width="112" height="100"/>
+      <ellipse cx="0" cy="10" rx="42" ry="30" fill="#5cbe4e"/>
+      <ellipse cx="0" cy="18" rx="30" ry="16" fill="#cfe89a"/>
+      <g fill="#4aa53f"><path d="M-40,26 q-16,4 -22,18 q14,2 22,-6z"/><path d="M40,26 q16,4 22,18 q-14,2 -22,-6z"/></g>
+      <circle cx="-20" cy="-24" r="16" fill="#5cbe4e"/><circle cx="20" cy="-24" r="16" fill="#5cbe4e"/>
+      <circle cx="-20" cy="-26" r="9" fill="#fff"/><circle cx="20" cy="-26" r="9" fill="#fff"/>
+      <circle cx="-20" cy="-24" r="5" fill="#1c1c1c"/><circle cx="20" cy="-24" r="5" fill="#1c1c1c"/>
+      <path d="M-16,10 q16,12 32,0" stroke="#2f7a2a" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <circle cx="-8" cy="6" r="2" fill="#2f7a2a"/><circle cx="8" cy="6" r="2" fill="#2f7a2a"/>
+    </g>
+  </g>
+
+  <!-- KIP (hen) -->
+  <g transform="translate(475,646) scale(0.8)">
+    <g class="animal-node" data-key="kip" role="button" aria-label="Kip" tabindex="0">
+      <rect class="hit" x="-48" y="-50" width="96" height="100"/>
+      <path d="M6,-2 q40,-16 34,26 q-8,22 -28,14 z" fill="#efe7da"/>
+      <ellipse cx="-4" cy="6" rx="30" ry="25" fill="#fbf6ee"/>
+      <circle cx="-22" cy="-12" r="15" fill="#fbf6ee"/>
+      <path d="M-30,-24 q-2,-10 6,-9 q0,7 6,9z" fill="#e4442e"/>
+      <path d="M-36,-14 l-13,1 l11,6 z" fill="#f0b73a"/>
+      <path d="M-24,-6 q-6,5 -1,10 q5,-2 5,-8 z" fill="#e4442e"/>
+      <circle cx="-26" cy="-14" r="3" fill="#2a1e16"/>
+      <path d="M2,4 q22,-2 28,10 q-16,6 -28,-2z" fill="#d9cdb8"/>
+      <g stroke="#e0a021" stroke-width="5" stroke-linecap="round"><line x1="-8" y1="28" x2="-10" y2="44"/><line x1="6" y1="28" x2="8" y2="44"/></g>
+    </g>
+  </g>
+
+  <!-- HAAN (rooster) -->
+  <g transform="translate(600,606) scale(0.95)">
+    <g class="animal-node" data-key="haan" role="button" aria-label="Haan" tabindex="0">
+      <rect class="hit" x="-54" y="-62" width="108" height="118"/>
+      <path d="M6,-6 q46,-30 40,26 q-6,30 -30,20 z" fill="#2f7bbf"/>
+      <path d="M14,-4 q40,-20 34,20" stroke="#e0a021" stroke-width="7" fill="none"/>
+      <ellipse cx="-6" cy="6" rx="30" ry="26" fill="#c8452f"/>
+      <circle cx="-24" cy="-18" r="16" fill="#e0a021"/>
+      <path d="M-34,-30 q-4,-14 6,-16 q2,8 8,10 q0,-12 10,-12 q0,10 6,14 q8,-6 12,2 q-6,8 -16,10 z" fill="#e4442e"/>
+      <path d="M-38,-18 l-14,2 l12,6 z" fill="#f0b73a"/>
+      <path d="M-24,-6 q-8,6 -2,12 q6,-2 6,-10 z" fill="#e4442e"/>
+      <circle cx="-28" cy="-20" r="3.4" fill="#2a1e16"/>
+      <g stroke="#e0a021" stroke-width="5" stroke-linecap="round"><line x1="-10" y1="30" x2="-12" y2="46"/><line x1="6" y1="30" x2="8" y2="46"/></g>
+    </g>
+  </g>
+
+
+
+  <!-- BIJ (bee) near flowers -->
+  <g transform="translate(930,586) scale(0.66)">
+    <path d="M0,20 q-40,-40 -70,-30" stroke="#e0a021" stroke-width="3" fill="none" stroke-dasharray="4 6" opacity="0.6"/>
+    <g class="animal-node" data-key="bij" role="button" aria-label="Bij" tabindex="0">
+      <rect class="hit" x="-48" y="-42" width="96" height="88"/>
+      <ellipse cx="-14" cy="-16" rx="18" ry="12" fill="#ffffff" opacity="0.85" transform="rotate(-24 -14 -16)"/>
+      <ellipse cx="12" cy="-18" rx="18" ry="12" fill="#ffffff" opacity="0.85" transform="rotate(20 12 -18)"/>
+      <ellipse cx="0" cy="6" rx="30" ry="22" fill="#f6c430"/>
+      <path d="M-14,-12 a30,22 0 0 1 28,0 l-4,10 a30,22 0 0 1 -20,0 z" fill="#2b2620"/>
+      <path d="M-16,10 h32 M-14,22 h28" stroke="#2b2620" stroke-width="6"/>
+      <circle cx="-26" cy="-6" r="12" fill="#2b2620"/>
+      <circle cx="-30" cy="-8" r="3" fill="#fff"/>
+      <path d="M-32,-16 q-6,-8 -12,-8 M-26,-18 q-2,-9 2,-13" stroke="#2b2620" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <circle cx="-38" cy="-24" r="3" fill="#2b2620"/><circle cx="-24" cy="-31" r="3" fill="#2b2620"/>
+    </g>
+  </g>
+
+
+  <!-- EEND (duck) op de vijver -->
+  <g transform="translate(140,606) scale(0.62)">
+    <g class="animal-node" data-key="eend" role="button" aria-label="Eend" tabindex="0">
+      <rect class="hit" x="-72" y="-72" width="146" height="124"/>
+      <path d="M40,2 q24,-10 28,4 q-15,7 -28,2z" fill="#ddd7c7"/>
+      <ellipse cx="0" cy="10" rx="46" ry="26" fill="#eeeade"/>
+      <path d="M-6,4 q26,-11 36,6 q-19,11 -36,-2z" fill="#ddd7c7"/>
+      <path d="M-26,6 q-11,-26 -2,-40 l17,2 q-2,21 4,36z" fill="#3e8e5f"/>
+      <circle cx="-22" cy="-42" r="17" fill="#3e8e5f"/>
+      <path d="M-33,-10 q10,5 19,1 l0,8 q-11,4 -20,-1z" fill="#f4f1e6"/>
+      <path d="M-38,-38 q-21,2 -21,8 q2,7 21,4 z" fill="#f0a52e"/>
+      <circle cx="-16" cy="-46" r="3" fill="#1c1c1c"/>
+      <path d="M-54,28 q22,9 48,0 q23,-7 46,2" stroke="#9fdcef" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.9"/>
+    </g>
+  </g>
+
+
+
+  <!-- GANS (goose) -->
+  <ellipse cx="400" cy="772" rx="42" ry="8" fill="#2f6b2a" opacity="0.16"/>
+  <g transform="translate(400,738) scale(0.55)">
+    <g class="animal-node" data-key="gans" role="button" aria-label="Gans" tabindex="0">
+      <rect class="hit" x="-72" y="-88" width="144" height="156"/>
+      <path d="M36,4 q26,-10 30,4 q-16,8 -30,4z" fill="#eeebe2"/>
+      <ellipse cx="0" cy="12" rx="44" ry="26" fill="#fbfaf6"/>
+      <path d="M-8,4 q26,-10 34,6 q-18,10 -34,-2z" fill="#eeebe2"/>
+      <path d="M-24,8 q-12,-32 -4,-52 l16,2 q-4,28 2,48z" fill="#fbfaf6"/>
+      <ellipse cx="-20" cy="-54" rx="15" ry="13" fill="#fbfaf6"/>
+      <path d="M-34,-54 q-20,0 -20,7 q2,6 20,4z" fill="#f0a52e"/>
+      <circle cx="-15" cy="-58" r="2.6" fill="#1c1c1c"/>
+      <g stroke="#f0a52e" stroke-width="5" stroke-linecap="round"><line x1="-8" y1="36" x2="-10" y2="50"/><line x1="8" y1="36" x2="8" y2="50"/></g>
+    </g>
+  </g>
+
+  <!-- KALKOEN (turkey) -->
+  <ellipse cx="800" cy="778" rx="44" ry="8" fill="#2f6b2a" opacity="0.16"/>
+  <g transform="translate(800,735) scale(0.6)">
+    <g class="animal-node" data-key="kalkoen" role="button" aria-label="Kalkoen" tabindex="0">
+      <rect class="hit" x="-66" y="-72" width="136" height="146"/>
+      <path d="M10,-6 q44,-46 66,-6 q-18,34 -66,20z" fill="#8a5a34"/>
+      <path d="M14,-4 q36,-36 52,-6 q-14,26 -52,16z" fill="#a97a46"/>
+      <path d="M18,-2 q28,-26 38,-4 q-10,18 -38,10z" fill="#c99a62"/>
+      <ellipse cx="-8" cy="8" rx="34" ry="28" fill="#4a3a2c"/>
+      <circle cx="-28" cy="-14" r="14" fill="#5a4636"/>
+      <path d="M-38,-26 q-3,-9 5,-8 q0,6 5,8z" fill="#e4442e"/>
+      <path d="M-40,-8 q-8,6 -2,12 q7,-2 6,-10z" fill="#e4442e"/>
+      <path d="M-42,-14 l-13,2 l11,6 z" fill="#f0b73a"/>
+      <circle cx="-30" cy="-16" r="2.8" fill="#1c1c1c"/>
+      <g stroke="#e0a021" stroke-width="5" stroke-linecap="round"><line x1="-14" y1="32" x2="-16" y2="48"/><line x1="2" y1="32" x2="4" y2="48"/></g>
+    </g>
+  </g>
+
+  <!-- DUIF (dove) op de silo -->
+  <g transform="translate(614,262) scale(0.45)">
+    <g class="animal-node" data-key="duif" role="button" aria-label="Duif" tabindex="0">
+      <rect class="hit" x="-50" y="-48" width="100" height="92"/>
+      <path d="M22,-2 q22,-6 24,6 q-14,6 -24,2z" fill="#b9c2cc"/>
+      <ellipse cx="0" cy="4" rx="26" ry="17" fill="#cdd4dc"/>
+      <path d="M-6,0 q20,-8 26,6 q-14,8 -26,0z" fill="#b9c2cc"/>
+      <circle cx="-20" cy="-12" r="12" fill="#dde3ea"/>
+      <path d="M-30,-12 l-14,3 l13,5 z" fill="#f0a52e"/>
+      <circle cx="-18" cy="-15" r="2.6" fill="#1c1c1c"/>
+      <g stroke="#e07b8a" stroke-width="3.6" stroke-linecap="round"><line x1="-6" y1="18" x2="-7" y2="28"/><line x1="6" y1="18" x2="6" y2="28"/></g>
+    </g>
+  </g>
+
+  <!-- MUIS (mouse) -->
+  <g transform="translate(930,748) scale(0.5)">
+    <g class="animal-node" data-key="muis" role="button" aria-label="Muis" tabindex="0">
+      <rect class="hit" x="-56" y="-44" width="112" height="86"/>
+      <path d="M28,8 q26,4 24,24" stroke="#b0a79e" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="2" cy="10" rx="28" ry="18" fill="#a8a29a"/>
+      <circle cx="-14" cy="-8" r="11" fill="#b8b2aa"/>
+      <circle cx="-14" cy="-8" r="6" fill="#e0b8bc"/>
+      <path d="M-16,6 q-20,2 -26,10 q8,8 26,4z" fill="#b0aaa2"/>
+      <circle cx="-40" cy="14" r="2.6" fill="#e0b8bc"/>
+      <circle cx="-22" cy="8" r="2.4" fill="#1c1c1c"/>
+      <g stroke="#8a847c" stroke-width="1.6"><line x1="-34" y1="12" x2="-50" y2="8"/><line x1="-34" y1="16" x2="-50" y2="18"/></g>
+    </g>
+  </g>
+</svg>
