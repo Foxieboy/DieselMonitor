@@ -14,7 +14,7 @@ Live (via GitHub Pages): `…/DieselMonitor/geluidenspel/`
 - 🦁 **Wilde dieren** (12) — leeuw, tijger, aap, olifant, uil, wolf, vos, nijlpaard, neushoorn,
   gorilla, papegaai, adelaar
 - 🚗 **Voertuigen** (9) — auto, motor, fiets, trein, brandweer, traktor, boot, vliegtuig, helikopter
-- 🏠 **In huis** (9, met huistekening) — kloppen, wekker, klok, stofzuiger, wasmachine, tandenborstel, wc, water, blikje
+- 🏠 **In huis** (9) — kloppen, wekker, klok, stofzuiger, wasmachine, tandenborstel, wc, water, blikje
 - 👶 **Mensen** (8) — lachen, niezen, hoesten, klappen, baby, voetstappen, snurken, drinken
 - ➕ ruimte voor meer thema's (zie *Nieuw thema toevoegen*)
 
@@ -63,9 +63,10 @@ python3 build_app.py                # bouwt ../index.html (leest scene_*.svg + s
 ## Nieuw thema toevoegen
 
 1. Maak `src/sounds_<thema>.json` (map key → data-URI mp3).
-Thema's zonder `scene_<thema>.svg` tonen alleen de tegel-weergave (de
-weergave-schakelaar wordt dan verborgen). In tekening-weergave stelt de quiz
-alleen vragen over items die echt in de tekening staan.
+Alle zes thema's hebben inmiddels een eigen tekening. Een thema zonder
+`scene_<thema>.svg` toont alleen de tegel-weergave (de weergave-schakelaar
+wordt dan verborgen). In tekening-weergave stelt de quiz alleen vragen over
+items die echt in de tekening staan.
 
 2. Teken `src/scene_<thema>.svg` met per item een
    `<g class="animal-node" data-key="<key>">…</g>` (met een transparant

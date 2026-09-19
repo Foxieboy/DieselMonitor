@@ -13,6 +13,7 @@ SCENE_DIEREN = open("scene_dieren.svg").read()
 SCENE_ERF    = open("scene_erf.svg").read()
 SCENE_WILD   = open("scene_wild.svg").read()
 SCENE_HUIS   = open("scene_huis.svg").read()
+SCENE_MENSEN = open("scene_mensen.svg").read()
 SCENE_VOERT  = open("scene_voertuigen.svg").read()
 
 HTML = r'''<title>Geluidenspel</title>
@@ -163,6 +164,7 @@ HTML = r'''<title>Geluidenspel</title>
 <div id="scene-erf" hidden>__SCENE_ERF__</div>
 <div id="scene-wild" hidden>__SCENE_WILD__</div>
 <div id="scene-huis" hidden>__SCENE_HUIS__</div>
+<div id="scene-mensen" hidden>__SCENE_MENSEN__</div>
 <div id="scene-voertuigen" hidden>__SCENE_VOERTUIGEN__</div>
 
 <script>
@@ -202,7 +204,7 @@ var SOUNDS = __SOUNDS__;
         {emoji:"🚽",name:"Wc",key:"wc"},{emoji:"🚰",name:"Water",key:"water"},
         {emoji:"🥫",name:"Blikje",key:"blikje"}
       ]},
-    mensen: { title:"Mensen", emoji:"👶",
+    mensen: { title:"Mensen", emoji:"👶", sceneTab:"🧸 Speelkamer", sceneName:"speelkamer",
       items:[
         {emoji:"😄",name:"Lachen",key:"lachen"},{emoji:"🤧",name:"Niezen",key:"niezen"},
         {emoji:"😷",name:"Hoesten",key:"hoesten"},{emoji:"👏",name:"Klappen",key:"klappen"},
@@ -451,6 +453,7 @@ out = (HTML
   .replace("__SCENE_ERF__", SCENE_ERF)
   .replace("__SCENE_WILD__", SCENE_WILD)
   .replace("__SCENE_HUIS__", SCENE_HUIS)
+  .replace("__SCENE_MENSEN__", SCENE_MENSEN)
   .replace("__SCENE_VOERTUIGEN__", SCENE_VOERT)
   .replace("__SOUNDS__", SOUNDS_JS))
 open("app.html","w").write(out)

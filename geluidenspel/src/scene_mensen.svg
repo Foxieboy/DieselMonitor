@@ -1,0 +1,191 @@
+<svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Speelkamer met mensen die geluiden maken">
+  <defs>
+    <style>.hit{fill:transparent;}.animal-node{cursor:pointer;}</style>
+    <linearGradient id="mWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbeedd"/><stop offset="1" stop-color="#f3e0c8"/></linearGradient>
+    <linearGradient id="mFloor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d7a86b"/><stop offset="1" stop-color="#c0904f"/></linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="700" fill="url(#mWall)"/>
+  <rect x="0" y="400" width="1000" height="300" fill="url(#mFloor)"/>
+  <g stroke="#a87b43" stroke-width="3" opacity="0.5">
+    <line x1="0" y1="470" x2="1000" y2="470"/><line x1="0" y1="550" x2="1000" y2="550"/><line x1="0" y1="640" x2="1000" y2="640"/>
+  </g>
+  <rect x="0" y="392" width="1000" height="12" fill="#c9a98a"/>
+
+  <!-- raam -->
+  <g transform="translate(200,150)">
+    <rect x="-80" y="-70" width="160" height="140" rx="6" fill="#8fd0ef"/>
+    <rect x="-80" y="-70" width="160" height="140" rx="6" fill="none" stroke="#e9d7b0" stroke-width="10"/>
+    <line x1="0" y1="-70" x2="0" y2="70" stroke="#e9d7b0" stroke-width="8"/>
+    <line x1="-80" y1="0" x2="80" y2="0" stroke="#e9d7b0" stroke-width="8"/>
+    <circle cx="44" cy="-40" r="16" fill="#ffe27a"/>
+  </g>
+  <!-- schilderij -->
+  <g transform="translate(700,140)">
+    <rect x="-70" y="-52" width="140" height="104" rx="5" fill="#e9d7b0"/>
+    <rect x="-58" y="-40" width="116" height="80" fill="#a8dcf0"/>
+    <path d="M-58,40 L-14,-6 L16,26 L40,2 L58,40 Z" fill="#6fae49"/>
+    <circle cx="34" cy="-20" r="11" fill="#ffd23f"/>
+  </g>
+
+  <!-- ============ MENSEN ============ -->
+
+  <!-- LACHEN -->
+  <g transform="translate(150,430) scale(0.7)">
+    <g class="animal-node" data-key="lachen" role="button" aria-label="Lachen" tabindex="0">
+      <rect class="hit" x="-72" y="-122" width="144" height="188"/>
+      <g fill="#4a6fa5"><rect x="-21" y="16" width="17" height="40" rx="7"/><rect x="6" y="16" width="17" height="40" rx="7"/></g>
+      <g fill="#3a3630"><rect x="-24" y="52" width="23" height="11" rx="4"/><rect x="4" y="52" width="23" height="11" rx="4"/></g>
+      <path d="M-27,-18 q-22,16 -10,32" fill="none" stroke="#e4553a" stroke-width="14" stroke-linecap="round"/>
+      <path d="M27,-18 q22,16 10,32" fill="none" stroke="#e4553a" stroke-width="14" stroke-linecap="round"/>
+      <rect x="-28" y="-36" width="56" height="58" rx="19" fill="#e4553a"/>
+      <circle cx="0" cy="-64" r="29" fill="#f2c9a0"/>
+      <path d="M-29,-72 q6,-27 29,-27 q23,0 29,27 q-15,-13 -29,-13 q-14,0 -29,13z" fill="#6b4a30"/>
+      <path d="M-15,-68 q7,-8 13,0" stroke="#2a1c12" stroke-width="3.6" fill="none" stroke-linecap="round"/>
+      <path d="M2,-68 q7,-8 13,0" stroke="#2a1c12" stroke-width="3.6" fill="none" stroke-linecap="round"/>
+      <path d="M-14,-55 q14,22 28,0 q-14,7 -28,0z" fill="#8a3a3a"/>
+      <path d="M-13,-55 q13,4 26,0" stroke="#ffffff" stroke-width="4" fill="none"/>
+      <circle cx="-21" cy="-55" r="5" fill="#f0a0a0" opacity="0.7"/><circle cx="21" cy="-55" r="5" fill="#f0a0a0" opacity="0.7"/>
+    </g>
+  </g>
+
+  <!-- NIEZEN -->
+  <g transform="translate(380,430) scale(0.7)">
+    <g class="animal-node" data-key="niezen" role="button" aria-label="Niezen" tabindex="0">
+      <rect class="hit" x="-78" y="-122" width="156" height="188"/>
+      <g fill="#5a6a4a"><rect x="-21" y="16" width="17" height="40" rx="7"/><rect x="6" y="16" width="17" height="40" rx="7"/></g>
+      <g fill="#3a3630"><rect x="-24" y="52" width="23" height="11" rx="4"/><rect x="4" y="52" width="23" height="11" rx="4"/></g>
+      <path d="M27,-18 q20,10 14,26" fill="none" stroke="#7cc7e8" stroke-width="14" stroke-linecap="round"/>
+      <rect x="-28" y="-36" width="56" height="58" rx="19" fill="#7cc7e8"/>
+      <circle cx="0" cy="-64" r="29" fill="#f2c9a0"/>
+      <path d="M-29,-74 q8,-25 29,-25 q21,0 29,25 q-15,-11 -29,-11 q-14,0 -29,11z" fill="#c9702f"/>
+      <path d="M-17,-70 l12,0 M5,-70 l12,0" stroke="#2a1c12" stroke-width="3.6" stroke-linecap="round"/>
+      <ellipse cx="-2" cy="-56" rx="8" ry="6" fill="#e07b8a"/>
+      <path d="M-30,-16 q-24,-14 -16,-34" fill="none" stroke="#f2c9a0" stroke-width="14" stroke-linecap="round"/>
+      <rect x="-56" y="-66" width="32" height="26" rx="6" fill="#ffffff" transform="rotate(-16 -40 -53)"/>
+      <g fill="#9fd8ee"><circle cx="-56" cy="-30" r="5"/><circle cx="-70" cy="-18" r="4"/><circle cx="-48" cy="-16" r="3.4"/></g>
+    </g>
+  </g>
+
+  <!-- HOESTEN -->
+  <g transform="translate(620,430) scale(0.7)">
+    <g class="animal-node" data-key="hoesten" role="button" aria-label="Hoesten" tabindex="0">
+      <rect class="hit" x="-76" y="-122" width="152" height="188"/>
+      <g fill="#6b4a30"><rect x="-21" y="16" width="17" height="40" rx="7"/><rect x="6" y="16" width="17" height="40" rx="7"/></g>
+      <g fill="#3a3630"><rect x="-24" y="52" width="23" height="11" rx="4"/><rect x="4" y="52" width="23" height="11" rx="4"/></g>
+      <path d="M-27,-18 q-20,14 -8,28" fill="none" stroke="#c58cff" stroke-width="14" stroke-linecap="round"/>
+      <rect x="-28" y="-36" width="56" height="58" rx="19" fill="#c58cff"/>
+      <circle cx="0" cy="-64" r="29" fill="#f2c9a0"/>
+      <path d="M-29,-72 q10,-27 29,-27 q19,0 27,22 q-6,10 -18,4 q-16,-8 -38,1z" fill="#2a2620"/>
+      <path d="M-16,-70 q6,-7 12,0" stroke="#2a1c12" stroke-width="3.6" fill="none" stroke-linecap="round"/>
+      <path d="M3,-70 q6,-7 12,0" stroke="#2a1c12" stroke-width="3.6" fill="none" stroke-linecap="round"/>
+      <ellipse cx="4" cy="-52" rx="9" ry="7" fill="#8a3a3a"/>
+      <path d="M30,-16 q16,-18 6,-32" fill="none" stroke="#f2c9a0" stroke-width="14" stroke-linecap="round"/>
+      <circle cx="30" cy="-52" r="13" fill="#f2c9a0"/>
+      <g fill="#cfd8de" opacity="0.85"><circle cx="46" cy="-62" r="9"/><circle cx="58" cy="-70" r="7"/><circle cx="66" cy="-58" r="5"/></g>
+    </g>
+  </g>
+
+  <!-- KLAPPEN -->
+  <g transform="translate(860,430) scale(0.7)">
+    <g class="animal-node" data-key="klappen" role="button" aria-label="Klappen" tabindex="0">
+      <rect class="hit" x="-76" y="-122" width="152" height="188"/>
+      <g fill="#c9502f"><rect x="-21" y="16" width="17" height="40" rx="7"/><rect x="6" y="16" width="17" height="40" rx="7"/></g>
+      <g fill="#3a3630"><rect x="-24" y="52" width="23" height="11" rx="4"/><rect x="4" y="52" width="23" height="11" rx="4"/></g>
+      <path d="M-27,-20 q-16,20 6,26" fill="none" stroke="#f6c430" stroke-width="14" stroke-linecap="round"/>
+      <path d="M27,-20 q16,20 -6,26" fill="none" stroke="#f6c430" stroke-width="14" stroke-linecap="round"/>
+      <rect x="-28" y="-36" width="56" height="58" rx="19" fill="#f6c430"/>
+      <circle cx="0" cy="-64" r="29" fill="#f2c9a0"/>
+      <path d="M-29,-70 q4,-29 29,-29 q25,0 29,29 q-16,-14 -29,-14 q-13,0 -29,14z" fill="#3a2a1c"/>
+      <circle cx="-10" cy="-67" r="3.4" fill="#2a1c12"/><circle cx="10" cy="-67" r="3.4" fill="#2a1c12"/>
+      <path d="M-10,-54 q10,10 20,0" stroke="#8a3a3a" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <circle cx="-8" cy="10" r="14" fill="#f2c9a0"/><circle cx="8" cy="10" r="14" fill="#f2c9a0"/>
+      <g stroke="#e0a021" stroke-width="4" stroke-linecap="round" opacity="0.9">
+        <line x1="-32" y1="-2" x2="-44" y2="-10"/><line x1="-34" y1="12" x2="-48" y2="12"/>
+        <line x1="32" y1="-2" x2="44" y2="-10"/><line x1="34" y1="12" x2="48" y2="12"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- BABY -->
+  <g transform="translate(170,606) scale(0.9)">
+    <ellipse cx="0" cy="56" rx="86" ry="20" fill="#e4553a" opacity="0.35"/>
+    <g class="animal-node" data-key="baby" role="button" aria-label="Baby" tabindex="0">
+      <rect class="hit" x="-78" y="-104" width="156" height="168"/>
+      <g fill="#f2c9a0"><rect x="-32" y="24" width="26" height="26" rx="12"/><rect x="8" y="24" width="26" height="26" rx="12"/></g>
+      <rect x="-30" y="-12" width="60" height="46" rx="18" fill="#fdf6e6"/>
+      <path d="M-30,10 q-26,4 -30,-14" fill="none" stroke="#f2c9a0" stroke-width="15" stroke-linecap="round"/>
+      <path d="M30,10 q26,4 30,-14" fill="none" stroke="#f2c9a0" stroke-width="15" stroke-linecap="round"/>
+      <circle cx="0" cy="-48" r="34" fill="#f2c9a0"/>
+      <path d="M-13,-62 q5,-10 12,-2" stroke="#8a6a44" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M-16,-52 q7,-8 14,0" stroke="#2a1c12" stroke-width="3.6" fill="none" stroke-linecap="round"/>
+      <path d="M4,-52 q7,-8 14,0" stroke="#2a1c12" stroke-width="3.6" fill="none" stroke-linecap="round"/>
+      <ellipse cx="1" cy="-32" rx="12" ry="11" fill="#8a3a3a"/>
+      <circle cx="-22" cy="-36" r="6" fill="#f0a0a0" opacity="0.75"/><circle cx="24" cy="-36" r="6" fill="#f0a0a0" opacity="0.75"/>
+      <g fill="#7cc7e8"><path d="M-26,-40 q-5,12 0,16 q6,-4 1,-16z"/><path d="M28,-40 q5,12 0,16 q-6,-4 -1,-16z"/></g>
+    </g>
+  </g>
+
+  <!-- VOETSTAPPEN -->
+  <g transform="translate(420,606) scale(0.9)">
+    <g class="animal-node" data-key="voetstappen" role="button" aria-label="Voetstappen" tabindex="0">
+      <rect class="hit" x="-92" y="-108" width="184" height="176"/>
+      <g fill="#3a3630" opacity="0.28">
+        <ellipse cx="-72" cy="48" rx="13" ry="18" transform="rotate(-12 -72 48)"/>
+        <ellipse cx="-44" cy="34" rx="12" ry="17" transform="rotate(-12 -44 34)"/>
+      </g>
+      <path d="M-14,4 q-14,26 -30,40" fill="none" stroke="#4a6fa5" stroke-width="20" stroke-linecap="round"/>
+      <path d="M14,4 q14,26 28,40" fill="none" stroke="#3d5f92" stroke-width="20" stroke-linecap="round"/>
+      <g fill="#3a3630"><ellipse cx="-48" cy="50" rx="18" ry="10"/><ellipse cx="46" cy="50" rx="18" ry="10"/></g>
+      <rect x="-26" y="-40" width="52" height="54" rx="18" fill="#4fae56"/>
+      <path d="M-26,-26 q-20,14 -14,32" fill="none" stroke="#4fae56" stroke-width="13" stroke-linecap="round"/>
+      <path d="M26,-26 q20,-8 22,-26" fill="none" stroke="#4fae56" stroke-width="13" stroke-linecap="round"/>
+      <circle cx="0" cy="-66" r="27" fill="#f2c9a0"/>
+      <path d="M-27,-74 q6,-25 27,-25 q21,0 27,25 q-14,-12 -27,-12 q-13,0 -27,12z" fill="#8a5a34"/>
+      <circle cx="-9" cy="-68" r="3.2" fill="#2a1c12"/><circle cx="9" cy="-68" r="3.2" fill="#2a1c12"/>
+      <path d="M-7,-56 q7,6 14,0" stroke="#8a3a3a" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- SNURKEN (op de bank) -->
+  <g transform="translate(680,596) scale(0.85)">
+    <g class="animal-node" data-key="snurken" role="button" aria-label="Snurken" tabindex="0">
+      <rect class="hit" x="-116" y="-104" width="232" height="172"/>
+      <rect x="-108" y="-8" width="216" height="52" rx="14" fill="#c9502f"/>
+      <rect x="-108" y="-48" width="30" height="56" rx="12" fill="#a53f22"/>
+      <rect x="78" y="-48" width="30" height="56" rx="12" fill="#a53f22"/>
+      <rect x="-100" y="44" width="16" height="16" rx="5" fill="#7a3526"/><rect x="84" y="44" width="16" height="16" rx="5" fill="#7a3526"/>
+      <rect x="-76" y="-30" width="150" height="34" rx="14" fill="#7cc7e8"/>
+      <rect x="-76" y="-34" width="46" height="24" rx="10" fill="#fdf6e6"/>
+      <circle cx="-48" cy="-44" r="26" fill="#f2c9a0"/>
+      <path d="M-74,-50 q6,-23 26,-23 q20,0 26,23 q-13,-11 -26,-11 q-13,0 -26,11z" fill="#6b4a30"/>
+      <path d="M-58,-46 l11,0 M-40,-46 l11,0" stroke="#2a1c12" stroke-width="3.4" stroke-linecap="round"/>
+      <ellipse cx="-46" cy="-32" rx="8" ry="6" fill="#8a3a3a"/>
+      <g fill="#6b7b8c" opacity="0.9" font-family="Baloo 2, sans-serif" font-weight="800">
+        <text x="-14" y="-74" font-size="22">z</text>
+        <text x="6" y="-92" font-size="30">Z</text>
+        <text x="34" y="-112" font-size="38">Z</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- DRINKEN -->
+  <g transform="translate(900,600) scale(0.9)">
+    <g class="animal-node" data-key="drinken" role="button" aria-label="Drinken" tabindex="0">
+      <rect class="hit" x="-76" y="-116" width="152" height="184"/>
+      <g fill="#5a4a7a"><rect x="-21" y="16" width="18" height="42" rx="8"/><rect x="6" y="16" width="18" height="42" rx="8"/></g>
+      <g fill="#3a3630"><rect x="-25" y="54" width="24" height="11" rx="4"/><rect x="4" y="54" width="24" height="11" rx="4"/></g>
+      <path d="M-28,-18 q-20,16 -8,30" fill="none" stroke="#f0a52e" stroke-width="14" stroke-linecap="round"/>
+      <rect x="-29" y="-36" width="58" height="58" rx="19" fill="#f0a52e"/>
+      <circle cx="0" cy="-66" r="29" fill="#f2c9a0"/>
+      <path d="M-29,-72 q6,-27 29,-27 q23,0 29,27 q-15,-13 -29,-13 q-14,0 -29,13z" fill="#c9702f"/>
+      <path d="M-16,-72 q7,-8 13,0" stroke="#2a1c12" stroke-width="3.6" fill="none" stroke-linecap="round"/>
+      <circle cx="10" cy="-70" r="3.2" fill="#2a1c12"/>
+      <path d="M29,-22 q22,-14 14,-34" fill="none" stroke="#f2c9a0" stroke-width="14" stroke-linecap="round"/>
+      <rect x="18" y="-74" width="34" height="32" rx="6" fill="#7cc7e8"/>
+      <path d="M52,-66 q14,2 12,12 q-2,8 -12,6" fill="none" stroke="#7cc7e8" stroke-width="6"/>
+      <rect x="18" y="-74" width="34" height="9" rx="4" fill="#a8dcf0"/>
+      <path d="M40,-78 q4,-12 -4,-18" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+    </g>
+  </g>
+</svg>
