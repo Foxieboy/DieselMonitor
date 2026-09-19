@@ -85,5 +85,30 @@
     "source": "https://github.com/raimonvibe/animalguesses-web (MIT)",
     "bytes": 17024,
     "dur": 1.6
+  },
+  "geit": {
+    "file": "Ziege.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "gans": {
+    "file": "Gaense.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "kalkoen": {
+    "file": "truthahn.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "duif": {
+    "file": "pigeons.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "muis": {
+    "file": "mouse.wav",
+    "bytes": 17024,
+    "dur": 1.6
   }
 }

@@ -9,9 +9,13 @@ Live (via GitHub Pages): `…/DieselMonitor/geluidenspel/`
 
 ## Thema's
 
-- 🐮 **Boerderij** — koe, hond, poes, varken, schaap, ezel, paard, eend, kip, haan, kikker, kraai, bij
-- 🦁 **Wilde dieren** — leeuw, tijger, aap, olifant, uil
-- 🚗 **Voertuigen** — auto, motor, fiets, trein, brandweer, traktor, boot, vliegtuig, helikopter
+- 🐮 **Boerderij** (18) — koe, hond, poes, varken, schaap, ezel, paard, eend, kip, haan, kikker,
+  kraai, bij, geit, gans, kalkoen, duif, muis
+- 🦁 **Wilde dieren** (12) — leeuw, tijger, aap, olifant, uil, wolf, vos, nijlpaard, neushoorn,
+  gorilla, papegaai, adelaar
+- 🚗 **Voertuigen** (9) — auto, motor, fiets, trein, brandweer, traktor, boot, vliegtuig, helikopter
+- 🏠 **In huis** (9) — kloppen, wekker, klok, stofzuiger, wasmachine, tandenborstel, wc, water, blikje
+- 👶 **Mensen** (8) — lachen, niezen, hoesten, klappen, baby, voetstappen, snurken, drinken
 - ➕ ruimte voor meer thema's (zie *Nieuw thema toevoegen*)
 
 ## Speelvormen (per thema)
@@ -35,7 +39,9 @@ Echte opnames komen uit meerdere vrij gelicentieerde bronnen:
 - **ESC-50** (https://github.com/karolpiczak/ESC-50) — boerderijdieren, **CC BY-NC 3.0**
 - **YashNita/Animal-Sound-Dataset** — leeuw, aap, ezel
 - **Animal-Sound-Dataset-Research-2019-Sri-Lanka** — olifant, **CC BY-4.0**
-- **raimonvibe/animalguesses-web** — paard, eend, tijger, uil, **MIT**
+- **raimonvibe/animalguesses-web** — paard, eend, tijger, uil, geit, gans, kalkoen, duif, muis,
+  wolf, vos, nijlpaard, neushoorn, gorilla, papegaai, adelaar, **MIT**
+- **ESC-50** — ook de thema's *In huis* en *Mensen*, **CC BY-NC 3.0**
 
 Per item is één fragment gekozen, kort geknipt en genormaliseerd. Enkele geluiden zonder ESC-50-bron zijn **gesynthetiseerd**
 (`src/add_synth.py`): de **fietsbel**, de **motor** (optrekkend motorgeluid) en
@@ -57,6 +63,10 @@ python3 build_app.py                # bouwt ../index.html (leest scene_*.svg + s
 ## Nieuw thema toevoegen
 
 1. Maak `src/sounds_<thema>.json` (map key → data-URI mp3).
+Thema's zonder `scene_<thema>.svg` tonen alleen de tegel-weergave (de
+weergave-schakelaar wordt dan verborgen). In tekening-weergave stelt de quiz
+alleen vragen over items die echt in de tekening staan.
+
 2. Teken `src/scene_<thema>.svg` met per item een
    `<g class="animal-node" data-key="<key>">…</g>` (met een transparant
    `<rect class="hit">` als ruim tikvlak).

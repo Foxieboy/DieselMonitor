@@ -4,6 +4,8 @@ sounds = {
   "dieren": json.load(open("sounds_dieren.json")),
   "wild": json.load(open("sounds_wild.json")),
   "voertuigen": json.load(open("sounds_voertuigen.json")),
+  "huis": json.load(open("sounds_huis.json")),
+  "mensen": json.load(open("sounds_mensen.json")),
 }
 SOUNDS_JS = json.dumps(sounds, separators=(",",":"))
 SCENE_DIEREN = open("scene_dieren.svg").read()
@@ -171,13 +173,33 @@ var SOUNDS = __SOUNDS__;
         {emoji:"🐴",name:"Paard",key:"paard"},{emoji:"🦆",name:"Eend",key:"eend"},
         {emoji:"🐔",name:"Kip",key:"kip"},{emoji:"🐓",name:"Haan",key:"haan"},
         {emoji:"🐸",name:"Kikker",key:"kikker"},{emoji:"🐦‍⬛",name:"Kraai",key:"kraai"},
-        {emoji:"🐝",name:"Bij",key:"bij"}
+        {emoji:"🐝",name:"Bij",key:"bij"},{emoji:"🐐",name:"Geit",key:"geit"},
+        {emoji:"🦢",name:"Gans",key:"gans"},{emoji:"🦃",name:"Kalkoen",key:"kalkoen"},
+        {emoji:"🕊️",name:"Duif",key:"duif"},{emoji:"🐭",name:"Muis",key:"muis"}
       ]},
     wild: { title:"Wilde dieren", emoji:"🦁", sceneTab:"🌳 Jungle", sceneName:"jungle",
       items:[
         {emoji:"🦁",name:"Leeuw",key:"leeuw"},{emoji:"🐵",name:"Aap",key:"aap"},
         {emoji:"🐘",name:"Olifant",key:"olifant"},{emoji:"🐯",name:"Tijger",key:"tijger"},
-        {emoji:"🦉",name:"Uil",key:"uil"}
+        {emoji:"🦉",name:"Uil",key:"uil"},{emoji:"🐺",name:"Wolf",key:"wolf"},
+        {emoji:"🦊",name:"Vos",key:"vos"},{emoji:"🦛",name:"Nijlpaard",key:"nijlpaard"},
+        {emoji:"🦏",name:"Neushoorn",key:"neushoorn"},{emoji:"🦍",name:"Gorilla",key:"gorilla"},
+        {emoji:"🦜",name:"Papegaai",key:"papegaai"},{emoji:"🦅",name:"Adelaar",key:"adelaar"}
+      ]},
+    huis: { title:"In huis", emoji:"🏠",
+      items:[
+        {emoji:"🚪",name:"Kloppen",key:"kloppen"},{emoji:"⏰",name:"Wekker",key:"wekker"},
+        {emoji:"🕰️",name:"Klok",key:"klok"},{emoji:"🧹",name:"Stofzuiger",key:"stofzuiger"},
+        {emoji:"🧺",name:"Wasmachine",key:"wasmachine"},{emoji:"🪥",name:"Tandenborstel",key:"tandenborstel"},
+        {emoji:"🚽",name:"Wc",key:"wc"},{emoji:"🚰",name:"Water",key:"water"},
+        {emoji:"🥫",name:"Blikje",key:"blikje"}
+      ]},
+    mensen: { title:"Mensen", emoji:"👶",
+      items:[
+        {emoji:"😄",name:"Lachen",key:"lachen"},{emoji:"🤧",name:"Niezen",key:"niezen"},
+        {emoji:"😷",name:"Hoesten",key:"hoesten"},{emoji:"👏",name:"Klappen",key:"klappen"},
+        {emoji:"👶",name:"Baby",key:"baby"},{emoji:"👣",name:"Voetstappen",key:"voetstappen"},
+        {emoji:"😴",name:"Snurken",key:"snurken"},{emoji:"🥤",name:"Drinken",key:"drinken"}
       ]},
     voertuigen: { title:"Voertuigen", emoji:"🚗", sceneTab:"🌳 Straat", sceneName:"straat",
       items:[
@@ -188,7 +210,7 @@ var SOUNDS = __SOUNDS__;
         {emoji:"🚁",name:"Helikopter",key:"helikopter"}
       ]}
   };
-  var THEME_ORDER=["dieren","wild","voertuigen"];
+  var THEME_ORDER=["dieren","wild","voertuigen","huis","mensen"];
   var colors=["#FFE5EC","#E5F6FF","#FFF3D6","#E8FBE0","#F3E8FF","#FFEAD6","#E0F7F4","#FDE7F3","#EAF0FF","#FFF0E8"];
 
   /* ---- audio ---- */
@@ -266,10 +288,12 @@ var SOUNDS = __SOUNDS__;
   var starsEl=document.getElementById("stars");
   var subtitle=document.getElementById("subtitle");
   var tabScene=document.getElementById("tabScene");
+  var viewTabs=document.getElementById("viewTabs");
+  var hasScene=true;
   function renderStars(){var n=Math.min(stars,10);starsEl.textContent=stars>0?(Array(n+1).join("⭐")+(stars>10?" +"+(stars-10):"")):"";}
 
   /* ---- HOME grid ---- */
-  var themeColors={dieren:"#B7E38C",wild:"#F6D98A",voertuigen:"#A9DCF5"};
+  var themeColors={dieren:"#B7E38C",wild:"#F6D98A",voertuigen:"#A9DCF5",huis:"#F7C9D8",mensen:"#D6CCF2"};
   THEME_ORDER.forEach(function(tid){
     var t=THEMES[tid];
     var c=document.createElement("button"); c.className="theme-card"; c.type="button";
@@ -347,8 +371,18 @@ var SOUNDS = __SOUNDS__;
       qTimer=setTimeout(function(){if(mode==="quiz"&&view==="tiles")newQuestion();},1900);
     }else{ btn.classList.remove("shake");void btn.offsetWidth;btn.classList.add("shake");playQuestion(); }
   }
+  function sceneKeySet(){
+    var o={}; sceneWrap.querySelectorAll(".animal-node").forEach(function(n){o[n.getAttribute("data-key")]=1;});
+    return o;
+  }
   function newQuestion(){
-    locked=false;current=items[(Math.random()*items.length)|0];
+    locked=false;
+    var pool=items;
+    if(view==="scene"){
+      var ks=sceneKeySet(), f=items.filter(function(a){return ks[a.key];});
+      if(f.length) pool=f;
+    }
+    current=pool[(Math.random()*pool.length)|0];
     if(view==="tiles")renderChoiceTiles();
     clearTimeout(qTimer);setTimeout(playQuestion,430);
   }
@@ -370,7 +404,7 @@ var SOUNDS = __SOUNDS__;
     starsEl.hidden=(mode!=="quiz");
     if(mode==="quiz"){stars=0;renderStars();}
     if(mode==="free"){try{window.speechSynthesis&&window.speechSynthesis.cancel();}catch(e){}}
-    var sn=THEMES[theme].sceneName;
+    var sn=THEMES[theme].sceneName||"tekening";
     subtitle.textContent = mode==="free"
       ? (view==="scene"?("Tik op de "+sn+"!"):"Tik op een plaatje!")
       : (view==="scene"?"Zoek wat je hoort!":"Wat hoor je?");
@@ -381,9 +415,12 @@ var SOUNDS = __SOUNDS__;
     theme=tid;var t=THEMES[tid];items=t.items;byKey={};idxOf={};
     items.forEach(function(a,i){byKey[a.key]=a;idxOf[a.key]=i;});
     themeTitle.textContent=t.emoji+" "+t.title;
-    tabScene.textContent=t.sceneTab;
+    var sc=document.getElementById("scene-"+tid);
+    hasScene=!!sc;
+    if(hasScene){ tabScene.textContent=t.sceneTab; sceneWrap.innerHTML=sc.innerHTML; }
+    else { sceneWrap.innerHTML=""; }
+    viewTabs.hidden=!hasScene;
     buildTiles();
-    sceneWrap.innerHTML=document.getElementById("scene-"+tid).innerHTML;
     mode="free";view="tiles";
     homeSec.hidden=true;themeSec.hidden=false;
     render();

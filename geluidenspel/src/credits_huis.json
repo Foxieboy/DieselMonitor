@@ -1,0 +1,47 @@
+{
+  "kloppen": {
+    "file": "1-26188-A-30.wav",
+    "bytes": 13889,
+    "dur": 1.29
+  },
+  "wekker": {
+    "file": "1-13613-A-37.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "klok": {
+    "file": "1-42139-A-38.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "stofzuiger": {
+    "file": "1-100210-B-36.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "wasmachine": {
+    "file": "1-23996-B-35.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "tandenborstel": {
+    "file": "1-58923-A-27.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "wc": {
+    "file": "1-20736-A-18.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "water": {
+    "file": "1-51433-A-17.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "blikje": {
+    "file": "1-58846-A-34.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  }
+}

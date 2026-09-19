@@ -1,0 +1,42 @@
+{
+  "lachen": {
+    "file": "1-30039-A-26.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "niezen": {
+    "file": "1-26143-A-21.wav",
+    "bytes": 9971,
+    "dur": 0.89
+  },
+  "hoesten": {
+    "file": "1-30830-A-24.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "klappen": {
+    "file": "1-110537-A-22.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "baby": {
+    "file": "1-187207-A-20.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "voetstappen": {
+    "file": "1-155858-A-25.wav",
+    "bytes": 16762,
+    "dur": 1.58
+  },
+  "snurken": {
+    "file": "1-27403-A-28.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "drinken": {
+    "file": "1-17295-A-29.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  }
+}

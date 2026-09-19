@@ -25,5 +25,40 @@
     "source": "https://github.com/raimonvibe/animalguesses-web (MIT)",
     "bytes": 17024,
     "dur": 1.6
+  },
+  "wolf": {
+    "file": "wolf.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "vos": {
+    "file": "fox.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "nijlpaard": {
+    "file": "hippo.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "neushoorn": {
+    "file": "Rhinozerus.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "gorilla": {
+    "file": "gorilla.wav",
+    "bytes": 17024,
+    "dur": 1.6
+  },
+  "papegaai": {
+    "file": "parrot.wav",
+    "bytes": 14673,
+    "dur": 1.36
+  },
+  "adelaar": {
+    "file": "eagle.wav",
+    "bytes": 17024,
+    "dur": 1.6
   }
 }
