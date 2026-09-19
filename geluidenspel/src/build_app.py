@@ -76,6 +76,7 @@ HTML = r'''<title>Geluidenspel</title>
   .animal:active{transform:translateY(4px);box-shadow:0 4px 0 rgba(61,44,78,.16);}
   .emoji{font-size:clamp(3rem,14vw,4.4rem);line-height:1;filter:drop-shadow(0 4px 3px rgba(61,44,78,.18));}
   .name{font-weight:800;font-size:clamp(1rem,4vw,1.3rem);color:var(--ink);}
+  .emoji svg{height:1.1em;width:1.1em;display:block;}
   .pop{animation:pop .6s ease;}
   @keyframes pop{0%{transform:scale(1) rotate(0)}25%{transform:scale(1.18) rotate(-7deg)}
     50%{transform:scale(1.12) rotate(7deg)}75%{transform:scale(1.14) rotate(-4deg)}100%{transform:scale(1) rotate(0)}}
@@ -199,9 +200,9 @@ var SOUNDS = __SOUNDS__;
     huis: { title:"In huis", emoji:"🏠", sceneTab:"🏠 Het huis", sceneName:"huis",
       items:[
         {emoji:"🚪",name:"Kloppen",key:"kloppen"},{emoji:"⏰",name:"Wekker",key:"wekker"},
-        {emoji:"🕰️",name:"Klok",key:"klok"},{emoji:"🧹",name:"Stofzuiger",key:"stofzuiger"},
-        {emoji:"🧺",name:"Wasmachine",key:"wasmachine"},{emoji:"🪥",name:"Tandenborstel",key:"tandenborstel"},
-        {emoji:"🚽",name:"Wc",key:"wc"},{emoji:"🚰",name:"Water",key:"water"},
+        {emoji:"🕰️",name:"Klok",key:"klok"},{emoji:"🧹",svg:'<svg viewBox="0 0 100 100"><path d="M54 14 q18 -3 22 -9" fill="none" stroke="#2f343a" stroke-width="9" stroke-linecap="round"/> <path d="M60 21 q13 -3 16 -8" fill="none" stroke="#525a63" stroke-width="5" stroke-linecap="round"/> <rect x="38" y="10" width="24" height="20" rx="9" fill="#e4553a"/> <rect x="38" y="10" width="24" height="7" rx="3.5" fill="#f2805f"/> <circle cx="50" cy="23" r="4.5" fill="#ffd9d0"/> <path d="M41 30 h18 a4 4 0 0 1 4 4 v8 a6 6 0 0 1 -6 6 H43 a6 6 0 0 1 -6 -6 V34 a4 4 0 0 1 4 -4z" fill="#d6eefa" stroke="#8fc4dd" stroke-width="2.4"/> <circle cx="50" cy="39" r="4" fill="#b3ddf0"/> <rect x="45" y="48" width="10" height="36" rx="3" fill="#aab3bc"/> <rect x="45" y="48" width="10" height="5" rx="2" fill="#8d97a1"/> <rect x="45" y="66" width="10" height="4" rx="2" fill="#8d97a1"/> <path d="M16 83 h68 a9 9 0 0 1 9 9 v1 a4 4 0 0 1 -4 4 H11 a4 4 0 0 1 -4 -4 v-1 a9 9 0 0 1 9 -9z" fill="#2f343a"/> <rect x="10" y="92" width="80" height="5" rx="2.4" fill="#5d646c"/></svg>',name:"Stofzuiger",key:"stofzuiger"},
+        {emoji:"🧺",svg:'<svg viewBox="0 0 100 100"><rect x="18" y="10" width="64" height="82" rx="11" fill="#eef3f6"/> <rect x="18" y="10" width="64" height="17" rx="9" fill="#dbe4ea"/> <circle cx="30" cy="18.5" r="3.4" fill="#8a939b"/><circle cx="41" cy="18.5" r="3.4" fill="#8a939b"/> <circle cx="70" cy="18.5" r="4.8" fill="#4fae56"/> <circle cx="50" cy="57" r="23" fill="#b9c2cc"/> <circle cx="50" cy="57" r="17" fill="#7cc7e8"/> <path d="M38 57 q6 -7.5 12 0 q6 7.5 12 0" stroke="#fdf6e6" stroke-width="3.6" fill="none" stroke-linecap="round"/> <rect x="23" y="92" width="11" height="6" rx="2.4" fill="#aab3bc"/> <rect x="66" y="92" width="11" height="6" rx="2.4" fill="#aab3bc"/></svg>',name:"Wasmachine",key:"wasmachine"},{emoji:"🪥",name:"Tandenborstel",key:"tandenborstel"},
+        {emoji:"🚽",name:"Wc",key:"wc"},{emoji:"🚰",svg:'<svg viewBox="0 0 100 100"><rect x="41" y="12" width="10" height="26" rx="4" fill="#aab3bc"/> <path d="M46 15 q28 0 28 21" fill="none" stroke="#aab3bc" stroke-width="10" stroke-linecap="round"/> <rect x="36" y="8" width="20" height="7" rx="3.5" fill="#8d97a1"/> <path d="M74 38 v26" stroke="#7cc7e8" stroke-width="8" stroke-linecap="round"/> <path d="M12 60 h76 l-10 30 h-56z" fill="#eef3f6"/> <ellipse cx="50" cy="60" rx="38" ry="9" fill="#dde6ec"/> <ellipse cx="50" cy="60" rx="30" ry="6" fill="#c9d6de"/> <ellipse cx="74" cy="64" rx="11" ry="5" fill="#9fd8ee"/></svg>',name:"Water",key:"water"},
         {emoji:"🥫",name:"Blikje",key:"blikje"}
       ]},
     mensen: { title:"Mensen", emoji:"👶", sceneTab:"🧸 Speelkamer", sceneName:"speelkamer",
@@ -321,7 +322,7 @@ var SOUNDS = __SOUNDS__;
     items.forEach(function(a,i){
       var btn=document.createElement("button");
       btn.className="animal";btn.type="button";btn.style.background=colors[i%colors.length];btn.setAttribute("aria-label",a.name);
-      btn.innerHTML='<span class="emoji" aria-hidden="true">'+a.emoji+'</span><span class="name">'+a.name+'</span>';
+      btn.innerHTML='<span class="emoji" aria-hidden="true">'+(a.svg||a.emoji)+'</span><span class="name">'+a.name+'</span>';
       btn.addEventListener("pointerdown",function(){
         initAudio();resume();unlockSpeech();
         var em=btn.querySelector(".emoji");em.classList.remove("pop");void em.offsetWidth;em.classList.add("pop");
@@ -366,7 +367,7 @@ var SOUNDS = __SOUNDS__;
     opts.forEach(function(a){
       var btn=document.createElement("button");btn.className="animal";btn.type="button";
       btn.style.background=colors[idxOf[a.key]%colors.length];btn.setAttribute("aria-label",a.name);
-      btn.innerHTML='<span class="emoji" aria-hidden="true">'+a.emoji+'</span><span class="name">'+a.name+'</span>';
+      btn.innerHTML='<span class="emoji" aria-hidden="true">'+(a.svg||a.emoji)+'</span><span class="name">'+a.name+'</span>';
       btn.addEventListener("pointerdown",function(){chooseTile(a,btn);});
       tilesQuiz.appendChild(btn);
     });

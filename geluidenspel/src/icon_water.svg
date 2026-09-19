@@ -1,0 +1,8 @@
+    <rect x="41" y="12" width="10" height="26" rx="4" fill="#aab3bc"/>
+    <path d="M46 15 q28 0 28 21" fill="none" stroke="#aab3bc" stroke-width="10" stroke-linecap="round"/>
+    <rect x="36" y="8" width="20" height="7" rx="3.5" fill="#8d97a1"/>
+    <path d="M74 38 v26" stroke="#7cc7e8" stroke-width="8" stroke-linecap="round"/>
+    <path d="M12 60 h76 l-10 30 h-56z" fill="#eef3f6"/>
+    <ellipse cx="50" cy="60" rx="38" ry="9" fill="#dde6ec"/>
+    <ellipse cx="50" cy="60" rx="30" ry="6" fill="#c9d6de"/>
+    <ellipse cx="74" cy="64" rx="11" ry="5" fill="#9fd8ee"/>

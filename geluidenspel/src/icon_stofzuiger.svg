@@ -1,0 +1,12 @@
+    <path d="M54 14 q18 -3 22 -9" fill="none" stroke="#2f343a" stroke-width="9" stroke-linecap="round"/>
+    <path d="M60 21 q13 -3 16 -8" fill="none" stroke="#525a63" stroke-width="5" stroke-linecap="round"/>
+    <rect x="38" y="10" width="24" height="20" rx="9" fill="#e4553a"/>
+    <rect x="38" y="10" width="24" height="7" rx="3.5" fill="#f2805f"/>
+    <circle cx="50" cy="23" r="4.5" fill="#ffd9d0"/>
+    <path d="M41 30 h18 a4 4 0 0 1 4 4 v8 a6 6 0 0 1 -6 6 H43 a6 6 0 0 1 -6 -6 V34 a4 4 0 0 1 4 -4z" fill="#d6eefa" stroke="#8fc4dd" stroke-width="2.4"/>
+    <circle cx="50" cy="39" r="4" fill="#b3ddf0"/>
+    <rect x="45" y="48" width="10" height="36" rx="3" fill="#aab3bc"/>
+    <rect x="45" y="48" width="10" height="5" rx="2" fill="#8d97a1"/>
+    <rect x="45" y="66" width="10" height="4" rx="2" fill="#8d97a1"/>
+    <path d="M16 83 h68 a9 9 0 0 1 9 9 v1 a4 4 0 0 1 -4 4 H11 a4 4 0 0 1 -4 -4 v-1 a9 9 0 0 1 9 -9z" fill="#2f343a"/>
+    <rect x="10" y="92" width="80" height="5" rx="2.4" fill="#5d646c"/>

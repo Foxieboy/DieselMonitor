@@ -1,0 +1,9 @@
+    <rect x="18" y="10" width="64" height="82" rx="11" fill="#eef3f6"/>
+    <rect x="18" y="10" width="64" height="17" rx="9" fill="#dbe4ea"/>
+    <circle cx="30" cy="18.5" r="3.4" fill="#8a939b"/><circle cx="41" cy="18.5" r="3.4" fill="#8a939b"/>
+    <circle cx="70" cy="18.5" r="4.8" fill="#4fae56"/>
+    <circle cx="50" cy="57" r="23" fill="#b9c2cc"/>
+    <circle cx="50" cy="57" r="17" fill="#7cc7e8"/>
+    <path d="M38 57 q6 -7.5 12 0 q6 7.5 12 0" stroke="#fdf6e6" stroke-width="3.6" fill="none" stroke-linecap="round"/>
+    <rect x="23" y="92" width="11" height="6" rx="2.4" fill="#aab3bc"/>
+    <rect x="66" y="92" width="11" height="6" rx="2.4" fill="#aab3bc"/>

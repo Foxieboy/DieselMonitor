@@ -74,6 +74,10 @@ items die echt in de tekening staan.
 3. Voeg het thema toe in `build_app.py` (`sounds`, `SCENE_*`, en het
    `THEMES`/`THEME_ORDER`-blok met items en emoji's) en herbouw.
 
+Bestaat er geen passende emoji (zoals voor een stofzuiger)? Geef het item
+dan een `svg:'<svg viewBox="0 0 100 100">…</svg>'` mee naast `emoji:`; de
+tegel toont dan die tekening. Zie `src/icon_*.svg`.
+
 ## Bestanden
 
 - `index.html` — het volledige spel (gegenereerd, geluiden ingesloten).
