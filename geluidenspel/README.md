@@ -15,6 +15,7 @@ Live (via GitHub Pages): `…/DieselMonitor/geluidenspel/`
   gorilla, papegaai, adelaar
 - 🚗 **Voertuigen** (9) — auto, motor, fiets, trein, brandweer, traktor, boot, vliegtuig, helikopter
 - 🏠 **In huis** (9) — kloppen, wekker, klok, stofzuiger, wasmachine, tandenborstel, wc, water, blikje
+- 🔧 **Klussen & tuin** (6) — hamer, handzaag, boor, kettingzaag, schaar, grasmaaier
 - 👶 **Mensen** (8) — lachen, niezen, hoesten, klappen, baby, voetstappen, snurken, drinken
 - ➕ ruimte voor meer thema's (zie *Nieuw thema toevoegen*)
 
@@ -77,6 +78,12 @@ items die echt in de tekening staan.
 Bestaat er geen passende emoji (zoals voor een stofzuiger)? Geef het item
 dan een `svg:'<svg viewBox="0 0 100 100">…</svg>'` mee naast `emoji:`; de
 tegel toont dan die tekening. Zie `src/icon_*.svg`.
+
+Het thema *Klussen & tuin* gaat een stap verder: de tekeningen in
+`src/tools/*.svg` worden hergebruikt voor zowel de tegel als de scene, zodat
+die twee niet uit elkaar kunnen lopen. De cirkelzaag is bewust weggelaten
+(klinkt te veel als boor/kettingzaag); het geluid staat klaar in
+`src/sounds_klus_cirkelzaag.json`.
 
 ## Bestanden
 

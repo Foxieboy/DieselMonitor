@@ -1,0 +1,28 @@
+{
+  "hamer": {
+    "file": "(gesynthetiseerd)",
+    "bytes": 16501
+  },
+  "handzaag": {
+    "file": "1-7974-A-49.wav",
+    "bron": "ESC-50 (CC BY-NC)",
+    "bytes": 16240
+  },
+  "boor": {
+    "file": "(gesynthetiseerd)",
+    "bytes": 20942
+  },
+  "kettingzaag": {
+    "file": "1-116765-A-41.wav",
+    "bron": "ESC-50 (CC BY-NC)",
+    "bytes": 17024
+  },
+  "schaar": {
+    "file": "(gesynthetiseerd)",
+    "bytes": 13366
+  },
+  "grasmaaier": {
+    "file": "(gesynthetiseerd)",
+    "bytes": 20942
+  }
+}

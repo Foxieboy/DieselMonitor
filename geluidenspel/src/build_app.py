@@ -6,6 +6,7 @@ sounds = {
   "wild": json.load(open("sounds_wild.json")),
   "voertuigen": json.load(open("sounds_voertuigen.json")),
   "huis": json.load(open("sounds_huis.json")),
+  "klus": json.load(open("sounds_klus.json")),
   "mensen": json.load(open("sounds_mensen.json")),
 }
 SOUNDS_JS = json.dumps(sounds, separators=(",",":"))
@@ -14,6 +15,7 @@ SCENE_ERF    = open("scene_erf.svg").read()
 SCENE_WILD   = open("scene_wild.svg").read()
 SCENE_HUIS   = open("scene_huis.svg").read()
 SCENE_MENSEN = open("scene_mensen.svg").read()
+SCENE_KLUS   = open("scene_klus.svg").read()
 SCENE_VOERT  = open("scene_voertuigen.svg").read()
 
 HTML = r'''<title>Geluidenspel</title>
@@ -166,6 +168,7 @@ HTML = r'''<title>Geluidenspel</title>
 <div id="scene-wild" hidden>__SCENE_WILD__</div>
 <div id="scene-huis" hidden>__SCENE_HUIS__</div>
 <div id="scene-mensen" hidden>__SCENE_MENSEN__</div>
+<div id="scene-klus" hidden>__SCENE_KLUS__</div>
 <div id="scene-voertuigen" hidden>__SCENE_VOERTUIGEN__</div>
 
 <script>
@@ -205,6 +208,15 @@ var SOUNDS = __SOUNDS__;
         {emoji:"🚽",name:"Wc",key:"wc"},{emoji:"🚰",svg:'<svg viewBox="0 0 100 100"><rect x="41" y="12" width="10" height="26" rx="4" fill="#aab3bc"/> <path d="M46 15 q28 0 28 21" fill="none" stroke="#aab3bc" stroke-width="10" stroke-linecap="round"/> <rect x="36" y="8" width="20" height="7" rx="3.5" fill="#8d97a1"/> <path d="M74 38 v26" stroke="#7cc7e8" stroke-width="8" stroke-linecap="round"/> <path d="M12 60 h76 l-10 30 h-56z" fill="#eef3f6"/> <ellipse cx="50" cy="60" rx="38" ry="9" fill="#dde6ec"/> <ellipse cx="50" cy="60" rx="30" ry="6" fill="#c9d6de"/> <ellipse cx="74" cy="64" rx="11" ry="5" fill="#9fd8ee"/></svg>',name:"Water",key:"water"},
         {emoji:"🥫",name:"Blikje",key:"blikje"}
       ]},
+    klus: { title:"Klussen & tuin", emoji:"🔧", sceneTab:"🔧 Werkplaats", sceneName:"werkplaats",
+      items:[
+        {emoji:"🔨",svg:'<svg viewBox="0 0 100 100"><rect x="44" y="30" width="13" height="50" rx="4" fill="#b5834a"/> <rect x="44" y="66" width="13" height="26" rx="5" fill="#2f343a"/> <rect x="44" y="70" width="13" height="4" fill="#e4553a"/> <path d="M30 16 h30 a7 7 0 0 1 7 7 v12 a5 5 0 0 1 -5 5 H36 a5 5 0 0 1 -5 -5 v-3 l-9 -7 l9 -6 z" fill="#79818a"/> <rect x="46" y="16" width="20" height="24" rx="4" fill="#949ca4"/></svg>',name:"Hamer",key:"hamer"},
+        {emoji:"🪚",svg:'<svg viewBox="0 0 100 100"><path d="M16 58 L74 26 L80 38 L22 70 z" fill="#ccd5dd"/> <path d="M16 58 L74 26 L77 32 L19 64 z" fill="#e2e9ef"/> <path d="M22 70 l6 -3 l1 5 l6 -3 l1 5 l6 -3 l1 5 l6 -3 l1 5 l6 -3 l1 5 l6 -3 l1 5 l6 -3 l1 5 l6 -3" fill="none" stroke="#8f979f" stroke-width="3.4" stroke-linejoin="round"/> <path d="M74 24 q16 -6 19 7 q3 14 -11 16 l-8 -11 z" fill="#a9682f"/> <path d="M79 30 q8 -2 9 5 q1 7 -6 8" fill="none" stroke="#7d4d22" stroke-width="3"/></svg>',name:"Handzaag",key:"handzaag"},
+        {emoji:"🛠️",svg:'<svg viewBox="0 0 100 100"><rect x="22" y="30" width="44" height="26" rx="11" fill="#e4553a"/> <rect x="22" y="30" width="44" height="9" rx="4.5" fill="#f2805f"/> <path d="M32 54 l-6 26 a5 5 0 0 0 5 6 h16 a5 5 0 0 0 5 -6 l-5 -26z" fill="#2f343a"/> <rect x="22" y="80" width="30" height="12" rx="5" fill="#4a525a"/> <path d="M39 58 l-4 9" stroke="#9aa1a8" stroke-width="5" stroke-linecap="round"/> <rect x="64" y="36" width="13" height="14" rx="3" fill="#9aa1a8"/> <rect x="76" y="41" width="18" height="4.5" rx="2" fill="#6b7078"/> <path d="M78 41 l14 0 M80 45.5 l12 0" stroke="#4a525a" stroke-width="1.6"/></svg>',name:"Boor",key:"boor"},
+        {emoji:"🪓",svg:'<svg viewBox="0 0 100 100"><path d="M44 46 h40 a8 8 0 0 1 0 16 H44 z" fill="#b9c2cc"/> <path d="M44 44 h40 a10 10 0 0 1 0 20 H44 z" fill="none" stroke="#6b7078" stroke-width="3" stroke-dasharray="4 3.5"/> <rect x="10" y="40" width="38" height="28" rx="9" fill="#e4553a"/> <rect x="10" y="40" width="38" height="10" rx="5" fill="#f2805f"/> <path d="M16 38 q14 -12 28 -2" fill="none" stroke="#2f343a" stroke-width="6" stroke-linecap="round"/> <path d="M8 46 q-5 8 0 16" fill="none" stroke="#2f343a" stroke-width="6" stroke-linecap="round"/> <circle cx="29" cy="58" r="5" fill="#8a3a22"/></svg>',name:"Kettingzaag",key:"kettingzaag"},
+        {emoji:"✂️",svg:'<svg viewBox="0 0 100 100"><path d="M34 66 L76 20" stroke="#c9d2da" stroke-width="8" stroke-linecap="round"/> <path d="M58 66 L16 20" stroke="#e2e9ef" stroke-width="8" stroke-linecap="round"/> <circle cx="28" cy="76" r="11" fill="none" stroke="#e4553a" stroke-width="7"/> <circle cx="64" cy="76" r="11" fill="none" stroke="#e4553a" stroke-width="7"/> <circle cx="46" cy="52" r="5" fill="#6b7078"/></svg>',name:"Schaar",key:"schaar"},
+        {emoji:"🌿",svg:'<svg viewBox="0 0 100 100"><path d="M62 18 q-8 28 -26 36" fill="none" stroke="#2f343a" stroke-width="7" stroke-linecap="round"/> <rect x="52" y="12" width="28" height="8" rx="4" fill="#2f343a"/> <rect x="58" y="42" width="30" height="20" rx="7" fill="#6b7078"/> <path d="M14 54 h54 a11 11 0 0 1 11 11 v9 H14 a9 9 0 0 1 -9 -9 v-2 a9 9 0 0 1 9 -9z" fill="#4fae56"/> <path d="M14 54 h54 a11 11 0 0 1 11 11 H14 z" fill="#62c264"/> <circle cx="24" cy="78" r="12" fill="#2f343a"/><circle cx="24" cy="78" r="5.5" fill="#8a939b"/> <circle cx="68" cy="78" r="12" fill="#2f343a"/><circle cx="68" cy="78" r="5.5" fill="#8a939b"/></svg>',name:"Grasmaaier",key:"grasmaaier"}
+      ]},
     mensen: { title:"Mensen", emoji:"👶", sceneTab:"🧸 Speelkamer", sceneName:"speelkamer",
       items:[
         {emoji:"😄",name:"Lachen",key:"lachen"},{emoji:"🤧",name:"Niezen",key:"niezen"},
@@ -221,7 +233,7 @@ var SOUNDS = __SOUNDS__;
         {emoji:"🚁",name:"Helikopter",key:"helikopter"}
       ]}
   };
-  var THEME_ORDER=["dieren","erf","wild","voertuigen","huis","mensen"];
+  var THEME_ORDER=["dieren","erf","wild","voertuigen","huis","klus","mensen"];
   var colors=["#FFE5EC","#E5F6FF","#FFF3D6","#E8FBE0","#F3E8FF","#FFEAD6","#E0F7F4","#FDE7F3","#EAF0FF","#FFF0E8"];
 
   /* ---- audio ---- */
@@ -304,7 +316,7 @@ var SOUNDS = __SOUNDS__;
   function renderStars(){var n=Math.min(stars,10);starsEl.textContent=stars>0?(Array(n+1).join("⭐")+(stars>10?" +"+(stars-10):"")):"";}
 
   /* ---- HOME grid ---- */
-  var themeColors={dieren:"#B7E38C",erf:"#FBE3A0",wild:"#F6D98A",voertuigen:"#A9DCF5",huis:"#F7C9D8",mensen:"#D6CCF2"};
+  var themeColors={dieren:"#B7E38C",erf:"#FBE3A0",wild:"#F6D98A",voertuigen:"#A9DCF5",huis:"#F7C9D8",klus:"#E8D5B5",mensen:"#D6CCF2"};
   THEME_ORDER.forEach(function(tid){
     var t=THEMES[tid];
     var c=document.createElement("button"); c.className="theme-card"; c.type="button";
@@ -455,6 +467,7 @@ out = (HTML
   .replace("__SCENE_WILD__", SCENE_WILD)
   .replace("__SCENE_HUIS__", SCENE_HUIS)
   .replace("__SCENE_MENSEN__", SCENE_MENSEN)
+  .replace("__SCENE_KLUS__", SCENE_KLUS)
   .replace("__SCENE_VOERTUIGEN__", SCENE_VOERT)
   .replace("__SOUNDS__", SOUNDS_JS))
 open("app.html","w").write(out)

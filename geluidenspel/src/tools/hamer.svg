@@ -1,0 +1,5 @@
+<rect x="44" y="30" width="13" height="50" rx="4" fill="#b5834a"/>
+<rect x="44" y="66" width="13" height="26" rx="5" fill="#2f343a"/>
+<rect x="44" y="70" width="13" height="4" fill="#e4553a"/>
+<path d="M30 16 h30 a7 7 0 0 1 7 7 v12 a5 5 0 0 1 -5 5 H36 a5 5 0 0 1 -5 -5 v-3 l-9 -7 l9 -6 z" fill="#79818a"/>
+<rect x="46" y="16" width="20" height="24" rx="4" fill="#949ca4"/>

@@ -1,0 +1,8 @@
+<rect x="22" y="30" width="44" height="26" rx="11" fill="#e4553a"/>
+<rect x="22" y="30" width="44" height="9" rx="4.5" fill="#f2805f"/>
+<path d="M32 54 l-6 26 a5 5 0 0 0 5 6 h16 a5 5 0 0 0 5 -6 l-5 -26z" fill="#2f343a"/>
+<rect x="22" y="80" width="30" height="12" rx="5" fill="#4a525a"/>
+<path d="M39 58 l-4 9" stroke="#9aa1a8" stroke-width="5" stroke-linecap="round"/>
+<rect x="64" y="36" width="13" height="14" rx="3" fill="#9aa1a8"/>
+<rect x="76" y="41" width="18" height="4.5" rx="2" fill="#6b7078"/>
+<path d="M78 41 l14 0 M80 45.5 l12 0" stroke="#4a525a" stroke-width="1.6"/>

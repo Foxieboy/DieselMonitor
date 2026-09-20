@@ -1,0 +1,97 @@
+<svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Werkplaats met gereedschap">
+  <defs>
+    <style>.hit{fill:transparent;}.animal-node{cursor:pointer;}</style>
+    <linearGradient id="kWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8d3b2"/><stop offset="1" stop-color="#dcc39c"/></linearGradient>
+    <linearGradient id="kFloor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9bdc2"/><stop offset="1" stop-color="#a3a8ae"/></linearGradient>
+    <linearGradient id="kBench" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c58b4e"/><stop offset="1" stop-color="#a8712f"/></linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="700" fill="url(#kWall)"/>
+  <g stroke="#cbae86" stroke-width="3" opacity="0.7">
+    <line x1="0" y1="90" x2="1000" y2="90"/><line x1="0" y1="200" x2="1000" y2="200"/>
+    <line x1="0" y1="310" x2="1000" y2="310"/><line x1="0" y1="420" x2="1000" y2="420"/>
+  </g>
+  <rect x="0" y="470" width="1000" height="230" fill="url(#kFloor)"/>
+  <rect x="0" y="462" width="1000" height="12" fill="#8d939a"/>
+
+  <!-- gereedschapsbord -->
+  <rect x="92" y="86" width="440" height="258" rx="10" fill="#e5c49a"/>
+  <rect x="92" y="86" width="440" height="258" rx="10" fill="none" stroke="#a8804f" stroke-width="7"/>
+  <circle cx="112" cy="106" r="2.6" fill="#c2a179"/><circle cx="140" cy="106" r="2.6" fill="#c2a179"/><circle cx="168" cy="106" r="2.6" fill="#c2a179"/><circle cx="196" cy="106" r="2.6" fill="#c2a179"/><circle cx="224" cy="106" r="2.6" fill="#c2a179"/><circle cx="252" cy="106" r="2.6" fill="#c2a179"/><circle cx="280" cy="106" r="2.6" fill="#c2a179"/><circle cx="308" cy="106" r="2.6" fill="#c2a179"/><circle cx="336" cy="106" r="2.6" fill="#c2a179"/><circle cx="364" cy="106" r="2.6" fill="#c2a179"/><circle cx="392" cy="106" r="2.6" fill="#c2a179"/><circle cx="420" cy="106" r="2.6" fill="#c2a179"/><circle cx="448" cy="106" r="2.6" fill="#c2a179"/><circle cx="476" cy="106" r="2.6" fill="#c2a179"/><circle cx="504" cy="106" r="2.6" fill="#c2a179"/><circle cx="112" cy="134" r="2.6" fill="#c2a179"/><circle cx="140" cy="134" r="2.6" fill="#c2a179"/><circle cx="168" cy="134" r="2.6" fill="#c2a179"/><circle cx="196" cy="134" r="2.6" fill="#c2a179"/><circle cx="224" cy="134" r="2.6" fill="#c2a179"/><circle cx="252" cy="134" r="2.6" fill="#c2a179"/><circle cx="280" cy="134" r="2.6" fill="#c2a179"/><circle cx="308" cy="134" r="2.6" fill="#c2a179"/><circle cx="336" cy="134" r="2.6" fill="#c2a179"/><circle cx="364" cy="134" r="2.6" fill="#c2a179"/><circle cx="392" cy="134" r="2.6" fill="#c2a179"/><circle cx="420" cy="134" r="2.6" fill="#c2a179"/><circle cx="448" cy="134" r="2.6" fill="#c2a179"/><circle cx="476" cy="134" r="2.6" fill="#c2a179"/><circle cx="504" cy="134" r="2.6" fill="#c2a179"/><circle cx="112" cy="162" r="2.6" fill="#c2a179"/><circle cx="140" cy="162" r="2.6" fill="#c2a179"/><circle cx="168" cy="162" r="2.6" fill="#c2a179"/><circle cx="196" cy="162" r="2.6" fill="#c2a179"/><circle cx="224" cy="162" r="2.6" fill="#c2a179"/><circle cx="252" cy="162" r="2.6" fill="#c2a179"/><circle cx="280" cy="162" r="2.6" fill="#c2a179"/><circle cx="308" cy="162" r="2.6" fill="#c2a179"/><circle cx="336" cy="162" r="2.6" fill="#c2a179"/><circle cx="364" cy="162" r="2.6" fill="#c2a179"/><circle cx="392" cy="162" r="2.6" fill="#c2a179"/><circle cx="420" cy="162" r="2.6" fill="#c2a179"/><circle cx="448" cy="162" r="2.6" fill="#c2a179"/><circle cx="476" cy="162" r="2.6" fill="#c2a179"/><circle cx="504" cy="162" r="2.6" fill="#c2a179"/><circle cx="112" cy="190" r="2.6" fill="#c2a179"/><circle cx="140" cy="190" r="2.6" fill="#c2a179"/><circle cx="168" cy="190" r="2.6" fill="#c2a179"/><circle cx="196" cy="190" r="2.6" fill="#c2a179"/><circle cx="224" cy="190" r="2.6" fill="#c2a179"/><circle cx="252" cy="190" r="2.6" fill="#c2a179"/><circle cx="280" cy="190" r="2.6" fill="#c2a179"/><circle cx="308" cy="190" r="2.6" fill="#c2a179"/><circle cx="336" cy="190" r="2.6" fill="#c2a179"/><circle cx="364" cy="190" r="2.6" fill="#c2a179"/><circle cx="392" cy="190" r="2.6" fill="#c2a179"/><circle cx="420" cy="190" r="2.6" fill="#c2a179"/><circle cx="448" cy="190" r="2.6" fill="#c2a179"/><circle cx="476" cy="190" r="2.6" fill="#c2a179"/><circle cx="504" cy="190" r="2.6" fill="#c2a179"/><circle cx="112" cy="218" r="2.6" fill="#c2a179"/><circle cx="140" cy="218" r="2.6" fill="#c2a179"/><circle cx="168" cy="218" r="2.6" fill="#c2a179"/><circle cx="196" cy="218" r="2.6" fill="#c2a179"/><circle cx="224" cy="218" r="2.6" fill="#c2a179"/><circle cx="252" cy="218" r="2.6" fill="#c2a179"/><circle cx="280" cy="218" r="2.6" fill="#c2a179"/><circle cx="308" cy="218" r="2.6" fill="#c2a179"/><circle cx="336" cy="218" r="2.6" fill="#c2a179"/><circle cx="364" cy="218" r="2.6" fill="#c2a179"/><circle cx="392" cy="218" r="2.6" fill="#c2a179"/><circle cx="420" cy="218" r="2.6" fill="#c2a179"/><circle cx="448" cy="218" r="2.6" fill="#c2a179"/><circle cx="476" cy="218" r="2.6" fill="#c2a179"/><circle cx="504" cy="218" r="2.6" fill="#c2a179"/><circle cx="112" cy="246" r="2.6" fill="#c2a179"/><circle cx="140" cy="246" r="2.6" fill="#c2a179"/><circle cx="168" cy="246" r="2.6" fill="#c2a179"/><circle cx="196" cy="246" r="2.6" fill="#c2a179"/><circle cx="224" cy="246" r="2.6" fill="#c2a179"/><circle cx="252" cy="246" r="2.6" fill="#c2a179"/><circle cx="280" cy="246" r="2.6" fill="#c2a179"/><circle cx="308" cy="246" r="2.6" fill="#c2a179"/><circle cx="336" cy="246" r="2.6" fill="#c2a179"/><circle cx="364" cy="246" r="2.6" fill="#c2a179"/><circle cx="392" cy="246" r="2.6" fill="#c2a179"/><circle cx="420" cy="246" r="2.6" fill="#c2a179"/><circle cx="448" cy="246" r="2.6" fill="#c2a179"/><circle cx="476" cy="246" r="2.6" fill="#c2a179"/><circle cx="504" cy="246" r="2.6" fill="#c2a179"/><circle cx="112" cy="274" r="2.6" fill="#c2a179"/><circle cx="140" cy="274" r="2.6" fill="#c2a179"/><circle cx="168" cy="274" r="2.6" fill="#c2a179"/><circle cx="196" cy="274" r="2.6" fill="#c2a179"/><circle cx="224" cy="274" r="2.6" fill="#c2a179"/><circle cx="252" cy="274" r="2.6" fill="#c2a179"/><circle cx="280" cy="274" r="2.6" fill="#c2a179"/><circle cx="308" cy="274" r="2.6" fill="#c2a179"/><circle cx="336" cy="274" r="2.6" fill="#c2a179"/><circle cx="364" cy="274" r="2.6" fill="#c2a179"/><circle cx="392" cy="274" r="2.6" fill="#c2a179"/><circle cx="420" cy="274" r="2.6" fill="#c2a179"/><circle cx="448" cy="274" r="2.6" fill="#c2a179"/><circle cx="476" cy="274" r="2.6" fill="#c2a179"/><circle cx="504" cy="274" r="2.6" fill="#c2a179"/><circle cx="112" cy="302" r="2.6" fill="#c2a179"/><circle cx="140" cy="302" r="2.6" fill="#c2a179"/><circle cx="168" cy="302" r="2.6" fill="#c2a179"/><circle cx="196" cy="302" r="2.6" fill="#c2a179"/><circle cx="224" cy="302" r="2.6" fill="#c2a179"/><circle cx="252" cy="302" r="2.6" fill="#c2a179"/><circle cx="280" cy="302" r="2.6" fill="#c2a179"/><circle cx="308" cy="302" r="2.6" fill="#c2a179"/><circle cx="336" cy="302" r="2.6" fill="#c2a179"/><circle cx="364" cy="302" r="2.6" fill="#c2a179"/><circle cx="392" cy="302" r="2.6" fill="#c2a179"/><circle cx="420" cy="302" r="2.6" fill="#c2a179"/><circle cx="448" cy="302" r="2.6" fill="#c2a179"/><circle cx="476" cy="302" r="2.6" fill="#c2a179"/><circle cx="504" cy="302" r="2.6" fill="#c2a179"/>
+  <g fill="#8a939b"><rect x="150" y="238" width="52" height="7" rx="3"/><rect x="292" y="232" width="60" height="7" rx="3"/><rect x="424" y="240" width="44" height="7" rx="3"/></g>
+
+  <!-- raam -->
+  <g transform="translate(820,170)">
+    <rect x="-78" y="-70" width="156" height="140" rx="6" fill="#9fd8ee"/>
+    <rect x="-78" y="-70" width="156" height="140" rx="6" fill="none" stroke="#f2e6cf" stroke-width="10"/>
+    <line x1="0" y1="-70" x2="0" y2="70" stroke="#f2e6cf" stroke-width="8"/>
+    <line x1="-78" y1="0" x2="78" y2="0" stroke="#f2e6cf" stroke-width="8"/>
+  </g>
+
+  <!-- werkbank -->
+  <rect x="556" y="396" width="428" height="26" rx="6" fill="url(#kBench)"/>
+  <rect x="556" y="396" width="428" height="8" rx="4" fill="#d9a468"/>
+  <rect x="584" y="422" width="22" height="92" rx="5" fill="#8f5f28"/>
+  <rect x="934" y="422" width="22" height="92" rx="5" fill="#8f5f28"/>
+  <rect x="584" y="470" width="372" height="12" rx="4" fill="#8f5f28"/>
+
+  <!-- plantje (tuinhoek) -->
+  <g transform="translate(560,600)">
+    <path d="M-26 0 h52 l-7 44 h-38z" fill="#c9502f"/>
+    <rect x="-30" y="-8" width="60" height="12" rx="4" fill="#e0663f"/>
+    <g fill="#4fae56"><ellipse cx="-12" cy="-26" rx="15" ry="9" transform="rotate(-24 -12 -26)"/>
+      <ellipse cx="12" cy="-28" rx="15" ry="9" transform="rotate(22 12 -28)"/>
+      <ellipse cx="0" cy="-42" rx="12" ry="16"/></g>
+  </g>
+
+  <!-- emmer -->
+  <g transform="translate(700,620)">
+    <path d="M-28 -18 h56 l-7 40 h-42z" fill="#5aa9d6"/>
+    <path d="M-28 -18 h56 l-2 9 h-52z" fill="#7cc7e8"/>
+    <path d="M-24 -20 q24 -22 48 0" fill="none" stroke="#3f7f9f" stroke-width="5"/>
+  </g>
+
+  <!-- ============ GEREEDSCHAP ============ -->
+
+  <g transform="translate(176,178) scale(1.12)">
+    <g class="animal-node" data-key="hamer" role="button" aria-label="Hamer" tabindex="0">
+      <rect class="hit" x="-56" y="-56" width="112" height="112"/>
+      <g transform="translate(-50,-50)"><rect x="44" y="30" width="13" height="50" rx="4" fill="#b5834a"/> <rect x="44" y="66" width="13" height="26" rx="5" fill="#2f343a"/> <rect x="44" y="70" width="13" height="4" fill="#e4553a"/> <path d="M30 16 h30 a7 7 0 0 1 7 7 v12 a5 5 0 0 1 -5 5 H36 a5 5 0 0 1 -5 -5 v-3 l-9 -7 l9 -6 z" fill="#79818a"/> <rect x="46" y="16" width="20" height="24" rx="4" fill="#949ca4"/></g>
+    </g>
+  </g>
+
+  <g transform="translate(322,172) scale(1.18)">
+    <g class="animal-node" data-key="handzaag" role="button" aria-label="Handzaag" tabindex="0">
+      <rect class="hit" x="-56" y="-56" width="112" height="112"/>
+      <g transform="translate(-50,-50)"><path d="M16 58 L74 26 L80 38 L22 70 z" fill="#ccd5dd"/> <path d="M16 58 L74 26 L77 32 L19 64 z" fill="#e2e9ef"/> <path d="M22 70 l6 -3 l1 5 l6 -3 l1 5 l6 -3 l1 5 l6 -3 l1 5 l6 -3 l1 5 l6 -3 l1 5 l6 -3 l1 5 l6 -3" fill="none" stroke="#8f979f" stroke-width="3.4" stroke-linejoin="round"/> <path d="M74 24 q16 -6 19 7 q3 14 -11 16 l-8 -11 z" fill="#a9682f"/> <path d="M79 30 q8 -2 9 5 q1 7 -6 8" fill="none" stroke="#7d4d22" stroke-width="3"/></g>
+    </g>
+  </g>
+
+  <g transform="translate(446,180) scale(1.02)">
+    <g class="animal-node" data-key="schaar" role="button" aria-label="Schaar" tabindex="0">
+      <rect class="hit" x="-56" y="-56" width="112" height="112"/>
+      <g transform="translate(-50,-50)"><path d="M34 66 L76 20" stroke="#c9d2da" stroke-width="8" stroke-linecap="round"/> <path d="M58 66 L16 20" stroke="#e2e9ef" stroke-width="8" stroke-linecap="round"/> <circle cx="28" cy="76" r="11" fill="none" stroke="#e4553a" stroke-width="7"/> <circle cx="64" cy="76" r="11" fill="none" stroke="#e4553a" stroke-width="7"/> <circle cx="46" cy="52" r="5" fill="#6b7078"/></g>
+    </g>
+  </g>
+
+  <g transform="translate(686,350) scale(1.18)">
+    <g class="animal-node" data-key="boor" role="button" aria-label="Boor" tabindex="0">
+      <rect class="hit" x="-56" y="-56" width="112" height="112"/>
+      <g transform="translate(-50,-50)"><rect x="22" y="30" width="44" height="26" rx="11" fill="#e4553a"/> <rect x="22" y="30" width="44" height="9" rx="4.5" fill="#f2805f"/> <path d="M32 54 l-6 26 a5 5 0 0 0 5 6 h16 a5 5 0 0 0 5 -6 l-5 -26z" fill="#2f343a"/> <rect x="22" y="80" width="30" height="12" rx="5" fill="#4a525a"/> <path d="M39 58 l-4 9" stroke="#9aa1a8" stroke-width="5" stroke-linecap="round"/> <rect x="64" y="36" width="13" height="14" rx="3" fill="#9aa1a8"/> <rect x="76" y="41" width="18" height="4.5" rx="2" fill="#6b7078"/> <path d="M78 41 l14 0 M80 45.5 l12 0" stroke="#4a525a" stroke-width="1.6"/></g>
+    </g>
+  </g>
+
+  <g transform="translate(876,356) scale(1.16)">
+    <g class="animal-node" data-key="kettingzaag" role="button" aria-label="Kettingzaag" tabindex="0">
+      <rect class="hit" x="-56" y="-56" width="112" height="112"/>
+      <g transform="translate(-50,-50)"><path d="M44 46 h40 a8 8 0 0 1 0 16 H44 z" fill="#b9c2cc"/> <path d="M44 44 h40 a10 10 0 0 1 0 20 H44 z" fill="none" stroke="#6b7078" stroke-width="3" stroke-dasharray="4 3.5"/> <rect x="10" y="40" width="38" height="28" rx="9" fill="#e4553a"/> <rect x="10" y="40" width="38" height="10" rx="5" fill="#f2805f"/> <path d="M16 38 q14 -12 28 -2" fill="none" stroke="#2f343a" stroke-width="6" stroke-linecap="round"/> <path d="M8 46 q-5 8 0 16" fill="none" stroke="#2f343a" stroke-width="6" stroke-linecap="round"/> <circle cx="29" cy="58" r="5" fill="#8a3a22"/></g>
+    </g>
+  </g>
+
+  <g transform="translate(232,588) scale(1.55)">
+    <g class="animal-node" data-key="grasmaaier" role="button" aria-label="Grasmaaier" tabindex="0">
+      <rect class="hit" x="-56" y="-56" width="112" height="112"/>
+      <g transform="translate(-50,-50)"><path d="M62 18 q-8 28 -26 36" fill="none" stroke="#2f343a" stroke-width="7" stroke-linecap="round"/> <rect x="52" y="12" width="28" height="8" rx="4" fill="#2f343a"/> <rect x="58" y="42" width="30" height="20" rx="7" fill="#6b7078"/> <path d="M14 54 h54 a11 11 0 0 1 11 11 v9 H14 a9 9 0 0 1 -9 -9 v-2 a9 9 0 0 1 9 -9z" fill="#4fae56"/> <path d="M14 54 h54 a11 11 0 0 1 11 11 H14 z" fill="#62c264"/> <circle cx="24" cy="78" r="12" fill="#2f343a"/><circle cx="24" cy="78" r="5.5" fill="#8a939b"/> <circle cx="68" cy="78" r="12" fill="#2f343a"/><circle cx="68" cy="78" r="5.5" fill="#8a939b"/></g>
+    </g>
+  </g>
+</svg>

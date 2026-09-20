@@ -1,0 +1,7 @@
+<path d="M62 18 q-8 28 -26 36" fill="none" stroke="#2f343a" stroke-width="7" stroke-linecap="round"/>
+<rect x="52" y="12" width="28" height="8" rx="4" fill="#2f343a"/>
+<rect x="58" y="42" width="30" height="20" rx="7" fill="#6b7078"/>
+<path d="M14 54 h54 a11 11 0 0 1 11 11 v9 H14 a9 9 0 0 1 -9 -9 v-2 a9 9 0 0 1 9 -9z" fill="#4fae56"/>
+<path d="M14 54 h54 a11 11 0 0 1 11 11 H14 z" fill="#62c264"/>
+<circle cx="24" cy="78" r="12" fill="#2f343a"/><circle cx="24" cy="78" r="5.5" fill="#8a939b"/>
+<circle cx="68" cy="78" r="12" fill="#2f343a"/><circle cx="68" cy="78" r="5.5" fill="#8a939b"/>
