@@ -1,4 +1,5 @@
-import json, os
+import json, os, re
+import photos
 
 sounds = {
   "dieren": json.load(open("sounds_dieren.json")),
@@ -79,6 +80,7 @@ HTML = r'''<title>Geluidenspel</title>
   .emoji{font-size:clamp(3rem,14vw,4.4rem);line-height:1;filter:drop-shadow(0 4px 3px rgba(61,44,78,.18));}
   .name{font-weight:800;font-size:clamp(1rem,4vw,1.3rem);color:var(--ink);}
   .emoji svg{height:1.1em;width:1.1em;display:block;}
+  .emoji img{height:1.35em;width:1.75em;object-fit:contain;display:block;}
   .pop{animation:pop .6s ease;}
   @keyframes pop{0%{transform:scale(1) rotate(0)}25%{transform:scale(1.18) rotate(-7deg)}
     50%{transform:scale(1.12) rotate(7deg)}75%{transform:scale(1.14) rotate(-4deg)}100%{transform:scale(1) rotate(0)}}
@@ -178,6 +180,7 @@ HTML = r'''<title>Geluidenspel</title>
 
 <script>
 var SOUNDS = __SOUNDS__;
+var IMGS = __IMGS__;
 (function(){
   "use strict";
   var THEMES = {
@@ -334,12 +337,13 @@ var SOUNDS = __SOUNDS__;
     c.innerHTML='<span class="tEmoji">➕</span><span class="tName">Meer volgt…</span>'; themeGrid.appendChild(c); })();
 
   /* ---- free tiles (per theme) ---- */
+  function tileArt(a){var im=IMGS[theme]&&IMGS[theme][a.key];return im?'<img src="'+im+'" alt="">':(a.svg||a.emoji);}
   function buildTiles(){
     tilesFree.innerHTML="";
     items.forEach(function(a,i){
       var btn=document.createElement("button");
       btn.className="animal";btn.type="button";btn.style.background=colors[i%colors.length];btn.setAttribute("aria-label",a.name);
-      btn.innerHTML='<span class="emoji" aria-hidden="true">'+(a.svg||a.emoji)+'</span><span class="name">'+a.name+'</span>';
+      btn.innerHTML='<span class="emoji" aria-hidden="true">'+tileArt(a)+'</span><span class="name">'+a.name+'</span>';
       btn.addEventListener("pointerdown",function(){
         initAudio();resume();unlockSpeech();
         var em=btn.querySelector(".emoji");em.classList.remove("pop");void em.offsetWidth;em.classList.add("pop");
@@ -461,7 +465,7 @@ var SOUNDS = __SOUNDS__;
     opts.forEach(function(a){
       var btn=document.createElement("button");btn.className="animal";btn.type="button";
       btn.style.background=colors[idxOf[a.key]%colors.length];btn.setAttribute("aria-label",a.name);
-      btn.innerHTML='<span class="emoji" aria-hidden="true">'+(a.svg||a.emoji)+'</span><span class="name">'+a.name+'</span>';
+      btn.innerHTML='<span class="emoji" aria-hidden="true">'+tileArt(a)+'</span><span class="name">'+a.name+'</span>';
       btn.addEventListener("pointerdown",function(){chooseTile(a,btn);});
       tilesQuiz.appendChild(btn);
     });
@@ -523,7 +527,9 @@ var SOUNDS = __SOUNDS__;
     themeTitle.textContent=t.emoji+" "+t.title;
     var sc=document.getElementById("scene-"+tid);
     hasScene=!!sc;
-    if(hasScene){ tabScene.textContent=t.sceneTab; sceneWrap.innerHTML=sc.innerHTML; animSetup(); }
+    if(hasScene){ tabScene.textContent=t.sceneTab; sceneWrap.innerHTML=sc.innerHTML;
+      sceneWrap.querySelectorAll("image[data-img]").forEach(function(im){im.setAttribute("href",IMGS[tid][im.getAttribute("data-img")]);});
+      animSetup(); }
     else { sceneWrap.innerHTML=""; }
     viewTabs.hidden=!hasScene;
     buildTiles();
@@ -544,14 +550,29 @@ var SOUNDS = __SOUNDS__;
 </script>
 '''
 
+# ---- foto's (realistische beelden) ----
+THEME_KEYS = {}
+for tid in ["dieren","erf","wild","huis","klus","mensen","voertuigen"]:
+    m = re.search(r"\n    %s: \{ title:(.*?)\]\}" % tid, HTML, re.S)
+    THEME_KEYS[tid] = re.findall(r'key:"(\w+)"', m.group(1))
+IMGS = {t: photos.theme_photos(t, ks) for t, ks in THEME_KEYS.items()}
+IMGS = {t: v for t, v in IMGS.items() if v}
+SCENE_SRC = {"dieren": SCENE_DIEREN, "erf": SCENE_ERF, "wild": SCENE_WILD, "huis": SCENE_HUIS,
+             "mensen": SCENE_MENSEN, "klus": SCENE_KLUS, "voertuigen": SCENE_VOERT}
+for t, spec in photos.SCENES.items():
+    if t in IMGS and os.path.exists(os.path.join("real", t, "bg.webp")):
+        SCENE_SRC[t] = photos.photo_scene(t, spec, IMGS[t])
+print("foto-thema's:", sorted(IMGS), "foto-tekeningen:", [t for t in photos.SCENES if t in IMGS])
+
 out = (HTML
-  .replace("__SCENE_DIEREN__", SCENE_DIEREN)
-  .replace("__SCENE_ERF__", SCENE_ERF)
-  .replace("__SCENE_WILD__", SCENE_WILD)
-  .replace("__SCENE_HUIS__", SCENE_HUIS)
-  .replace("__SCENE_MENSEN__", SCENE_MENSEN)
-  .replace("__SCENE_KLUS__", SCENE_KLUS)
-  .replace("__SCENE_VOERTUIGEN__", SCENE_VOERT)
+  .replace("__SCENE_DIEREN__", SCENE_SRC["dieren"])
+  .replace("__SCENE_ERF__", SCENE_SRC["erf"])
+  .replace("__SCENE_WILD__", SCENE_SRC["wild"])
+  .replace("__SCENE_HUIS__", SCENE_SRC["huis"])
+  .replace("__SCENE_MENSEN__", SCENE_SRC["mensen"])
+  .replace("__SCENE_KLUS__", SCENE_SRC["klus"])
+  .replace("__SCENE_VOERTUIGEN__", SCENE_SRC["voertuigen"])
+  .replace("__IMGS__", json.dumps(IMGS, separators=(",",":")))
   .replace("__SOUNDS__", SOUNDS_JS))
 open("app.html","w").write(out)
 print("Wrote app.html:", os.path.getsize("app.html"), "bytes")

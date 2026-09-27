@@ -1,0 +1,54 @@
+{
+ "dieren": {
+  "koe": "Photorealistic Holstein dairy cow, full body side view facing left, standing, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "paard": "Photorealistic brown horse, full body side view facing left, standing, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "ezel": "Photorealistic grey donkey, full body side view facing left, standing, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "varken": "Photorealistic pink farm pig, full body side view facing left, standing, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "schaap": "Photorealistic white woolly sheep, full body side view facing left, standing, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "geit": "Photorealistic white goat with small horns, full body side view facing left, standing, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "hond": "Photorealistic friendly golden retriever dog, full body side view facing left, standing, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "poes": "Photorealistic orange tabby cat sitting, full body, facing the camera, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "bg": "Photorealistic empty sunny Dutch farm meadow with a red barn far in the background, green grass field in the foreground, small pond on the left, blue sky with a few clouds, no animals, no people, wide landscape photo"
+ },
+ "erf": {
+  "kip": "Photorealistic brown hen chicken, full body side view facing right, standing, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "haan": "Photorealistic proud rooster with red comb and colorful tail feathers, full body side view facing left, standing, isolated on a flat solid bright blue chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "eend": "Photorealistic white domestic duck with orange beak, full body side view facing right, standing, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "gans": "Photorealistic white farm goose, full body side view facing left, standing, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "kalkoen": "Photorealistic wild turkey with fanned tail and red wattle, full body side view facing left, standing, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "duif": "Photorealistic grey city pigeon, full body side view facing right, standing, isolated on a flat solid bright magenta chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "kraai": "Photorealistic black crow flying with wings fully spread, side view, head pointing to the right, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "kikker": "Photorealistic green frog sitting, side view facing left, full body, isolated on a flat solid bright magenta chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "bij": "Photorealistic honey bee flying, side view facing right, wings spread, whole insect visible, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "muis": "Photorealistic small grey house mouse, full body side view facing left, sitting, long tail visible, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "bg": "Photorealistic empty farmyard: grass and sand ground, wooden chicken coop on the left, small duck pond, wooden fence, farmhouse in the background, blue sky, no animals, no people, wide photo"
+ },
+ "wild": {
+  "leeuw": "Photorealistic male lion with big mane, full body side view facing left, standing, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "tijger": "Photorealistic bengal tiger, full body side view facing left, walking, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "aap": "Photorealistic chimpanzee sitting, full body, facing camera, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "olifant": "Photorealistic african elephant, full body side view facing left, standing, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "uil": "Photorealistic brown owl perched, full body, facing camera, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "wolf": "Photorealistic grey wolf, full body side view facing left, standing, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "vos": "Photorealistic red fox, full body side view facing left, standing, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "nijlpaard": "Photorealistic hippopotamus, full body side view facing left, standing, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "neushoorn": "Photorealistic rhinoceros, full body side view facing left, standing, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "gorilla": "Photorealistic silverback gorilla sitting, full body, facing camera, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "papegaai": "Photorealistic scarlet macaw parrot perched, full body side view facing right, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "adelaar": "Photorealistic bald eagle soaring with wings fully spread, side view, head pointing to the right, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "bg": "Photorealistic empty African savanna with acacia trees, a watering hole, golden grass, blue sky, no animals, no people, wide landscape photo"
+ },
+ "voertuigen": {
+  "auto": "Photorealistic small modern blue family car, side view facing right, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "motor": "Photorealistic red motorcycle, side view facing right, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "fiets": "Photorealistic red city bicycle, side view facing right, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "trein": "Photorealistic modern yellow Dutch passenger train locomotive with one carriage, side view facing right, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "brandweer": "Photorealistic red fire truck with ladder, side view facing right, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "traktor": "Photorealistic green farm tractor, side view facing right, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "boot": "Photorealistic small white motorboat, side view facing right, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "vliegtuig": "Photorealistic white passenger jet airplane flying, side view facing right, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "helikopter": "Photorealistic red rescue helicopter flying, side view facing left, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "bg": "Photorealistic empty sunny Dutch street scene, side view: asphalt road across the image, railway track behind it, row of houses in the background, sidewalk and a canal in the foreground, blue sky, no vehicles, no people, wide photo"
+ },
+ "_note": "Onderwerpen op effen groen (magenta/blauw voor groene/roze onderwerpen) -> cutout.py; bg-prompts op 1152x864. Model: FLUX.1-schnell / Z-Image-Turbo via Hugging Face Spaces."
+}
