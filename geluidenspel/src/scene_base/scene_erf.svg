@@ -18,7 +18,10 @@
   <rect x="0" y="0" width="1000" height="790" fill="url(#skyG)"/>
   <circle cx="150" cy="115" r="58" fill="url(#sunG)"/>
   <circle cx="150" cy="115" r="58" fill="none" stroke="#ffe27a" stroke-width="10" opacity="0.35"/>
-  <g fill="#ffffff" opacity="0.92"><g transform="translate(0,0)" data-anim="drift" data-v="6"><ellipse cx="440" cy="110" rx="60" ry="26"/><ellipse cx="490" cy="96" rx="46" ry="24"/><ellipse cx="390" cy="98" rx="40" ry="22"/></g><g transform="translate(0,0)" data-anim="drift" data-v="8"><ellipse cx="900" cy="120" rx="52" ry="22"/><ellipse cx="945" cy="108" rx="38" ry="20"/><ellipse cx="862" cy="110" rx="34" ry="18"/></g></g>
+  <g fill="#ffffff" opacity="0.92">
+    <ellipse cx="440" cy="110" rx="60" ry="26"/><ellipse cx="490" cy="96" rx="46" ry="24"/><ellipse cx="390" cy="98" rx="40" ry="22"/>
+    <ellipse cx="900" cy="120" rx="52" ry="22"/><ellipse cx="945" cy="108" rx="38" ry="20"/><ellipse cx="862" cy="110" rx="34" ry="18"/>
+  </g>
 
   <!-- HILLS -->
   <path d="M0,430 Q220,350 470,410 T1000,392 L1000,470 L0,470 Z" fill="url(#hillFar)"/>
@@ -79,7 +82,7 @@
 
   <!-- soft shadows -->
   <g fill="#2f6b2a" opacity="0.16">
-    
+    <ellipse cx="475" cy="694" rx="38" ry="7"/><ellipse cx="600" cy="666" rx="44" ry="8"/>
   </g>
 
 
@@ -95,21 +98,16 @@
   <!-- ================= ANIMALS ================= -->
 
   <!-- KRAAI (crow) on barn roof -->
-  <g transform="translate(300,170) scale(0.85)" data-anim="fly" data-v="30" data-a="14" data-p="7" data-face="1">
+  <g transform="translate(752,214) scale(0.8)">
     <g class="animal-node" data-key="kraai" role="button" aria-label="Kraai" tabindex="0">
-      <rect class="hit" x="-62" y="-58" width="124" height="104"/>
-      <g class="flap">
-        <path d="M-6,-4 q-22,-40 -52,-44 q14,18 18,40 q18,6 34,4z" fill="#171a20"/>
-        <path d="M-2,-6 q-10,-30 -30,-40 q6,20 8,36z" fill="#262a32"/>
-      </g>
-      <ellipse cx="0" cy="0" rx="30" ry="13" fill="#20242b"/>
-      <path d="M-26,-2 l-22,-8 l4,10 l-4,10 l22,-6z" fill="#171a20"/>
-      <circle cx="28" cy="-6" r="12" fill="#20242b"/>
-      <path d="M38,-8 l18,3 l-18,6 z" fill="#f0a52e"/>
-      <circle cx="31" cy="-9" r="2.8" fill="#fff"/><circle cx="32" cy="-9" r="1.6" fill="#000"/>
-      <g class="flap flap2">
-        <path d="M2,2 q20,28 46,30 q-12,-14 -16,-30 q-16,-4 -30,0z" fill="#2c3139"/>
-      </g>
+      <rect class="hit" x="-40" y="-46" width="86" height="80"/>
+      <ellipse cx="0" cy="0" rx="26" ry="17" fill="#20242b"/>
+      <circle cx="20" cy="-14" r="14" fill="#20242b"/>
+      <path d="M32,-16 l20,4 l-20,6 z" fill="#f0a52e"/>
+      <circle cx="24" cy="-16" r="3.2" fill="#fff"/><circle cx="25" cy="-16" r="1.8" fill="#000"/>
+      <path d="M-24,-4 q-22,4 -30,16 q20,-2 30,-6 z" fill="#12151a"/>
+      <line x1="-6" y1="16" x2="-8" y2="30" stroke="#3a2f28" stroke-width="4" stroke-linecap="round"/>
+      <line x1="8" y1="16" x2="8" y2="30" stroke="#3a2f28" stroke-width="4" stroke-linecap="round"/>
     </g>
   </g>
 
@@ -117,7 +115,7 @@
 
 
   <!-- KIKKER (frog) on lily pad -->
-  <g transform="translate(245,646) scale(0.6)" data-anim="hop" data-a="16" data-p="4.5">
+  <g transform="translate(245,646) scale(0.6)">
     <g class="animal-node" data-key="kikker" role="button" aria-label="Kikker" tabindex="0">
       <rect class="hit" x="-56" y="-56" width="112" height="100"/>
       <ellipse cx="0" cy="10" rx="42" ry="30" fill="#5cbe4e"/>
@@ -132,7 +130,7 @@
   </g>
 
   <!-- KIP (hen) -->
-  <g transform="translate(475,646) scale(0.8)" data-anim="patrol" data-v="14" data-r="45" data-p="2.5" data-face="-1" data-peck="1"><ellipse cx="0.0" cy="60.0" rx="47.5" ry="8.8" fill="#2f6b2a" opacity="0.16"/>
+  <g transform="translate(475,646) scale(0.8)">
     <g class="animal-node" data-key="kip" role="button" aria-label="Kip" tabindex="0">
       <rect class="hit" x="-48" y="-50" width="96" height="100"/>
       <path d="M6,-2 q40,-16 34,26 q-8,22 -28,14 z" fill="#efe7da"/>
@@ -148,7 +146,7 @@
   </g>
 
   <!-- HAAN (rooster) -->
-  <g transform="translate(600,606) scale(0.95)" data-anim="patrol" data-v="10" data-r="25" data-p="4" data-face="-1" data-peck="1"><ellipse cx="0.0" cy="63.2" rx="46.3" ry="8.4" fill="#2f6b2a" opacity="0.16"/>
+  <g transform="translate(600,606) scale(0.95)">
     <g class="animal-node" data-key="haan" role="button" aria-label="Haan" tabindex="0">
       <rect class="hit" x="-54" y="-62" width="108" height="118"/>
       <path d="M6,-6 q46,-30 40,26 q-6,30 -30,20 z" fill="#2f7bbf"/>
@@ -166,7 +164,7 @@
 
 
   <!-- BIJ (bee) near flowers -->
-  <g transform="translate(930,586) scale(0.66)" data-anim="hover" data-r="38" data-p="7" data-face="-1">
+  <g transform="translate(930,586) scale(0.66)">
     <path d="M0,20 q-40,-40 -70,-30" stroke="#e0a021" stroke-width="3" fill="none" stroke-dasharray="4 6" opacity="0.6"/>
     <g class="animal-node" data-key="bij" role="button" aria-label="Bij" tabindex="0">
       <rect class="hit" x="-48" y="-42" width="96" height="88"/>
@@ -184,7 +182,7 @@
 
 
   <!-- EEND (duck) op de vijver -->
-  <g transform="translate(140,606) scale(0.62)" data-anim="swim" data-v="8" data-r="40" data-p="3" data-face="-1">
+  <g transform="translate(140,606) scale(0.62)">
     <g class="animal-node" data-key="eend" role="button" aria-label="Eend" tabindex="0">
       <rect class="hit" x="-72" y="-72" width="146" height="124"/>
       <path d="M40,2 q24,-10 28,4 q-15,7 -28,2z" fill="#ddd7c7"/>
@@ -202,8 +200,8 @@
 
 
   <!-- GANS (goose) -->
-  
-  <g transform="translate(400,738) scale(0.55)" data-anim="patrol" data-v="12" data-r="40" data-p="3" data-face="-1" data-peck="1"><ellipse cx="0.0" cy="61.8" rx="76.4" ry="14.5" fill="#2f6b2a" opacity="0.16"/>
+  <ellipse cx="400" cy="772" rx="42" ry="8" fill="#2f6b2a" opacity="0.16"/>
+  <g transform="translate(400,738) scale(0.55)">
     <g class="animal-node" data-key="gans" role="button" aria-label="Gans" tabindex="0">
       <rect class="hit" x="-72" y="-88" width="144" height="156"/>
       <path d="M36,4 q26,-10 30,4 q-16,8 -30,4z" fill="#eeebe2"/>
@@ -218,8 +216,8 @@
   </g>
 
   <!-- KALKOEN (turkey) -->
-  
-  <g transform="translate(800,735) scale(0.6)" data-anim="patrol" data-v="9" data-r="35" data-p="4" data-face="-1" data-peck="1"><ellipse cx="0.0" cy="71.7" rx="73.3" ry="13.3" fill="#2f6b2a" opacity="0.16"/>
+  <ellipse cx="800" cy="778" rx="44" ry="8" fill="#2f6b2a" opacity="0.16"/>
+  <g transform="translate(800,735) scale(0.6)">
     <g class="animal-node" data-key="kalkoen" role="button" aria-label="Kalkoen" tabindex="0">
       <rect class="hit" x="-66" y="-72" width="136" height="146"/>
       <path d="M10,-6 q44,-46 66,-6 q-18,34 -66,20z" fill="#8a5a34"/>
@@ -236,7 +234,7 @@
   </g>
 
   <!-- DUIF (dove) op de silo -->
-  <g transform="translate(614,262) scale(0.45)" data-anim="breathe" data-p="1.8">
+  <g transform="translate(614,262) scale(0.45)">
     <g class="animal-node" data-key="duif" role="button" aria-label="Duif" tabindex="0">
       <rect class="hit" x="-50" y="-48" width="100" height="92"/>
       <path d="M22,-2 q22,-6 24,6 q-14,6 -24,2z" fill="#b9c2cc"/>
@@ -250,7 +248,7 @@
   </g>
 
   <!-- MUIS (mouse) -->
-  <g transform="translate(930,748) scale(0.5)" data-anim="patrol" data-v="34" data-r="35" data-p="3" data-face="-1">
+  <g transform="translate(930,748) scale(0.5)">
     <g class="animal-node" data-key="muis" role="button" aria-label="Muis" tabindex="0">
       <rect class="hit" x="-56" y="-44" width="112" height="86"/>
       <path d="M28,8 q26,4 24,24" stroke="#b0a79e" stroke-width="5" fill="none" stroke-linecap="round"/>

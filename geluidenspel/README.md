@@ -31,6 +31,14 @@ Twee schakelaars combineren tot vier varianten:
 - **🌳 Tekening** — alles in één grote habitat-illustratie (boerderij voor
   dieren, straat voor voertuigen). In de quiz wordt dit "zoek-in-de-tekening".
 
+**Bewegende tekeningen.** In de tekening-weergave leeft alles: vogels en het
+vliegtuig vliegen traag van links naar rechts door de lucht, het verkeer rijdt
+(alle auto's even snel, dus ze botsen nooit), dieren wandelen heen en weer en
+pikken of grazen, de kikker springt, de bij zweeft, wolken drijven voorbij.
+Alles beweegt bewust traag, zodat een peuter het makkelijk kan aantikken; wie
+iets aantikt laat het (of de hele rijstrook) even stilstaan. Met de
+toestelinstelling "Beperk beweging" staat alles stil.
+
 De Nederlandse namen worden (als bonus) uitgesproken via de voorleesstem van
 het toestel; de geluiden zelf zijn opnames en spelen altijd af.
 
@@ -58,7 +66,8 @@ Vereist internettoegang tot `raw.githubusercontent.com` en `ffmpeg`
 cd src
 python3 build_sounds.py             # dieren  -> sounds_dieren.json
 python3 build_sounds_voertuigen.py  # voertuigen -> sounds_voertuigen.json
-python3 build_app.py                # bouwt ../index.html (leest scene_*.svg + sounds_*.json)
+python3 animate_scenes.py           # scene_base/*.svg + bewegingen -> scene_*.svg
+python3 build_app.py                # bouwt app.html (= ../index.html) uit scene_*.svg + sounds_*.json
 ```
 
 ## Nieuw thema toevoegen
@@ -90,5 +99,7 @@ die twee niet uit elkaar kunnen lopen. De cirkelzaag is bewust weggelaten
 - `index.html` — het volledige spel (gegenereerd, geluiden ingesloten).
 - `src/build_app.py` — bouwt de multi-thema pagina (HTML/CSS/JS + inbedding).
 - `src/build_sounds*.py` — sourcet/verwerkt de audiofragmenten.
-- `src/scene_*.svg` — de habitat-tekeningen (illustratie, vector).
+- `src/scene_base/*.svg` — de habitat-tekeningen (illustratie, vector).
+- `src/animate_scenes.py` — zegt per item hoe het beweegt (`data-anim`) en
+  schrijft `src/scene_*.svg`; de beweging zelf zit in `build_app.py`.
 - `src/sounds_*.json`, `src/credits*.json` — geluiden + bronvermelding.

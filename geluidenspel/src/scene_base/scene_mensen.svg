@@ -31,7 +31,7 @@
   <!-- ============ MENSEN ============ -->
 
   <!-- LACHEN -->
-  <g transform="translate(150,430) scale(0.7)" data-anim="breathe" data-p="1.4">
+  <g transform="translate(150,430) scale(0.7)">
     <g class="animal-node" data-key="lachen" role="button" aria-label="Lachen" tabindex="0">
       <rect class="hit" x="-72" y="-122" width="144" height="188"/>
       <g fill="#4a6fa5"><rect x="-21" y="16" width="17" height="40" rx="7"/><rect x="6" y="16" width="17" height="40" rx="7"/></g>
@@ -108,7 +108,7 @@
   </g>
 
   <!-- BABY -->
-  <g transform="translate(170,606) scale(0.9)" data-anim="sway" data-a="3" data-p="2.4" data-py="40">
+  <g transform="translate(170,606) scale(0.9)">
     <ellipse cx="0" cy="56" rx="86" ry="20" fill="#e4553a" opacity="0.35"/>
     <g class="animal-node" data-key="baby" role="button" aria-label="Baby" tabindex="0">
       <rect class="hit" x="-78" y="-104" width="156" height="168"/>
@@ -148,7 +148,7 @@
   </g>
 
   <!-- SNURKEN (op de bank) -->
-  <g transform="translate(680,596) scale(0.85)" data-anim="breathe" data-p="3.4" data-a="3">
+  <g transform="translate(680,596) scale(0.85)">
     <g class="animal-node" data-key="snurken" role="button" aria-label="Snurken" tabindex="0">
       <rect class="hit" x="-116" y="-104" width="232" height="172"/>
       <rect x="-108" y="-8" width="216" height="52" rx="14" fill="#c9502f"/>

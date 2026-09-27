@@ -110,6 +110,11 @@ HTML = r'''<title>Geluidenspel</title>
   @keyframes abounce{0%{transform:scale(1)}30%{transform:scale(1.17)}60%{transform:scale(.97)}100%{transform:scale(1)}}
   .a-shake{animation:ashake .5s ease;}
   @keyframes ashake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px) rotate(-4deg)}75%{transform:translateX(6px) rotate(4deg)}}
+  .flap{transform-box:fill-box;transform-origin:50% 100%;animation:flap .55s ease-in-out infinite alternate;}
+  .flap2{transform-origin:50% 0%;}
+  @keyframes flap{from{transform:scaleY(1)}to{transform:scaleY(.25)}}
+  .rotor{transform-box:fill-box;transform-origin:center;animation:rotor .18s linear infinite;}
+  @keyframes rotor{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.12)}}
   .a-glow{filter:drop-shadow(0 0 10px #FFD23F) drop-shadow(0 0 18px #FFD23F);}
 
   #fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:5;}
@@ -121,7 +126,7 @@ HTML = r'''<title>Geluidenspel</title>
   .credit{margin:18px auto 0;text-align:center;font-size:.72rem;color:rgba(61,44,78,.55);font-weight:600;}
   [hidden]{display:none !important;}
   @media (prefers-reduced-motion:reduce){
-    .pop,.shake,.a-bounce,.a-shake,.replay.playing{animation:none}.flash{animation-duration:.9s}
+    .pop,.shake,.a-bounce,.a-shake,.replay.playing,.flap,.rotor{animation:none}.flash{animation-duration:.9s}
   }
 </style>
 
@@ -163,13 +168,13 @@ HTML = r'''<title>Geluidenspel</title>
 </main>
 
 <!-- scenes (hidden templates) -->
-<div id="scene-dieren" hidden>__SCENE_DIEREN__</div>
-<div id="scene-erf" hidden>__SCENE_ERF__</div>
-<div id="scene-wild" hidden>__SCENE_WILD__</div>
-<div id="scene-huis" hidden>__SCENE_HUIS__</div>
-<div id="scene-mensen" hidden>__SCENE_MENSEN__</div>
-<div id="scene-klus" hidden>__SCENE_KLUS__</div>
-<div id="scene-voertuigen" hidden>__SCENE_VOERTUIGEN__</div>
+<template id="scene-dieren">__SCENE_DIEREN__</template>
+<template id="scene-erf">__SCENE_ERF__</template>
+<template id="scene-wild">__SCENE_WILD__</template>
+<template id="scene-huis">__SCENE_HUIS__</template>
+<template id="scene-mensen">__SCENE_MENSEN__</template>
+<template id="scene-klus">__SCENE_KLUS__</template>
+<template id="scene-voertuigen">__SCENE_VOERTUIGEN__</template>
 
 <script>
 var SOUNDS = __SOUNDS__;
@@ -353,6 +358,7 @@ var SOUNDS = __SOUNDS__;
   sceneWrap.addEventListener("pointerdown",function(e){
     var node=e.target.closest(".animal-node"); if(!node) return;
     var key=node.getAttribute("data-key"); initAudio();resume();unlockSpeech();
+    animHold(node,2600);
     if(mode==="free"){
       node.classList.remove("a-bounce");void node.getBBox();node.classList.add("a-bounce");
       playSample(key);speak(byKey[key].name);
@@ -367,6 +373,82 @@ var SOUNDS = __SOUNDS__;
       }else{ node.classList.remove("a-shake");void node.getBBox();node.classList.add("a-shake");playQuestion(); }
     }
   });
+
+  /* ---- beweging in de tekening ----
+     Elke <g data-anim="..."> krijgt per frame een nieuwe transform. Eigen klok per
+     item; getikte items (of hun hele rijstrook) staan even stil. Zie animate_scenes.py. */
+  var AN={els:[],raf:0,last:0,W:1000,hold:{}};
+  function anum(el,a,d){var v=el.getAttribute("data-"+a);return v==null?d:parseFloat(v);}
+  function animSetup(){
+    animStop();AN.els=[];AN.hold={};
+    var svg=sceneWrap.querySelector("svg");if(!svg||reduce)return;
+    AN.W=svg.viewBox.baseVal.width||1000;
+    svg.querySelectorAll("[data-anim]").forEach(function(el){
+      var m=/translate\(\s*([-\d.]+)[ ,]+([-\d.]+)\s*\)(?:\s*scale\(\s*([-\d.]+)\s*\))?/.exec(el.getAttribute("transform")||"");
+      AN.els.push({el:el,t:el.getAttribute("data-anim"),x:m?+m[1]:0,y:m?+m[2]:0,s:m&&m[3]?+m[3]:1,
+        v:anum(el,"v",20),face:anum(el,"face",1),r:anum(el,"r",40),a:anum(el,"a",NaN),p:anum(el,"p",3),
+        py:anum(el,"py",0),peck:el.hasAttribute("data-peck"),lane:el.getAttribute("data-lane")||"",
+        node:el.querySelector(".animal-node"),clock:el.hasAttribute("data-lane")?0:Math.random()*20,bb:null});
+    });
+  }
+  function animStart(){if(!AN.els.length||AN.raf)return;AN.last=0;AN.raf=requestAnimationFrame(animStep);}
+  function animStop(){if(AN.raf)cancelAnimationFrame(AN.raf);AN.raf=0;}
+  function animHold(node,ms){
+    var until=performance.now()+ms;
+    AN.els.forEach(function(e){if(e.node===node){if(e.lane)AN.hold["L"+e.lane]=until;else e.holdUntil=until;}});
+  }
+  function bbOf(e){if(!e.bb){var b=e.el.getBBox();e.bb={cx:b.x+b.width/2,hw:Math.abs(b.width/2*e.s)};}return e.bb;}
+  function laneM(e){
+    if(e.M==null){var m=bbOf(e).hw;
+      if(e.lane)AN.els.forEach(function(o){if(o.lane===e.lane)m=Math.max(m,bbOf(o).hw);});
+      e.M=m+10;}
+    return e.M;
+  }
+  function wrapX(e,t,dir,sx){
+    /* zelfde lus-lengte voor de hele rijstrook -> onderlinge afstand blijft gelijk */
+    var bb=bbOf(e),M=laneM(e),span=AN.W+2*M;
+    var c=e.x+bb.cx*e.s+M+dir*e.v*t;
+    c=((c%span)+span)%span-M;
+    return c-bb.cx*sx;
+  }
+  function animStep(ts){
+    AN.raf=requestAnimationFrame(animStep);
+    var dt=AN.last?Math.min((ts-AN.last)/1000,0.1):0;AN.last=ts;
+    var now=performance.now(),TAU=6.2832;
+    for(var i=0;i<AN.els.length;i++){
+      var e=AN.els[i],held=now<(e.lane?(AN.hold["L"+e.lane]||0):(e.holdUntil||0));
+      if(!held)e.clock+=dt;
+      var t=e.clock,x=e.x,y=e.y,rot=0,sign=1,sy=1,w=TAU/e.p;
+      switch(e.t){
+        case "drive":sign=e.face;x=wrapX(e,t,1,e.s*sign);if(!held)y-=0.8*Math.abs(Math.sin(t*7));break;
+        case "fly":sign=e.face;x=wrapX(e,t,1,e.s*sign);y+=(isNaN(e.a)?10:e.a)*Math.sin(w*t);break;
+        case "drift":x=wrapX(e,t,1,e.s);break;
+        case "patrol":case "swim":{
+          var leg=2*e.r/e.v,cyc=2*(leg+e.p),u=t%cyc,pos,dir,walking=true;
+          if(u<leg){pos=-e.r+e.v*u;dir=1;}
+          else if(u<leg+e.p){pos=e.r;dir=1;walking=false;}
+          else if(u<2*leg+e.p){pos=e.r-e.v*(u-leg-e.p);dir=-1;}
+          else{pos=-e.r;dir=-1;walking=false;}
+          if(held)walking=false;
+          x+=pos;sign=dir*e.face;
+          if(e.t==="swim"){y+=1.6*Math.sin(t*1.8);rot=1.5*Math.sin(t*1.8+1);}
+          else if(walking)y-=1.6*Math.abs(Math.sin(t*6));
+          if(!isNaN(e.a))y+=e.a*Math.sin(t*1.6);
+          if(e.peck&&!walking&&!held){var q=(u%e.p)/e.p;rot=sign*10*Math.max(0,Math.sin(q*TAU*2));}
+          break;}
+        case "hover":{var ph=w*t;x+=e.r*Math.sin(ph);y+=0.45*e.r*Math.sin(2*ph)+1.4*Math.sin(t*31);
+          sign=(Math.cos(ph)>=0?1:-1)*e.face;break;}
+        case "bob":y+=(isNaN(e.a)?3:e.a)*Math.sin(w*t);rot=2*Math.sin(w*t+1);break;
+        case "hop":{var hu=t%e.p;if(hu<0.5)y-=(isNaN(e.a)?12:e.a)*Math.sin(Math.PI*hu/0.5);break;}
+        case "breathe":sy=1+(isNaN(e.a)?1.6:e.a)/100*Math.sin(w*t);break;
+        case "sway":rot=(isNaN(e.a)?4:e.a)*Math.sin(w*t);break;
+        case "wiggle":{var wu=t%e.p;if(wu<0.9)rot=(isNaN(e.a)?5:e.a)*Math.sin(wu*45)*(1-wu/0.9);break;}
+      }
+      e.el.setAttribute("transform","translate("+x.toFixed(1)+","+y.toFixed(1)+")"+
+        (rot?" rotate("+rot.toFixed(2)+",0,"+(e.py*e.s).toFixed(1)+")":"")+
+        " scale("+(e.s*sign).toFixed(3)+","+(e.s*sy).toFixed(3)+")");
+    }
+  }
 
   /* ---- quiz ---- */
   function playQuestion(){if(!current)return;replayBtn.classList.add("playing");
@@ -423,6 +505,7 @@ var SOUNDS = __SOUNDS__;
     tilesFree.hidden=!(view==="tiles"&&mode==="free");
     tilesQuiz.hidden=!(view==="tiles"&&mode==="quiz");
     sceneWrap.hidden=!(view==="scene");
+    if(view==="scene")animStart();else animStop();
     replayBtn.classList.toggle("show",mode==="quiz");
     starsEl.hidden=(mode!=="quiz");
     if(mode==="quiz"){stars=0;renderStars();}
@@ -440,7 +523,7 @@ var SOUNDS = __SOUNDS__;
     themeTitle.textContent=t.emoji+" "+t.title;
     var sc=document.getElementById("scene-"+tid);
     hasScene=!!sc;
-    if(hasScene){ tabScene.textContent=t.sceneTab; sceneWrap.innerHTML=sc.innerHTML; }
+    if(hasScene){ tabScene.textContent=t.sceneTab; sceneWrap.innerHTML=sc.innerHTML; animSetup(); }
     else { sceneWrap.innerHTML=""; }
     viewTabs.hidden=!hasScene;
     buildTiles();
@@ -450,7 +533,7 @@ var SOUNDS = __SOUNDS__;
   }
   function goHome(){
     clearTimeout(qTimer);try{window.speechSynthesis&&window.speechSynthesis.cancel();}catch(e){}
-    themeSec.hidden=true;homeSec.hidden=false;
+    animStop();themeSec.hidden=true;homeSec.hidden=false;
   }
   document.getElementById("homeBtn").addEventListener("pointerdown",goHome);
   tabPlay.addEventListener("pointerdown",function(){initAudio();resume();unlockSpeech();mode="free";render();});

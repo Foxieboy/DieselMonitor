@@ -18,7 +18,10 @@
   <rect x="0" y="0" width="1000" height="790" fill="url(#skyG)"/>
   <circle cx="150" cy="115" r="58" fill="url(#sunG)"/>
   <circle cx="150" cy="115" r="58" fill="none" stroke="#ffe27a" stroke-width="10" opacity="0.35"/>
-  <g fill="#ffffff" opacity="0.92"><g transform="translate(0,0)" data-anim="drift" data-v="6"><ellipse cx="440" cy="110" rx="60" ry="26"/><ellipse cx="490" cy="96" rx="46" ry="24"/><ellipse cx="390" cy="98" rx="40" ry="22"/></g><g transform="translate(0,0)" data-anim="drift" data-v="8"><ellipse cx="900" cy="120" rx="52" ry="22"/><ellipse cx="945" cy="108" rx="38" ry="20"/><ellipse cx="862" cy="110" rx="34" ry="18"/></g></g>
+  <g fill="#ffffff" opacity="0.92">
+    <ellipse cx="440" cy="110" rx="60" ry="26"/><ellipse cx="490" cy="96" rx="46" ry="24"/><ellipse cx="390" cy="98" rx="40" ry="22"/>
+    <ellipse cx="900" cy="120" rx="52" ry="22"/><ellipse cx="945" cy="108" rx="38" ry="20"/><ellipse cx="862" cy="110" rx="34" ry="18"/>
+  </g>
 
   <!-- HILLS -->
   <path d="M0,430 Q220,350 470,410 T1000,392 L1000,470 L0,470 Z" fill="url(#hillFar)"/>
@@ -79,15 +82,15 @@
 
   <!-- soft shadows -->
   <g fill="#2f6b2a" opacity="0.16">
-    
-    
+    <ellipse cx="300" cy="642" rx="92" ry="15"/><ellipse cx="110" cy="778" rx="58" ry="11"/>
+    <ellipse cx="675" cy="602" rx="76" ry="12"/><ellipse cx="815" cy="646" rx="70" ry="12"/>
   </g>
 
   <!-- ================= ANIMALS ================= -->
 
 
   <!-- POES (cat) on fence -->
-  <g transform="translate(858,452) scale(0.9)" data-anim="breathe" data-p="2.6">
+  <g transform="translate(858,452) scale(0.9)">
     <g class="animal-node" data-key="poes" role="button" aria-label="Poes" tabindex="0">
       <rect class="hit" x="-42" y="-52" width="90" height="96"/>
       <path d="M14,20 q46,-2 40,-40" stroke="#e8973f" stroke-width="9" fill="none" stroke-linecap="round"/>
@@ -103,7 +106,7 @@
   </g>
 
   <!-- KOE (cow) -->
-  <g transform="translate(300,545) scale(1.0)" data-anim="patrol" data-v="10" data-r="45" data-p="5" data-face="-1" data-peck="1"><ellipse cx="0.0" cy="97.0" rx="92.0" ry="15.0" fill="#2f6b2a" opacity="0.16"/>
+  <g transform="translate(300,545) scale(1.0)">
     <g class="animal-node" data-key="koe" role="button" aria-label="Koe" tabindex="0">
       <rect class="hit" x="-104" y="-72" width="200" height="168"/>
       <g fill="#5b4636"><rect x="-46" y="18" width="15" height="52" rx="6"/><rect x="24" y="18" width="15" height="52" rx="6"/></g>
@@ -126,7 +129,7 @@
   </g>
 
   <!-- HOND (dog) -->
-  <g transform="translate(110,716) scale(0.72)" data-anim="patrol" data-v="28" data-r="40" data-p="2.5" data-face="-1"><ellipse cx="0.0" cy="86.1" rx="80.6" ry="15.3" fill="#2f6b2a" opacity="0.16"/>
+  <g transform="translate(110,716) scale(0.72)">
     <g class="animal-node" data-key="hond" role="button" aria-label="Hond" tabindex="0">
       <rect class="hit" x="-90" y="-60" width="176" height="146"/>
       <g fill="#a9713e"><rect x="-38" y="22" width="15" height="46" rx="6"/><rect x="-8" y="26" width="15" height="46" rx="6"/><rect x="22" y="22" width="15" height="46" rx="6"/><rect x="50" y="26" width="15" height="46" rx="6"/></g>
@@ -148,7 +151,7 @@
 
 
   <!-- SCHAAP (sheep) -->
-  <g transform="translate(675,535) scale(0.9)" data-anim="patrol" data-v="9" data-r="30" data-p="5" data-face="-1" data-peck="1"><ellipse cx="0.0" cy="74.4" rx="84.4" ry="13.3" fill="#2f6b2a" opacity="0.16"/>
+  <g transform="translate(675,535) scale(0.9)">
     <g class="animal-node" data-key="schaap" role="button" aria-label="Schaap" tabindex="0">
       <rect class="hit" x="-84" y="-60" width="164" height="140"/>
       <g fill="#4a4038"><rect x="-34" y="26" width="13" height="42" rx="5"/><rect x="-6" y="30" width="13" height="42" rx="5"/><rect x="22" y="26" width="13" height="42" rx="5"/><rect x="46" y="30" width="13" height="42" rx="5"/></g>
@@ -168,7 +171,7 @@
   </g>
 
   <!-- VARKEN (pig) -->
-  <g transform="translate(815,580) scale(0.9)" data-anim="patrol" data-v="12" data-r="35" data-p="4" data-face="-1" data-peck="1"><ellipse cx="0.0" cy="73.3" rx="77.8" ry="13.3" fill="#2f6b2a" opacity="0.16"/>
+  <g transform="translate(815,580) scale(0.9)">
     <g class="animal-node" data-key="varken" role="button" aria-label="Varken" tabindex="0">
       <rect class="hit" x="-84" y="-56" width="168" height="130"/>
       <g fill="#e88aa0"><rect x="-40" y="20" width="15" height="42" rx="6"/><rect x="-10" y="24" width="15" height="42" rx="6"/><rect x="22" y="20" width="15" height="42" rx="6"/><rect x="50" y="24" width="15" height="42" rx="6"/></g>
@@ -188,7 +191,7 @@
 
 
   <!-- EZEL (donkey) in het veld -->
-  <g transform="translate(455,492) scale(0.55)" data-anim="breathe" data-p="3.2">
+  <g transform="translate(455,492) scale(0.55)">
     <g class="animal-node" data-key="ezel" role="button" aria-label="Ezel" tabindex="0">
       <rect class="hit" x="-96" y="-78" width="184" height="164"/>
       <g fill="#6f6f6f"><rect x="-40" y="20" width="13" height="46" rx="5"/><rect x="-12" y="24" width="13" height="46" rx="5"/><rect x="20" y="20" width="13" height="46" rx="5"/><rect x="46" y="24" width="13" height="46" rx="5"/></g>
@@ -212,8 +215,8 @@
 
 
   <!-- PAARD (horse) op de voorgrond -->
-  
-  <g transform="translate(640,716) scale(0.74)" data-anim="patrol" data-v="16" data-r="55" data-p="4" data-face="-1" data-peck="1"><ellipse cx="0.0" cy="86.5" rx="110.8" ry="17.6" fill="#2f6b2a" opacity="0.16"/>
+  <ellipse cx="640" cy="780" rx="82" ry="13" fill="#2f6b2a" opacity="0.16"/>
+  <g transform="translate(640,716) scale(0.74)">
     <g class="animal-node" data-key="paard" role="button" aria-label="Paard" tabindex="0">
       <rect class="hit" x="-104" y="-86" width="200" height="176"/>
       <g fill="#7a4a24"><rect x="-44" y="22" width="16" height="56" rx="7"/><rect x="-12" y="26" width="16" height="56" rx="7"/><rect x="24" y="22" width="16" height="56" rx="7"/><rect x="52" y="26" width="16" height="56" rx="7"/></g>
@@ -235,7 +238,7 @@
 
   <!-- GEIT (goat) -->
   <ellipse cx="250" cy="780" rx="60" ry="10" fill="#2f6b2a" opacity="0.16"/>
-  <g transform="translate(250,735) scale(0.6)" data-anim="hop" data-a="10" data-p="6">
+  <g transform="translate(250,735) scale(0.6)">
     <g class="animal-node" data-key="geit" role="button" aria-label="Geit" tabindex="0">
       <rect class="hit" x="-92" y="-74" width="180" height="156"/>
       <g fill="#8a8178"><rect x="-38" y="20" width="14" height="48" rx="6"/><rect x="-10" y="24" width="14" height="48" rx="6"/><rect x="22" y="20" width="14" height="48" rx="6"/><rect x="48" y="24" width="14" height="48" rx="6"/></g>

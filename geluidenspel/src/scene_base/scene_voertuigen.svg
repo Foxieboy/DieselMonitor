@@ -16,7 +16,9 @@
   <rect x="0" y="0" width="1000" height="700" fill="url(#vskyG)"/>
   <circle cx="120" cy="98" r="52" fill="url(#vsunG)"/>
   <circle cx="120" cy="98" r="52" fill="none" stroke="#ffe27a" stroke-width="9" opacity="0.35"/>
-  <g fill="#ffffff" opacity="0.92"><g transform="translate(0,0)" data-anim="drift" data-v="6"><ellipse cx="520" cy="90" rx="52" ry="22"/><ellipse cx="562" cy="80" rx="40" ry="20"/><ellipse cx="482" cy="80" rx="32" ry="16"/></g></g>
+  <g fill="#ffffff" opacity="0.92">
+    <ellipse cx="520" cy="90" rx="52" ry="22"/><ellipse cx="562" cy="80" rx="40" ry="20"/><ellipse cx="482" cy="80" rx="32" ry="16"/>
+  </g>
 
   <!-- GRASS -->
   <rect x="0" y="430" width="1000" height="270" fill="url(#grassG)"/>
@@ -53,13 +55,13 @@
 
   <!-- shadows -->
   <g fill="#3a3f45" opacity="0.20">
-    
+    <ellipse cx="235" cy="632" rx="110" ry="12"/><ellipse cx="645" cy="636" rx="80" ry="11"/><ellipse cx="855" cy="636" rx="72" ry="11"/><ellipse cx="455" cy="636" rx="52" ry="9"/><ellipse cx="720" cy="694" rx="46" ry="7"/>
   </g>
 
   <!-- ============ VEHICLES ============ -->
 
   <!-- VLIEGTUIG (airplane) sky -->
-  <g transform="translate(778,120) scale(0.92)" data-anim="fly" data-v="24" data-a="8" data-p="10" data-face="1">
+  <g transform="translate(778,120) scale(0.92)">
     <g class="animal-node" data-key="vliegtuig" role="button" aria-label="Vliegtuig" tabindex="0">
       <rect class="hit" x="-110" y="-56" width="220" height="120"/>
       <path d="M-30,4 L-96,44 L-40,18 Z" fill="#c6d2dd"/>
@@ -75,10 +77,10 @@
   </g>
 
   <!-- HELIKOPTER (helicopter) sky -->
-  <g transform="translate(215,150) scale(0.92)" data-anim="patrol" data-v="18" data-r="80" data-p="2" data-face="-1" data-a="6">
+  <g transform="translate(215,150) scale(0.92)">
     <g class="animal-node" data-key="helikopter" role="button" aria-label="Helikopter" tabindex="0">
       <rect class="hit" x="-70" y="-54" width="176" height="118"/>
-      <rect class="rotor" x="-64" y="-40" width="150" height="8" rx="4" fill="#3a3f45"/>
+      <rect x="-64" y="-40" width="150" height="8" rx="4" fill="#3a3f45"/>
       <rect x="-4" y="-40" width="8" height="20" fill="#3a3f45"/>
       <path d="M-30,-8 q30,-26 74,-2 q10,4 10,18 q0,18 -30,22 l-54,0 q-16,-24 0,-38z" fill="#e5b23a"/>
       <path d="M40,-6 q28,2 52,8 l0,10 q-24,4 -52,2 z" fill="#d99f2c"/>
@@ -91,7 +93,7 @@
   </g>
 
   <!-- TREIN (train) on rails -->
-  <g transform="translate(500,452) scale(0.82)" data-anim="drive" data-v="40" data-face="1" data-lane="rails">
+  <g transform="translate(500,452) scale(0.82)">
     <g class="animal-node" data-key="trein" role="button" aria-label="Trein" tabindex="0">
       <rect class="hit" x="-150" y="-60" width="300" height="120"/>
       <!-- wagon -->
@@ -109,7 +111,7 @@
   </g>
 
   <!-- BRANDWEER (fire truck) road left -->
-  <g transform="translate(235,566) scale(0.92)" data-anim="drive" data-v="34" data-face="1" data-lane="weg"><ellipse cx="0.0" cy="71.7" rx="119.6" ry="13.0" fill="#3a3f45" opacity="0.20"/>
+  <g transform="translate(235,566) scale(0.92)">
     <g class="animal-node" data-key="brandweer" role="button" aria-label="Brandweer" tabindex="0">
       <rect class="hit" x="-120" y="-64" width="240" height="130"/>
       <rect x="-110" y="-22" width="150" height="64" rx="8" fill="url(#fireG)"/>
@@ -127,7 +129,7 @@
   </g>
 
   <!-- AUTO (car) road right -->
-  <g transform="translate(645,586) scale(0.92)" data-anim="drive" data-v="34" data-face="1" data-lane="weg"><ellipse cx="0.0" cy="54.3" rx="87.0" ry="12.0" fill="#3a3f45" opacity="0.20"/>
+  <g transform="translate(645,586) scale(0.92)">
     <g class="animal-node" data-key="auto" role="button" aria-label="Auto" tabindex="0">
       <rect class="hit" x="-92" y="-56" width="184" height="118"/>
       <path d="M-78,20 q-6,-26 18,-30 q10,-24 34,-24 q30,0 44,24 q28,2 40,30 z" fill="url(#carG)"/>
@@ -141,7 +143,7 @@
   </g>
 
   <!-- TRAKTOR (tractor) road far-right -->
-  <g transform="translate(855,576) scale(0.9)" data-anim="drive" data-v="34" data-face="-1" data-lane="weg"><ellipse cx="0.0" cy="66.7" rx="80.0" ry="12.2" fill="#3a3f45" opacity="0.20"/>
+  <g transform="translate(855,576) scale(0.9)">
     <g class="animal-node" data-key="traktor" role="button" aria-label="Traktor" tabindex="0">
       <rect class="hit" x="-80" y="-70" width="164" height="140"/>
       <rect x="-58" y="-52" width="8" height="30" fill="#2a2f34"/>
@@ -157,7 +159,7 @@
   </g>
 
   <!-- FIETS (bicycle) sidewalk front -->
-  <g transform="translate(720,668) scale(0.58)" data-anim="patrol" data-v="22" data-r="190" data-p="2" data-face="1"><ellipse cx="0.0" cy="44.8" rx="79.3" ry="12.1" fill="#3a3f45" opacity="0.20"/>
+  <g transform="translate(720,668) scale(0.58)">
     <g class="animal-node" data-key="fiets" role="button" aria-label="Fiets" tabindex="0">
       <rect class="hit" x="-80" y="-70" width="160" height="120"/>
       <circle cx="-50" cy="18" r="34" fill="none" stroke="#2a2f34" stroke-width="7"/>
@@ -176,7 +178,7 @@
   </g>
 
   <!-- MOTOR (motorbike) road center -->
-  <g transform="translate(455,602) scale(0.6)" data-anim="drive" data-v="34" data-face="-1" data-lane="weg"><ellipse cx="0.0" cy="56.7" rx="86.7" ry="15.0" fill="#3a3f45" opacity="0.20"/>
+  <g transform="translate(455,602) scale(0.6)">
     <g class="animal-node" data-key="motor" role="button" aria-label="Motor" tabindex="0">
       <rect class="hit" x="-82" y="-64" width="164" height="122"/>
       <circle cx="-46" cy="22" r="30" fill="#2a2f34"/><circle cx="-46" cy="22" r="12" fill="#8a939b"/>
@@ -193,7 +195,7 @@
   </g>
 
   <!-- BOOT (boat) on water -->
-  <g transform="translate(150,662) scale(0.74)" data-anim="swim" data-v="6" data-r="35" data-p="3" data-face="1">
+  <g transform="translate(150,662) scale(0.74)">
     <g class="animal-node" data-key="boot" role="button" aria-label="Boot" tabindex="0">
       <rect class="hit" x="-82" y="-72" width="164" height="124"/>
       <line x1="-6" y1="-8" x2="-6" y2="-60" stroke="#7a5a34" stroke-width="5"/>

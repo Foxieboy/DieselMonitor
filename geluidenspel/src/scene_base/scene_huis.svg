@@ -35,7 +35,7 @@
   <!-- ============ VOORWERPEN ============ -->
 
   <!-- WEKKER (slaapkamer) -->
-  <g transform="translate(215,318) scale(0.95)" data-anim="wiggle" data-p="5">
+  <g transform="translate(215,318) scale(0.95)">
     <g class="animal-node" data-key="wekker" role="button" aria-label="Wekker" tabindex="0">
       <rect class="hit" x="-66" y="-76" width="132" height="152"/>
       <circle cx="-30" cy="-40" r="15" fill="#c9502f"/><circle cx="30" cy="-40" r="15" fill="#c9502f"/>
@@ -129,7 +129,7 @@
   </g>
 
   <!-- WASMACHINE (washok) -->
-  <g transform="translate(722,548) scale(0.95)" data-anim="wiggle" data-p="4" data-a="2">
+  <g transform="translate(722,548) scale(0.95)">
     <g class="animal-node" data-key="wasmachine" role="button" aria-label="Wasmachine" tabindex="0">
       <rect class="hit" x="-64" y="-74" width="128" height="156"/>
       <rect x="-50" y="-58" width="100" height="124" rx="10" fill="#eef3f6"/>
@@ -143,7 +143,7 @@
   </g>
 
   <!-- STOFZUIGER (washok) -->
-  <g transform="translate(866,556) scale(0.95)" data-anim="patrol" data-v="18" data-r="18" data-p="2" data-face="1">
+  <g transform="translate(866,556) scale(0.95)">
     <g class="animal-node" data-key="stofzuiger" role="button" aria-label="Stofzuiger" tabindex="0">
       <rect class="hit" x="-68" y="-70" width="136" height="140"/>
       <path d="M-30,-6 q-28,-42 6,-48 q32,-6 32,17" stroke="#3a3f45" stroke-width="9" fill="none" stroke-linecap="round"/>
