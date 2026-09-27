@@ -26,6 +26,13 @@ def cutout(src, dst, max_side=440):
     edge = set(np.unique(np.concatenate([lab[0], lab[-1], lab[:,0], lab[:,-1]]))) - {0}
     conn = np.isin(lab, list(edge))
     conn = ndimage.binary_dilation(conn, iterations=1)
+    # ingesloten gaten (tussen poten, staart): duidelijk schermkleur -> ook weg
+    holes = (key > 0.6 * kb) & ~conn
+    lab3, n3 = ndimage.label(holes)
+    if n3:
+        sizes3 = ndimage.sum(holes, lab3, range(1, n3 + 1))
+        big = np.isin(lab3, [i + 1 for i, sz in enumerate(sizes3) if sz >= 12])
+        conn = conn | ndimage.binary_dilation(big, iterations=2)
     alpha = np.where(conn, alpha, 1.0)
     # losse snippers weg
     fg = alpha > 0.5
