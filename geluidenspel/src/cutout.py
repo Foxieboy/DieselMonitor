@@ -3,7 +3,7 @@ import sys, numpy as np
 from PIL import Image
 from scipy import ndimage
 
-def cutout(src, dst, max_side=440):
+def cutout(src, dst, max_side=440, full_despill=False):
     im = Image.open(src).convert("RGB")
     a = np.asarray(im).astype(np.float32)
     r, g, b = a[...,0], a[...,1], a[...,2]
@@ -42,6 +42,8 @@ def cutout(src, dst, max_side=440):
         alpha = np.where(np.isin(lab2, [i+1 for i,s in enumerate(sizes) if s < 0.01*sizes.max()]), 0, alpha)
     # despill: haal de schermkleur-zweem van randen (projectie op de chroma-richting afkappen)
     edge = conn | (alpha < 1)
+    if full_despill:                 # glas/chroom: ook binnenin de schermkleur weghalen
+        edge = np.ones_like(edge)
     spill = np.clip(proj - 4, 0, None)[..., None] * c[None, None, :]
     out_rgb = np.where(edge[..., None], a - spill, a)
     out = np.dstack([np.clip(out_rgb, 0, 255), alpha * 255]).astype(np.uint8)

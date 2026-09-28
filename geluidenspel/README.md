@@ -42,6 +42,15 @@ toestelinstelling "Beperk beweging" staat alles stil.
 De Nederlandse namen worden (als bonus) uitgesproken via de voorleesstem van
 het toestel; de geluiden zelf zijn opnames en spelen altijd af.
 
+## Realistische foto's
+
+Foto's worden gegenereerd met beeldmodellen op Hugging Face (FLUX.1-schnell),
+op een effen groen/magenta/blauw scherm, en daarna uitgeknipt met
+`src/cutout.py` (chroma-key). Een thema schakelt pas over op foto's (tegels én
+een foto-tekening met bewegende dieren) als alle items een foto hebben.
+Klaar: **Het erf**. Onderweg: Voertuigen, Boerderij, Wilde dieren, …
+Prompts: `src/photo_prompts.json`; posities/bewegingen: `src/photos.py`.
+
 ## Geluiden — bron & licentie
 
 Echte opnames komen uit meerdere vrij gelicentieerde bronnen:

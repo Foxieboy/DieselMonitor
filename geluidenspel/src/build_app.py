@@ -166,7 +166,7 @@ HTML = r'''<title>Geluidenspel</title>
     <p class="stars" id="stars" aria-live="polite"></p>
   </section>
 
-  <p class="credit">Echte opnames · ESC-50 (CC BY-NC) · tekeningen: illustratie</p>
+  <p class="credit">Echte opnames · ESC-50 (CC BY-NC) · foto’s: AI-beelden (FLUX.1 via Hugging Face) · tekeningen: illustratie</p>
 </main>
 
 <!-- scenes (hidden templates) -->
