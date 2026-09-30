@@ -44,6 +44,17 @@ SCENES = {
         "kalkoen": dict(name="Kalkoen", x=845, y=665, h=205, face=-1, anim=dict(anim="patrol", v=9, r=30, p=4, peck=1)),
         "muis":    dict(name="Muis",    x=330, y=725, h=82,  face=-1, anim=dict(anim="patrol", v=30, r=30, p=3)),
     }},
+    "voertuigen": {"label": "Foto van een straat met voertuigen", "items": {
+        "vliegtuig":  dict(name="Vliegtuig",  x=700, y=140, h=62,  face=1,  air=1, anim=dict(anim="fly", v=26, a=8, p=10)),
+        "helikopter": dict(name="Helikopter", x=260, y=250, h=90,  face=-1, air=1, anim=dict(anim="patrol", v=18, r=110, p=2, a=6)),
+        "trein":      dict(name="Trein",      x=600, y=402, h=96,  face=1,  anim=dict(anim="drive", v=40, lane="spoor")),
+        "boot":       dict(name="Boot",       x=272, y=478, h=44,  face=1,  anim=dict(anim="swim", v=5, r=12, p=3)),
+        "motor":      dict(name="Motor",      x=380, y=568, h=80,  face=1,  anim=dict(anim="drive", v=28, dir=-1, lane="ver")),
+        "fiets":      dict(name="Fiets",      x=760, y=568, h=76,  face=1,  anim=dict(anim="drive", v=28, dir=-1, lane="ver")),
+        "brandweer":  dict(name="Brandweer",  x=180, y=722, h=128, face=1,  anim=dict(anim="drive", v=34, lane="dicht")),
+        "auto":       dict(name="Auto",       x=540, y=722, h=104, face=1,  anim=dict(anim="drive", v=34, lane="dicht")),
+        "traktor":    dict(name="Traktor",    x=850, y=722, h=128, face=1,  anim=dict(anim="drive", v=34, lane="dicht")),
+    }},
 }
 
 

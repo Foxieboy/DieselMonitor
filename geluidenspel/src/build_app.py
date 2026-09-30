@@ -390,7 +390,7 @@ var IMGS = __IMGS__;
     svg.querySelectorAll("[data-anim]").forEach(function(el){
       var m=/translate\(\s*([-\d.]+)[ ,]+([-\d.]+)\s*\)(?:\s*scale\(\s*([-\d.]+)\s*\))?/.exec(el.getAttribute("transform")||"");
       AN.els.push({el:el,t:el.getAttribute("data-anim"),x:m?+m[1]:0,y:m?+m[2]:0,s:m&&m[3]?+m[3]:1,
-        v:anum(el,"v",20),face:anum(el,"face",1),r:anum(el,"r",40),a:anum(el,"a",NaN),p:anum(el,"p",3),
+        v:anum(el,"v",20),face:anum(el,"face",1),dir:anum(el,"dir",1),r:anum(el,"r",40),a:anum(el,"a",NaN),p:anum(el,"p",3),
         py:anum(el,"py",0),peck:el.hasAttribute("data-peck"),lane:el.getAttribute("data-lane")||"",
         node:el.querySelector(".animal-node"),clock:el.hasAttribute("data-lane")?0:Math.random()*20,bb:null});
     });
@@ -424,7 +424,7 @@ var IMGS = __IMGS__;
       if(!held)e.clock+=dt;
       var t=e.clock,x=e.x,y=e.y,rot=0,sign=1,sy=1,w=TAU/e.p;
       switch(e.t){
-        case "drive":sign=e.face;x=wrapX(e,t,1,e.s*sign);if(!held)y-=0.8*Math.abs(Math.sin(t*7));break;
+        case "drive":sign=e.face*e.dir;x=wrapX(e,t,e.dir,e.s*sign);if(!held)y-=0.8*Math.abs(Math.sin(t*7));break;
         case "fly":sign=e.face;x=wrapX(e,t,1,e.s*sign);y+=(isNaN(e.a)?10:e.a)*Math.sin(w*t);break;
         case "drift":x=wrapX(e,t,1,e.s);break;
         case "patrol":case "swim":{
