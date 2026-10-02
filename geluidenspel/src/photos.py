@@ -32,6 +32,17 @@ def theme_photos(theme, keys):
 # face = kijkrichting van de foto (1 rechts, -1 links), plus bewegings-attributen
 # (zie animate_scenes.py). Achtergrond: 1000 x 750.
 SCENES = {
+    # weide: hek op y~435 (ca. 50 eenheden = 1,2 m); achterste rij ~100/m, voorste ~130/m
+    "dieren": {"label": "Foto van een weide met boerderijdieren", "items": {
+        "koe":    dict(name="Koe",    x=290, y=575, h=150, face=-1, anim=dict(anim="patrol", v=10, r=45, p=5, peck=1)),
+        "ezel":   dict(name="Ezel",   x=535, y=565, h=128, face=-1, anim=dict(anim="breathe", p=3.2)),
+        "paard":  dict(name="Paard",  x=790, y=580, h=170, face=-1, anim=dict(anim="patrol", v=16, r=55, p=4, peck=1)),
+        "varken": dict(name="Varken", x=135, y=705, h=125, face=-1, anim=dict(anim="patrol", v=12, r=35, p=4, peck=1)),
+        "schaap": dict(name="Schaap", x=375, y=715, h=140, face=1,  anim=dict(anim="patrol", v=9, r=30, p=5, peck=1)),
+        "geit":   dict(name="Geit",   x=600, y=710, h=135, face=1,  anim=dict(anim="hop", a=10, p=6)),
+        "hond":   dict(name="Hond",   x=790, y=700, h=100,  face=-1, anim=dict(anim="patrol", v=28, r=40, p=2.5)),
+        "poes":   dict(name="Poes",   x=925, y=742, h=74,  face=1,  anim=dict(anim="breathe", p=2.6)),
+    }},
     "erf": {"label": "Foto van het erf met dieren", "items": {
         "kraai":   dict(name="Kraai",   x=250, y=190, h=125,  face=1,  air=1, anim=dict(anim="fly", v=30, a=14, p=7)),
         "bij":     dict(name="Bij",     x=560, y=390, h=75,  face=1,  air=1, anim=dict(anim="hover", r=45, p=7)),

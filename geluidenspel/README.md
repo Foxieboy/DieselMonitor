@@ -48,7 +48,7 @@ Foto's worden gegenereerd met beeldmodellen op Hugging Face (FLUX.1-schnell),
 op een effen groen/magenta/blauw scherm, en daarna uitgeknipt met
 `src/cutout.py` (chroma-key). Een thema schakelt pas over op foto's (tegels én
 een foto-tekening met bewegende dieren) als alle items een foto hebben.
-Klaar: **Het erf**, **Voertuigen** (met verkeer in twee richtingen). Onderweg: Boerderij, Wilde dieren, …
+Klaar: **Boerderij**, **Het erf**, **Voertuigen** (met verkeer in twee richtingen). Onderweg: Wilde dieren, In huis, Klussen & tuin, Mensen.
 Prompts: `src/photo_prompts.json`; posities/bewegingen: `src/photos.py`.
 
 ## Geluiden — bron & licentie
