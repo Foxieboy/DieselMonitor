@@ -43,6 +43,22 @@ SCENES = {
         "hond":   dict(name="Hond",   x=790, y=700, h=100,  face=-1, anim=dict(anim="patrol", v=28, r=40, p=2.5)),
         "poes":   dict(name="Poes",   x=925, y=742, h=74,  face=1,  anim=dict(anim="breathe", p=2.6)),
     }},
+    # savanne: horizon y~450; achterste rij ~60 eenheden/m, voorste ~100/m.
+    # uil en papegaai zitten op een tak die van buiten beeld komt (tak raakt de rand).
+    "wild": {"label": "Foto van de savanne met wilde dieren", "items": {
+        "adelaar":   dict(name="Adelaar",   x=500, y=170, h=80,  face=1,  air=1, z=9999, anim=dict(anim="fly", v=26, a=18, p=9)),
+        "papegaai":  dict(name="Papegaai",  x=108, y=330, h=280, face=-1, air=1),
+        "uil":       dict(name="Uil",       x=938, y=270, h=180, face=1,  air=1),
+        "olifant":   dict(name="Olifant",   x=165, y=585, h=190, face=-1, anim=dict(anim="patrol", v=7, r=25, p=5)),
+        "neushoorn": dict(name="Neushoorn", x=420, y=585, h=100, face=-1, anim=dict(anim="patrol", v=8, r=30, p=5)),
+        "nijlpaard": dict(name="Nijlpaard", x=650, y=588, h=95,  face=-1, anim=dict(anim="breathe", p=3.6)),
+        "gorilla":   dict(name="Gorilla",   x=845, y=590, h=90,  face=1,  anim=dict(anim="breathe", p=3)),
+        "leeuw":     dict(name="Leeuw",     x=110, y=728, h=125, face=-1, anim=dict(anim="breathe", p=3.4)),
+        "tijger":    dict(name="Tijger",    x=330, y=730, h=95,  face=-1, anim=dict(anim="patrol", v=15, r=40, p=3)),
+        "aap":       dict(name="Aap",       x=525, y=732, h=95,  face=1,  anim=dict(anim="breathe", p=2.2)),
+        "wolf":      dict(name="Wolf",      x=705, y=728, h=95,  face=1,  anim=dict(anim="patrol", v=18, r=40, p=3)),
+        "vos":       dict(name="Vos",       x=905, y=735, h=55,  face=-1, anim=dict(anim="patrol", v=20, r=35, p=3)),
+    }},
     "erf": {"label": "Foto van het erf met dieren", "items": {
         "kraai":   dict(name="Kraai",   x=250, y=190, h=125,  face=1,  air=1, anim=dict(anim="fly", v=30, a=14, p=7)),
         "bij":     dict(name="Bij",     x=560, y=390, h=75,  face=1,  air=1, anim=dict(anim="hover", r=45, p=7)),
@@ -75,8 +91,8 @@ def photo_scene(theme, spec, imgs):
     out = ['<svg viewBox="0 0 %d %d" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="%s">' % (W, H, spec["label"]),
            '<image href="%s" x="0" y="0" width="%d" height="%d" preserveAspectRatio="xMidYMid slice"/>' % (
                data_uri(os.path.join(HERE, "real", theme, "bg.webp")), W, H)]
-    # achteraan eerst tekenen: sorteer op grondlijn
-    for key, it in sorted(spec["items"].items(), key=lambda kv: kv[1]["y"]):
+    # achteraan eerst tekenen: sorteer op grondlijn (z = optionele voorrang, bv. vliegende vogel)
+    for key, it in sorted(spec["items"].items(), key=lambda kv: kv[1].get("z", kv[1]["y"])):
         iw, ih = Image.open(photo_path(theme, key)).size
         h = it["h"]; w = h * iw / ih
         anim = dict(it.get("anim", {}))
