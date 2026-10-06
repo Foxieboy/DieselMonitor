@@ -50,5 +50,37 @@
   "helikopter": "Photorealistic red rescue helicopter flying, side view facing left, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
   "bg": "Photorealistic Dutch village street photographed straight from the side at eye level from across the road, flat side view, no perspective depth: straight horizontal two-lane asphalt road across the full width in the lower third, brick sidewalk in the very front, behind the road a straight railway track on a low grass embankment, behind it a row of brick houses and trees, small canal at the bottom left, blue sky with a few clouds in the top third, no cars, no people"
  },
- "_note": "Onderwerpen op effen groen (magenta/blauw voor groene/roze onderwerpen) -> cutout.py; bg-prompts op 1152x864. Model: FLUX.1-schnell / Z-Image-Turbo via Hugging Face Spaces."
+ "_note": "Onderwerpen op effen groen (magenta/blauw voor groene/roze onderwerpen) -> cutout.py; bg-prompts op 1152x864. Model: FLUX.1-schnell / Z-Image-Turbo via Hugging Face Spaces.",
+ "huis": {
+  "kloppen": "Photorealistic closed wooden front door with brass knocker and handle, straight front view, whole door with frame, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "wekker": "Photorealistic classic red twin bell alarm clock, front view, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "klok": "Photorealistic wooden grandfather pendulum clock standing, straight front view, whole clock, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "stofzuiger": "Photorealistic red canister vacuum cleaner with hose and floor nozzle, side view, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "wasmachine": "Photorealistic white front loading washing machine, straight front view, isolated on a flat solid pure blue chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "tandenborstel": "Photorealistic blue toothbrush with toothpaste on the bristles, side view, lying horizontally, isolated on a flat solid magenta chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "wc": "Photorealistic white toilet with lid open, side view, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "water": "Photorealistic chrome kitchen faucet with water running into a white sink, side view, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "blikje": "Photorealistic red soda can, unbranded, no logo, upright, front view, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "bg": "Photorealistic empty bright Dutch living room photographed straight at eye level, flat front view of one wall, no perspective depth: light oak floor in the lower quarter, plain warm white wall, a window with curtains on the right, a picture frame, no furniture, no people"
+ },
+ "klus": {
+  "hamer": "Photorealistic claw hammer with wooden handle, side view, lying horizontally, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "handzaag": "Photorealistic hand saw with wooden handle, side view, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "boor": "Photorealistic red cordless power drill, side view, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "kettingzaag": "Photorealistic orange chainsaw, side view, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "schaar": "Photorealistic pair of garden hedge shears, open, side view, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "grasmaaier": "Photorealistic green push lawn mower, side view, whole mower with handle, isolated on a flat solid magenta chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "bg": "Photorealistic sunny Dutch back garden photographed straight from the side at eye level, flat side view, no perspective depth: green lawn in the lower third, a wooden garden shed with open door and a workbench in front, a hedge and fence, blue sky, no people"
+ },
+ "mensen": {
+  "lachen": "Photorealistic happy toddler laughing out loud, upper body, front view, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "niezen": "Photorealistic young woman sneezing into a tissue, upper body, front view, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "hoesten": "Photorealistic man coughing into his elbow, upper body, side view, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "klappen": "Photorealistic little girl clapping her hands, smiling, upper body, front view, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "baby": "Photorealistic crying baby lying on its back, full body, top view, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "voetstappen": "Photorealistic pair of brown leather shoes walking, side view, only shoes and ankles, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "snurken": "Photorealistic grandfather sleeping with mouth open, head on a white pillow, side view, isolated on a flat solid pure blue chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "drinken": "Photorealistic little boy drinking from a glass of water, upper body, side view, isolated on a flat solid bright green chroma key studio background, even soft lighting, no shadow, no props, no text, sharp detail",
+  "bg": "Photorealistic empty colorful children's playroom photographed straight at eye level, flat front view of one wall, no perspective depth: soft carpet floor in the lower quarter, pastel painted wall, a window, a shelf with a few toys, no people"
+ }
 }
