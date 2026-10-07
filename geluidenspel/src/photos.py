@@ -43,6 +43,24 @@ SCENES = {
         "hond":   dict(name="Hond",   x=790, y=700, h=100,  face=-1, anim=dict(anim="patrol", v=28, r=40, p=2.5)),
         "poes":   dict(name="Poes",   x=925, y=742, h=74,  face=1,  anim=dict(anim="breathe", p=2.6)),
     }},
+    # woonkamer: plint/vloer op y~578, ~190 eenheden per meter aan de muur.
+    # kleine spullen staan (iets vergroot) op een wandplank.
+    "huis": {"label": "Foto van een kamer in huis", "decor": (
+        '<defs><linearGradient id="plank" x1="0" y1="0" x2="0" y2="1">'
+        '<stop offset="0" stop-color="#c79a63"/><stop offset="1" stop-color="#8f6234"/></linearGradient></defs>'
+        '<rect x="392" y="336" width="380" height="22" rx="3" fill="#000" opacity="0.10"/>'
+        '<path d="M430 344 v34 l22 -34z M734 344 v34 l-22 -34z" fill="#7b5430"/>'
+        '<rect x="385" y="328" width="385" height="16" rx="3" fill="url(#plank)"/>'), "items": {
+        "kloppen":       dict(name="Deur",          x=120, y=580, h=400, face=1, air=1),
+        "klok":          dict(name="Klok",          x=300, y=580, h=380, face=1),
+        "wekker":        dict(name="Wekker",        x=440, y=330, h=75,  face=1, air=1, anim=dict(anim="wiggle", p=5)),
+        "blikje":        dict(name="Blikje",        x=515, y=330, h=72,  face=1, air=1),
+        "tandenborstel": dict(name="Tandenborstel", x=610, y=330, h=18,  face=1, air=1),
+        "water":         dict(name="Water",         x=718, y=330, h=125, face=1, air=1),
+        "wasmachine":    dict(name="Wasmachine",    x=520, y=592, h=165, face=1, anim=dict(anim="wiggle", p=4, a=2)),
+        "wc":            dict(name="Wc",            x=700, y=594, h=150, face=1),
+        "stofzuiger":    dict(name="Stofzuiger",    x=860, y=665, h=120, face=1, anim=dict(anim="patrol", v=18, r=40, p=2)),
+    }},
     # savanne: horizon y~450; achterste rij ~60 eenheden/m, voorste ~100/m.
     # uil en papegaai zitten op een tak die van buiten beeld komt (tak raakt de rand).
     "wild": {"label": "Foto van de savanne met wilde dieren", "items": {
@@ -91,6 +109,8 @@ def photo_scene(theme, spec, imgs):
     out = ['<svg viewBox="0 0 %d %d" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="%s">' % (W, H, spec["label"]),
            '<image href="%s" x="0" y="0" width="%d" height="%d" preserveAspectRatio="xMidYMid slice"/>' % (
                data_uri(os.path.join(HERE, "real", theme, "bg.webp")), W, H)]
+    if spec.get("decor"):
+        out.append(spec["decor"])
     # achteraan eerst tekenen: sorteer op grondlijn (z = optionele voorrang, bv. vliegende vogel)
     for key, it in sorted(spec["items"].items(), key=lambda kv: kv[1].get("z", kv[1]["y"])):
         iw, ih = Image.open(photo_path(theme, key)).size
