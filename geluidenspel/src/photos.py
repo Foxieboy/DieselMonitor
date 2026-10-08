@@ -61,6 +61,23 @@ SCENES = {
         "wc":            dict(name="Wc",            x=700, y=594, h=150, face=1),
         "stofzuiger":    dict(name="Stofzuiger",    x=860, y=665, h=120, face=1, anim=dict(anim="patrol", v=18, r=40, p=2)),
     }},
+    # tuin: schuurtje recht van voren, grond bij de schuur op y~547; gereedschap ligt
+    # (iets vergroot) op een werkbank op het gras, grasmaaier rijdt heen en weer.
+    "klus": {"label": "Foto van een tuin met gereedschap", "decor": (
+        '<defs><linearGradient id="bank" x1="0" y1="0" x2="0" y2="1">'
+        '<stop offset="0" stop-color="#c99a62"/><stop offset="1" stop-color="#94673a"/></linearGradient></defs>'
+        '<ellipse cx="775" cy="700" rx="235" ry="14" fill="#1d2a12" opacity="0.28"/>'
+        '<rect x="572" y="588" width="18" height="110" fill="#7b5430"/><rect x="962" y="588" width="18" height="110" fill="#7b5430"/>'
+        '<rect x="600" y="600" width="12" height="96" fill="#6a4628"/><rect x="940" y="600" width="12" height="96" fill="#6a4628"/>'
+        '<rect x="575" y="655" width="400" height="10" fill="#8a5f35"/>'
+        '<rect x="556" y="572" width="438" height="20" rx="3" fill="url(#bank)"/>'), "items": {
+        "hamer":      dict(name="Hamer",      x=620, y=582, h=36,  face=1,  air=1),
+        "handzaag":   dict(name="Handzaag",   x=745, y=582, h=58,  face=1,  air=1),
+        "boor":       dict(name="Boor",       x=885, y=584, h=82,  face=1,  air=1, anim=dict(anim="wiggle", p=5)),
+        "schaar":     dict(name="Schaar",     x=900, y=740, h=58,  face=1),
+        "kettingzaag":dict(name="Kettingzaag",x=480, y=732, h=62,  face=1,  anim=dict(anim="wiggle", p=4)),
+        "grasmaaier": dict(name="Grasmaaier", x=200, y=722, h=140, face=-1, anim=dict(anim="patrol", v=16, r=60, p=2)),
+    }},
     # savanne: horizon y~450; achterste rij ~60 eenheden/m, voorste ~100/m.
     # uil en papegaai zitten op een tak die van buiten beeld komt (tak raakt de rand).
     "wild": {"label": "Foto van de savanne met wilde dieren", "items": {
