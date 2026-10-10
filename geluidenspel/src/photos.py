@@ -94,6 +94,33 @@ SCENES = {
         "wolf":      dict(name="Wolf",      x=705, y=728, h=95,  face=1,  anim=dict(anim="patrol", v=18, r=40, p=3)),
         "vos":       dict(name="Vos",       x=905, y=735, h=55,  face=-1, anim=dict(anim="patrol", v=20, r=35, p=3)),
     }},
+    # speelkamer: muur recht van voren, plint/vloer op y~555 (~230 eenheden per meter aan de muur).
+    # grote mensen en de lachende peuter zitten op een bank (voorkant over de onderkant van de foto).
+    "mensen": {"label": "Foto van een speelkamer met mensen", "decor": (
+        '<defs><linearGradient id="bank2" x1="0" y1="0" x2="0" y2="1">'
+        '<stop offset="0" stop-color="#8fb0bb"/><stop offset="1" stop-color="#5f8290"/></linearGradient></defs>'
+        '<ellipse cx="390" cy="578" rx="290" ry="11" fill="#3a2a1a" opacity="0.25"/>'
+        '<rect x="130" y="360" width="520" height="150" rx="30" fill="url(#bank2)"/>'
+        '<rect x="150" y="458" width="480" height="30" rx="10" fill="#9dbcc6"/>'
+        '<rect x="96" y="640" width="250" height="40" rx="14" fill="#f3d27a"/>'
+        '<rect x="96" y="672" width="250" height="10" rx="5" fill="#d9b25a"/>'), "front": (
+        '<g pointer-events="none">'
+        '<rect x="135" y="563" width="14" height="16" fill="#5b3d22"/><rect x="631" y="563" width="14" height="16" fill="#5b3d22"/>'
+        '<rect x="150" y="478" width="480" height="86" rx="14" fill="url(#bank2)"/>'
+        '<path d="M160 486 h460" stroke="#a9c6cf" stroke-width="3" opacity="0.6"/>'
+        '<rect x="106" y="420" width="72" height="146" rx="26" fill="url(#bank2)"/>'
+        '<rect x="602" y="420" width="72" height="146" rx="26" fill="url(#bank2)"/>'
+        '<path d="M262 606 q40 -14 84 -4 v46 q-2 8 -12 8 h-84 q-8 -22 12 -50z" fill="#b9d3e2"/>'
+        '<path d="M262 606 q40 -14 84 -4" stroke="#e8f1f6" stroke-width="7" fill="none" stroke-linecap="round"/></g>'), "items": {
+        "niezen":      dict(name="Niezen",      x=250, y=505, h=190, face=1, air=1, anim=dict(anim="breathe", p=3.2)),
+        "lachen":      dict(name="Lachen",      x=395, y=505, h=150, face=1, air=1, anim=dict(anim="breathe", p=1.4)),
+        "hoesten":     dict(name="Hoesten",     x=530, y=505, h=195, face=1, air=1, anim=dict(anim="breathe", p=2.6)),
+        "klappen":     dict(name="Klappen",     x=730, y=615, h=200, face=1, anim=dict(anim="hop", a=8, p=3)),
+        "snurken":     dict(name="Snurken",     x=222, y=652, h=78,  face=1, air=1, anim=dict(anim="breathe", p=3.4)),
+        "baby":        dict(name="Baby",        x=505, y=690, h=92,  face=1, anim=dict(anim="sway", a=3, p=2.4)),
+        "voetstappen": dict(name="Voetstappen", x=640, y=742, h=62,  face=-1, anim=dict(anim="patrol", v=30, r=90, p=1)),
+        "drinken":     dict(name="Drinken",     x=875, y=750, h=270, face=1, air=1, z=9000),
+    }},
     "erf": {"label": "Foto van het erf met dieren", "items": {
         "kraai":   dict(name="Kraai",   x=250, y=190, h=125,  face=1,  air=1, anim=dict(anim="fly", v=30, a=14, p=7)),
         "bij":     dict(name="Bij",     x=560, y=390, h=75,  face=1,  air=1, anim=dict(anim="hover", r=45, p=7)),
@@ -147,5 +174,7 @@ def photo_scene(theme, spec, imgs):
                 it["x"], it["y"], face, attrs.replace(' data-face="%s"' % face, ""), shadow,
                 key, it["name"], -w / 2 - padx, -h - pady, w + 2 * padx, h + 2 * pady,
                 key, -w / 2, -h, w, h))
+    if spec.get("front"):
+        out.append(spec["front"])   # voorgrond (bv. voorkant van een bank) over de items
     out.append("</svg>")
     return "\n".join(out)
