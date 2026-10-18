@@ -98,6 +98,29 @@
   @keyframes rotor{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.12)}}
   .a-glow{filter:drop-shadow(0 0 10px #FFD23F) drop-shadow(0 0 18px #FFD23F);}
 
+  /* ---- memory ---- */
+  #memory{display:grid;gap:clamp(8px,2vw,14px);max-width:900px;margin:0 auto;}
+  .mcard{appearance:none;border:none;padding:0;margin:0;background:none;cursor:pointer;aspect-ratio:1;
+    perspective:900px;font-family:inherit;outline:none;}
+  .mcard .in{position:relative;display:block;width:100%;height:100%;transition:transform .45s ease;transform-style:preserve-3d;}
+  .mcard.open .in{transform:rotateY(180deg);}
+  .mcard .b,.mcard .f{position:absolute;inset:0;border-radius:clamp(14px,3vw,22px);display:flex;align-items:center;
+    justify-content:center;box-sizing:border-box;-webkit-backface-visibility:hidden;backface-visibility:hidden;
+    box-shadow:0 6px 0 rgba(61,44,78,.16),0 10px 18px rgba(61,44,78,.14);}
+  .mcard .b{background:repeating-linear-gradient(45deg,#FF8FB5 0 12px,#FF6B9D 12px 24px);border:5px solid #fff;
+    font-size:clamp(1.6rem,7vw,2.8rem);}
+  .mcard .b span{filter:drop-shadow(0 3px 2px rgba(61,44,78,.25));}
+  .mcard .f{background:#fff;transform:rotateY(180deg);padding:7%;}
+  .mcard .f img{width:100%;height:100%;object-fit:contain;display:block;}
+  .mcard .f .e{font-size:clamp(2rem,9vw,3.6rem);line-height:1;}
+  .mcard .f .e svg{height:1.1em;width:1.1em;display:block;}
+  .mcard:active .b{transform:translateY(3px);}
+  .mcard.done{cursor:default;}
+  .mcard.done .f{box-shadow:0 0 0 5px var(--good),0 6px 0 rgba(61,44,78,.16);}
+  .mcard.done .f>*{animation:pop .6s ease;}
+  .mcard:focus-visible .b{box-shadow:0 0 0 4px var(--ink);}
+  .again{display:block;margin:18px auto 0;}
+
   #fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:5;}
   .flash{position:fixed;z-index:6;pointer-events:none;transform:translate(-50%,-50%);font-weight:800;
     font-size:clamp(1.8rem,9vw,3.4rem);color:#fff;text-shadow:0 3px 0 var(--pink),0 6px 12px rgba(61,44,78,.35);
@@ -107,7 +130,8 @@
   .credit{margin:18px auto 0;text-align:center;font-size:.72rem;color:rgba(61,44,78,.55);font-weight:600;}
   [hidden]{display:none !important;}
   @media (prefers-reduced-motion:reduce){
-    .pop,.shake,.a-bounce,.a-shake,.replay.playing,.flap,.rotor{animation:none}.flash{animation-duration:.9s}
+    .pop,.shake,.a-bounce,.a-shake,.replay.playing,.flap,.rotor,.mcard.done .f>*{animation:none}
+    .mcard .in{transition:none}.flash{animation-duration:.9s}
   }
 </style>
 
@@ -134,6 +158,7 @@
     <div class="tabs small" id="viewTabs">
       <button id="tabTiles" class="tab active" type="button">🔲 Tegels</button>
       <button id="tabScene" class="tab" type="button">🌳 Tekening</button>
+      <button id="tabMemory" class="tab" type="button">🃏 Memory</button>
     </div>
     <p class="subtitle" id="subtitle">Tik op een plaatje!</p>
     <button id="replay" class="replay" type="button" aria-label="Nog eens luisteren">🔊</button>
@@ -141,6 +166,8 @@
       <div id="tilesFree" class="grid"></div>
       <div id="tilesQuiz" class="choices" hidden></div>
       <div id="sceneWrap" hidden></div>
+      <div id="memory" hidden></div>
+      <button id="again" class="homebtn again" type="button" hidden>🔄 Nog eens</button>
     </section>
     <p class="stars" id="stars" aria-live="polite"></p>
   </section>
@@ -556,28 +583,93 @@ var IMGS = {"dieren":{"koe":"data:image/webp;base64,UklGRih3AABXRUJQVlA4WAoAAAAQ
   }
   replayBtn.addEventListener("pointerdown",function(){initAudio();resume();unlockSpeech();playQuestion();});
 
+  /* ---- memory ----
+     Elk plaatje twee keer, omgekeerd. Per beurt twee kaarten; een paar blijft open liggen
+     (en pas dan klinkt het geluid), anders gaan ze na even terug dicht. */
+  var memEl=document.getElementById("memory"),againBtn=document.getElementById("again");
+  var mem={gen:0,open:[],busy:false,found:0,total:0};
+  function memArt(a){var im=IMGS[theme]&&IMGS[theme][a.key];return im?'<img src="'+im+'" alt="">':'<span class="e">'+(a.svg||a.emoji)+'</span>';}
+  function memCols(n){
+    if(innerWidth<620)return n<=12?3:4;
+    return n<=16?4:n<=20?5:6;
+  }
+  function memLayout(){
+    /* zoveel kolommen dat alle kaarten zonder scrollen in beeld passen (waar dat kan) */
+    var n=memEl.children.length,cols=memCols(n),rows=Math.ceil(n/cols),gap=12;
+    memEl.style.gridTemplateColumns="repeat("+cols+",minmax(0,1fr))";
+    var avail=innerHeight-memEl.getBoundingClientRect().top-24,card=(avail-gap*(rows-1))/rows;
+    if(innerWidth<620){memEl.style.maxWidth="";return;}
+    memEl.style.maxWidth=Math.round(Math.max(300,Math.min(900,card*cols+gap*(cols-1))))+"px";
+  }
+  function newMemory(){
+    mem={gen:mem.gen+1,open:[],busy:false,found:0,total:items.length};
+    memEl.innerHTML="";againBtn.hidden=true;
+    shuffle(items.concat(items)).forEach(function(a){
+      var c=document.createElement("button");c.type="button";c.className="mcard";c.setAttribute("aria-label","Kaart");c._a=a;
+      c.innerHTML='<span class="in"><span class="b" aria-hidden="true"><span>'+THEMES[theme].emoji+'</span></span>'+
+        '<span class="f" aria-hidden="true">'+memArt(a)+'</span></span>';
+      c.addEventListener("pointerdown",function(){flipCard(c);});
+      memEl.appendChild(c);
+    });
+    memLayout();
+  }
+  function flipCard(c){
+    initAudio();resume();unlockSpeech();
+    if(mem.busy||c.classList.contains("open"))return;
+    c.classList.add("open");c.setAttribute("aria-label",c._a.name);mem.open.push(c);
+    if(mem.open.length<2)return;
+    var a=mem.open[0],b=mem.open[1],g=mem.gen;mem.open=[];mem.busy=true;
+    if(a._a.key===b._a.key){
+      setTimeout(function(){
+        if(g!==mem.gen)return;
+        a.classList.add("done");b.classList.add("done");
+        playSample(a._a.key);
+        var r=b.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,26);flashText(a._a.name,r.left+r.width/2,r.top);
+        mem.found++;mem.busy=false;
+        if(mem.found===mem.total)setTimeout(function(){
+          if(g!==mem.gen)return;
+          bigBurst();flashText("Knap gedaan! 🎉",innerWidth/2,innerHeight*0.30,"#fff");againBtn.hidden=false;
+        },1500);
+      },450);
+    }else{
+      setTimeout(function(){
+        if(g!==mem.gen)return;
+        [a,b].forEach(function(x){x.classList.remove("open");x.setAttribute("aria-label","Kaart");});
+        mem.busy=false;
+      },1400);
+    }
+  }
+  againBtn.addEventListener("pointerdown",function(){initAudio();resume();unlockSpeech();newMemory();});
+  addEventListener("resize",function(){if(view==="memory")memLayout();});
+
   /* ---- render + navigation ---- */
   var tabPlay=document.getElementById("tabPlay"),tabQuiz=document.getElementById("tabQuiz");
-  var tabTiles=document.getElementById("tabTiles");
+  var tabTiles=document.getElementById("tabTiles"),tabMemory=document.getElementById("tabMemory");
+  var modeTabs=document.getElementById("modeTabs");
   function render(){
     clearTimeout(qTimer);locked=false;clearSceneFx();
     tabPlay.classList.toggle("active",mode==="free");
     tabQuiz.classList.toggle("active",mode==="quiz");
     tabTiles.classList.toggle("active",view==="tiles");
     tabScene.classList.toggle("active",view==="scene");
+    tabMemory.classList.toggle("active",view==="memory");
+    var memo=(view==="memory");
+    modeTabs.hidden=memo;memEl.hidden=!memo;
+    if(!memo){mem.gen++;againBtn.hidden=true;}
     tilesFree.hidden=!(view==="tiles"&&mode==="free");
     tilesQuiz.hidden=!(view==="tiles"&&mode==="quiz");
     sceneWrap.hidden=!(view==="scene");
     if(view==="scene")animStart();else animStop();
-    replayBtn.classList.toggle("show",mode==="quiz");
-    starsEl.hidden=(mode!=="quiz");
+    replayBtn.classList.toggle("show",mode==="quiz"&&!memo);
+    starsEl.hidden=(mode!=="quiz"||memo);
     if(mode==="quiz"){stars=0;renderStars();}
     if(mode==="free"){try{window.speechSynthesis&&window.speechSynthesis.cancel();}catch(e){}}
     var sn=THEMES[theme].sceneName||"tekening";
-    subtitle.textContent = mode==="free"
+    subtitle.textContent = memo ? "Zoek twee dezelfde kaarten!" : mode==="free"
       ? (view==="scene"?("Tik op de "+sn+"!"):"Tik op een plaatje!")
       : (view==="scene"?"Zoek wat je hoort!":"Wat hoor je?");
-    if(mode==="quiz")newQuestion();
+    if(mode==="quiz"&&!memo)newQuestion();
+    if(memo)newMemory();   /* pas na het verbergen van de andere weergaven: memLayout meet de vrije hoogte */
   }
   function openTheme(tid){
     initAudio();resume();unlockSpeech();
@@ -590,13 +682,14 @@ var IMGS = {"dieren":{"koe":"data:image/webp;base64,UklGRih3AABXRUJQVlA4WAoAAAAQ
       sceneWrap.querySelectorAll("image[data-img]").forEach(function(im){im.setAttribute("href",IMGS[tid][im.getAttribute("data-img")]);});
       animSetup(); }
     else { sceneWrap.innerHTML=""; }
-    viewTabs.hidden=!hasScene;
+    tabScene.hidden=!hasScene;
     buildTiles();
     mode="free";view="tiles";
     homeSec.hidden=true;themeSec.hidden=false;
     render();
   }
   function goHome(){
+    mem.gen++;
     clearTimeout(qTimer);try{window.speechSynthesis&&window.speechSynthesis.cancel();}catch(e){}
     animStop();themeSec.hidden=true;homeSec.hidden=false;
   }
@@ -605,5 +698,6 @@ var IMGS = {"dieren":{"koe":"data:image/webp;base64,UklGRih3AABXRUJQVlA4WAoAAAAQ
   tabQuiz.addEventListener("pointerdown",function(){initAudio();resume();unlockSpeech();mode="quiz";render();});
   tabTiles.addEventListener("pointerdown",function(){initAudio();resume();unlockSpeech();view="tiles";render();});
   tabScene.addEventListener("pointerdown",function(){initAudio();resume();unlockSpeech();view="scene";render();});
+  tabMemory.addEventListener("pointerdown",function(){initAudio();resume();unlockSpeech();view="memory";render();});
 })();
 </script>

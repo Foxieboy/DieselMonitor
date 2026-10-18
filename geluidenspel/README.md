@@ -31,6 +31,12 @@ Twee schakelaars combineren tot vier varianten:
 - **🌳 Tekening** — alles in één grote habitat-illustratie (boerderij voor
   dieren, straat voor voertuigen). In de quiz wordt dit "zoek-in-de-tekening".
 
+**🃏 Memory** (derde weergave, voor elk thema): elk plaatje van het thema ligt
+twee keer omgekeerd op tafel. Per beurt draai je twee kaarten om; een paar
+blijft open liggen en pas dan klinkt het geluid. Geen paar → de kaarten gaan
+na even stil terug dicht. Alles gevonden → confetti en "🔄 Nog eens". De
+kaarten schalen mee zodat het hele spel zonder scrollen in beeld past.
+
 **Bewegende tekeningen.** In de tekening-weergave leeft alles: vogels en het
 vliegtuig vliegen traag van links naar rechts door de lucht, het verkeer rijdt
 (alle auto's even snel, dus ze botsen nooit), dieren wandelen heen en weer en
