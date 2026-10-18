@@ -122,7 +122,13 @@ HTML = r'''<title>Geluidenspel</title>
   /* ---- memory ---- */
   #memory{display:grid;gap:clamp(8px,2vw,14px);max-width:900px;margin:0 auto;}
   .mcard{appearance:none;border:none;padding:0;margin:0;background:none;cursor:pointer;aspect-ratio:1;
-    perspective:900px;font-family:inherit;outline:none;}
+    perspective:900px;font-family:inherit;outline:none;transform:rotate(var(--rot,0deg));}
+  .mcard.deal{animation:deal .42s cubic-bezier(.2,.9,.3,1.25) both;}
+  @keyframes deal{from{opacity:0;transform:translate(var(--dx,0),-70px) scale(.5) rotate(var(--r0,0deg));}
+    to{opacity:1;transform:rotate(var(--rot,0deg));}}
+  #memSize{margin:-4px 0 14px;}
+  #memSize .tab{min-width:3.2em;}
+  @media (max-width:460px){ #memSize{gap:6px;} #memSize .tab{min-width:0;padding:6px 10px;} }
   .mcard .in{position:relative;display:block;width:100%;height:100%;transition:transform .45s ease;transform-style:preserve-3d;}
   .mcard.open .in{transform:rotateY(180deg);}
   .mcard .b,.mcard .f{position:absolute;inset:0;border-radius:clamp(14px,3vw,22px);display:flex;align-items:center;
@@ -152,7 +158,7 @@ HTML = r'''<title>Geluidenspel</title>
   [hidden]{display:none !important;}
   @media (prefers-reduced-motion:reduce){
     .pop,.shake,.a-bounce,.a-shake,.replay.playing,.flap,.rotor,.mcard.done .f>*{animation:none}
-    .mcard .in{transition:none}.flash{animation-duration:.9s}
+    .mcard .in{transition:none} .mcard.deal{animation:none}.flash{animation-duration:.9s}
   }
 </style>
 
@@ -187,6 +193,7 @@ HTML = r'''<title>Geluidenspel</title>
       <div id="tilesFree" class="grid"></div>
       <div id="tilesQuiz" class="choices" hidden></div>
       <div id="sceneWrap" hidden></div>
+      <div id="memSize" class="tabs small" role="group" aria-label="Aantal kaarten" hidden></div>
       <div id="memory" hidden></div>
       <button id="again" class="homebtn again" type="button" hidden>🔄 Nog eens</button>
     </section>
@@ -527,12 +534,39 @@ var IMGS = __IMGS__;
   /* ---- memory ----
      Elk plaatje twee keer, omgekeerd. Per beurt twee kaarten; een paar blijft open liggen
      (en pas dan klinkt het geluid), anders gaan ze na even terug dicht. */
-  var memEl=document.getElementById("memory"),againBtn=document.getElementById("again");
-  var mem={gen:0,open:[],busy:false,found:0,total:0};
+  var memEl=document.getElementById("memory"),againBtn=document.getElementById("again"),memSizeEl=document.getElementById("memSize");
+  var mem={gen:0,open:[],busy:false,found:0,total:0},memLast={};
+  var memPairs=6;try{memPairs=parseInt(localStorage.getItem("geluidenspel.memPairs"),10)||6;}catch(e){}
+  /* toeval: crypto als het kan, zodat elk spel echt anders ligt */
+  function rnd(){try{return crypto.getRandomValues(new Uint32Array(1))[0]/4294967296;}catch(e){return Math.random();}}
+  function mshuffle(a){for(var i=a.length-1;i>0;i--){var j=(rnd()*(i+1))|0,t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function memOptions(n){var o=[3,4,6,8,10].filter(function(k){return k<n;});o.push(n);return o;}
+  function memPairsNow(){var o=memOptions(items.length),best=o[0];o.forEach(function(k){if(k<=memPairs)best=k;});return best;}
+  function buildMemSize(){
+    memSizeEl.innerHTML="";var cur=memPairsNow(),opts=memOptions(items.length);
+    opts.forEach(function(k){
+      var b=document.createElement("button");b.type="button";b.className="tab"+(k===cur?" active":"");
+      b.textContent=(k===items.length&&opts.length>1?"Alle ":"")+(2*k);b.setAttribute("aria-label",(2*k)+" kaarten");
+      b.addEventListener("pointerdown",function(){initAudio();resume();unlockSpeech();memPairs=k;
+        try{localStorage.setItem("geluidenspel.memPairs",String(k));}catch(e){}
+        buildMemSize();newMemory();});
+      memSizeEl.appendChild(b);
+    });
+  }
+  function wrongSound(){ if(!actx) return;
+    /* zacht "oei-oei": twee dalende tonen, niet eng */
+    var t=actx.currentTime;
+    [[520,390,0],[390,290,0.2]].forEach(function(f){
+      var o=actx.createOscillator(),g=actx.createGain(),s=t+f[2];
+      o.type="triangle";o.frequency.setValueAtTime(f[0],s);o.frequency.exponentialRampToValueAtTime(f[1],s+0.17);
+      g.gain.setValueAtTime(0.0001,s);g.gain.exponentialRampToValueAtTime(0.22,s+0.02);g.gain.exponentialRampToValueAtTime(0.0001,s+0.19);
+      o.connect(g).connect(master||actx.destination);o.start(s);o.stop(s+0.21);
+    });
+  }
   function memArt(a){var im=IMGS[theme]&&IMGS[theme][a.key];return im?'<img src="'+im+'" alt="">':'<span class="e">'+(a.svg||a.emoji)+'</span>';}
   function memCols(n){
-    if(innerWidth<620)return n<=12?3:4;
-    return n<=16?4:n<=20?5:6;
+    if(innerWidth<620)return n<=6?3:n<=8?4:n<=12?3:4;
+    return n<=6?3:n<=16?4:n<=20?5:6;
   }
   function memLayout(){
     /* zoveel kolommen dat alle kaarten zonder scrollen in beeld passen (waar dat kan) */
@@ -543,10 +577,23 @@ var IMGS = __IMGS__;
     memEl.style.maxWidth=Math.round(Math.max(300,Math.min(900,card*cols+gap*(cols-1))))+"px";
   }
   function newMemory(){
-    mem={gen:mem.gen+1,open:[],busy:false,found:0,total:items.length};
+    var pairs=memPairsNow(),pick=mshuffle(items.slice()).slice(0,pairs);
+    mem={gen:mem.gen+1,open:[],busy:false,found:0,total:pairs};
     memEl.innerHTML="";againBtn.hidden=true;
-    shuffle(items.concat(items)).forEach(function(a){
-      var c=document.createElement("button");c.type="button";c.className="mcard";c.setAttribute("aria-label","Kaart");c._a=a;
+    /* elke keer anders: opnieuw schudden zolang de legging te veel op de vorige lijkt */
+    var id=theme+"|"+pairs,prev=memLast[id],deck,same,tries=0;
+    do{deck=mshuffle(pick.concat(pick));same=0;
+      if(prev&&prev.length===deck.length)deck.forEach(function(a,i){if(prev[i]===a.key)same++;});
+    }while(prev&&same>deck.length/6&&++tries<40);
+    memLast[id]=deck.map(function(a){return a.key;});
+    var order=mshuffle(deck.map(function(_,i){return i;}));
+    deck.forEach(function(a,i){
+      var c=document.createElement("button");c.type="button";c.className="mcard deal";c.setAttribute("aria-label","Kaart");c._a=a;
+      c.style.setProperty("--rot",(rnd()*5-2.5).toFixed(1)+"deg");
+      c.style.setProperty("--r0",(rnd()*40-20).toFixed(0)+"deg");
+      c.style.setProperty("--dx",(rnd()*60-30).toFixed(0)+"px");
+      c.style.animationDelay=(order.indexOf(i)*45)+"ms";
+      c.addEventListener("animationend",function(){c.classList.remove("deal");});
       c.innerHTML='<span class="in"><span class="b" aria-hidden="true"><span>'+THEMES[theme].emoji+'</span></span>'+
         '<span class="f" aria-hidden="true">'+memArt(a)+'</span></span>';
       c.addEventListener("pointerdown",function(){flipCard(c);});
@@ -573,11 +620,12 @@ var IMGS = __IMGS__;
         },1500);
       },450);
     }else{
+      setTimeout(function(){if(g===mem.gen){wrongSound();[a,b].forEach(function(x){x.classList.remove("shake");void x.offsetWidth;x.classList.add("shake");});}},550);
       setTimeout(function(){
         if(g!==mem.gen)return;
-        [a,b].forEach(function(x){x.classList.remove("open");x.setAttribute("aria-label","Kaart");});
+        [a,b].forEach(function(x){x.classList.remove("open","shake");x.setAttribute("aria-label","Kaart");});
         mem.busy=false;
-      },1400);
+      },1600);
     }
   }
   againBtn.addEventListener("pointerdown",function(){initAudio();resume();unlockSpeech();newMemory();});
@@ -595,7 +643,7 @@ var IMGS = __IMGS__;
     tabScene.classList.toggle("active",view==="scene");
     tabMemory.classList.toggle("active",view==="memory");
     var memo=(view==="memory");
-    modeTabs.hidden=memo;memEl.hidden=!memo;
+    modeTabs.hidden=memo;memEl.hidden=!memo;memSizeEl.hidden=!memo;if(memo)buildMemSize();
     if(!memo){mem.gen++;againBtn.hidden=true;}
     tilesFree.hidden=!(view==="tiles"&&mode==="free");
     tilesQuiz.hidden=!(view==="tiles"&&mode==="quiz");

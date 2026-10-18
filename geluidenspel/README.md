@@ -33,8 +33,13 @@ Twee schakelaars combineren tot vier varianten:
 
 **🃏 Memory** (derde weergave, voor elk thema): elk plaatje van het thema ligt
 twee keer omgekeerd op tafel. Per beurt draai je twee kaarten om; een paar
-blijft open liggen en pas dan klinkt het geluid. Geen paar → de kaarten gaan
-na even stil terug dicht. Alles gevonden → confetti en "🔄 Nog eens". De
+blijft open liggen en pas dan klinkt het geluid. Geen paar → een zacht
+"oei-oei"-geluidje, de kaarten wiebelen en gaan terug dicht. Alles gevonden →
+confetti en "🔄 Nog eens". Bovenaan kies je het aantal kaarten (6, 8, 12, … of
+alle); de keuze wordt onthouden. Bij een kleiner aantal komt telkens een
+willekeurige selectie plaatjes op tafel. Elk spel wordt opnieuw geschud (en
+herschud als het te veel op de vorige legging lijkt), de kaarten vallen in
+willekeurige volgorde op tafel en liggen telkens een tikje anders scheef. De
 kaarten schalen mee zodat het hele spel zonder scrollen in beeld past.
 
 **Bewegende tekeningen.** In de tekening-weergave leeft alles: vogels en het
