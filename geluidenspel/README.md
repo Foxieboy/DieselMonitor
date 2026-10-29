@@ -71,6 +71,11 @@ Echte opnames komen uit meerdere vrij gelicentieerde bronnen:
 - **raimonvibe/animalguesses-web** — paard, eend, tijger, uil, geit, gans, kalkoen, duif, muis,
   wolf, vos, nijlpaard, neushoorn, gorilla, papegaai, adelaar, **MIT**
 - **ESC-50** — ook de thema's *In huis* en *Mensen*, **CC BY-NC 3.0**
+- **Boormachine** (*Klussen & tuin*) — samengesteld uit twee echte opnames
+  (`src/boor_echt.py`): een boor die aanslaat en optoert (voorbeeldopname uit
+  mikesmales/Udacity-ML-Capstone) en een boor die in de muur bijt
+  (UrbanSound8K / Freesound 103199, **CC BY-NC 3.0**), met een uitloop waarin de
+  toon zakt.
 
 Per item is één fragment gekozen, kort geknipt en genormaliseerd. Enkele geluiden zonder ESC-50-bron zijn **gesynthetiseerd**
 (`src/add_synth.py`): de **fietsbel**, de **motor** (optrekkend motorgeluid) en

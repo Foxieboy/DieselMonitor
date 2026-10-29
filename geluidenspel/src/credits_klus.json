@@ -9,8 +9,9 @@
     "bytes": 16240
   },
   "boor": {
-    "file": "(gesynthetiseerd)",
-    "bytes": 20942
+    "file": "drilling_1.wav + 103199-4-0-0.wav (samengesteld, zie boor_echt.py)",
+    "bron": "UrbanSound8K / Freesound 103199 (CC BY-NC) + voorbeeldopname mikesmales/Udacity-ML-Capstone",
+    "bytes": 32176
   },
   "kettingzaag": {
     "file": "1-116765-A-41.wav",
