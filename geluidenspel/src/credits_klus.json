@@ -25,5 +25,20 @@
   "grasmaaier": {
     "file": "(gesynthetiseerd)",
     "bytes": 20942
+  },
+  "accuboor": {
+    "file": "drilling_1.wav",
+    "bron": "voorbeeldopname mikesmales/Udacity-ML-Capstone",
+    "bytes": 20943
+  },
+  "klopboor": {
+    "file": "103199-4-0-0.wav",
+    "bron": "UrbanSound8K / Freesound 103199 (CC BY-NC)",
+    "bytes": 34004
+  },
+  "drilboor": {
+    "file": "103074-7-0-0.wav",
+    "bron": "UrbanSound8K / Freesound 103074 (CC BY-NC)",
+    "bytes": 23816
   }
 }
