@@ -35,7 +35,8 @@ Twee schakelaars combineren tot vier varianten:
 twee keer omgekeerd op tafel. Per beurt draai je twee kaarten om; een paar
 blijft open liggen en pas dan klinkt het geluid. Geen paar → een zacht
 "oei-oei"-geluidje, de kaarten wiebelen en gaan terug dicht. Alles gevonden →
-confetti en "🔄 Nog eens". Bovenaan kies je het aantal kaarten (6, 8, 12, … of
+confetti en "🔄 Nog eens". Op een al gevonden kaart tikken laat het geluid
+opnieuw horen; gesloten kaarten blijven stil. Bovenaan kies je het aantal kaarten (6, 8, 12, … of
 alle); de keuze wordt onthouden. Bij een kleiner aantal komt telkens een
 willekeurige selectie plaatjes op tafel. Elk spel wordt opnieuw geschud (en
 herschud als het te veel op de vorige legging lijkt), de kaarten vallen in

@@ -142,7 +142,7 @@ HTML = r'''<title>Geluidenspel</title>
   .mcard .f .e{font-size:clamp(2rem,9vw,3.6rem);line-height:1;}
   .mcard .f .e svg{height:1.1em;width:1.1em;display:block;}
   .mcard:active .b{transform:translateY(3px);}
-  .mcard.done{cursor:default;}
+  .mcard.done{cursor:pointer;}
   .mcard.done .f{box-shadow:0 0 0 5px var(--good),0 6px 0 rgba(61,44,78,.16);}
   .mcard.done .f>*{animation:pop .6s ease;}
   .mcard:focus-visible .b{box-shadow:0 0 0 4px var(--ink);}
@@ -604,6 +604,12 @@ var IMGS = __IMGS__;
   }
   function flipCard(c){
     initAudio();resume();unlockSpeech();
+    if(c.classList.contains("done")){
+      /* gevonden paar: tikken laat het geluid opnieuw horen */
+      var im=c.querySelector(".f>*");im.style.animation="none";void im.offsetWidth;im.style.animation="";
+      playSample(c._a.key);var r=c.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,14);flashText(c._a.name,r.left+r.width/2,r.top);
+      return;
+    }
     if(mem.busy||c.classList.contains("open"))return;
     c.classList.add("open");c.setAttribute("aria-label",c._a.name);mem.open.push(c);
     if(mem.open.length<2)return;
