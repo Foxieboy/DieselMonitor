@@ -71,9 +71,14 @@ SCENES = {
         '<rect x="600" y="600" width="12" height="96" fill="#6a4628"/><rect x="940" y="600" width="12" height="96" fill="#6a4628"/>'
         '<rect x="575" y="655" width="400" height="10" fill="#8a5f35"/>'
         '<rect x="556" y="572" width="438" height="20" rx="3" fill="url(#bank)"/>'), "items": {
-        "hamer":      dict(name="Hamer",      x=620, y=582, mw=0.33, sy=690,  face=1,  air=1),
-        "handzaag":   dict(name="Handzaag",   x=745, y=582, mw=0.55, sy=690,  face=1,  air=1),
-        "boor":       dict(name="Boor",       x=885, y=584, m=0.24, sy=690,  face=1,  air=1, anim=dict(anim="wiggle", p=5)),
+        "hamer":      dict(name="Hamer",      x=598, y=582, mw=0.33, sy=690,  face=1,  air=1),
+        "schuurmachine": dict(name="Schuurmachine", x=668, y=583, mw=0.25, sy=690, face=1, air=1, anim=dict(anim="wiggle", p=3, a=2)),
+        "handzaag":   dict(name="Handzaag",   x=760, y=582, mw=0.55, sy=690,  face=1,  air=1),
+        "accuboor":   dict(name="Accuboor",   x=858, y=584, m=0.26, sy=690,  face=1,  air=1, anim=dict(anim="wiggle", p=6)),
+        "boor":       dict(name="Boor",       x=937, y=584, m=0.24, sy=690,  face=1,  air=1, anim=dict(anim="wiggle", p=5)),
+        # op het gras: klopboor ligt voor de werkbank, de drilboor (breekhamer) staat rechtop
+        "klopboor":   dict(name="Klopboor",   x=700, y=745, mw=0.33, face=1,  anim=dict(anim="wiggle", p=4.5, a=3)),
+        "drilboor":   dict(name="Drilboor",   x=470, y=620, m=0.75, face=1,  anim=dict(anim="hop", a=3, p=2.2)),
         "schaar":     dict(name="Schaar",     x=900, y=740, mw=0.6,  face=1),
         "kettingzaag":dict(name="Kettingzaag",x=480, y=732, mw=0.8,  face=1,  anim=dict(anim="wiggle", p=4)),
         "grasmaaier": dict(name="Grasmaaier", x=200, y=722, mw=1.45, face=-1, anim=dict(anim="patrol", v=16, r=60, p=2)),
