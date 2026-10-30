@@ -80,6 +80,10 @@ Echte opnames komen uit meerdere vrij gelicentieerde bronnen:
   Daarnaast staan drie boormachines als eigen tegel, elk met hun eigen echte
   opname: **Accuboor** (optoeren), **Klopboor** (in de muur, Freesound 103199) en
   **Drilboor** (breekhamer, UrbanSound8K / Freesound 103074, **CC BY-NC 3.0**).
+- **Schuurmachine** (*Klussen & tuin*) — **gesynthetiseerd** (`src/schuur_synth.py`):
+  brommende motor (~190 Hz, aan- en uitlopend), trillend schuurplateau en het
+  schurende geruis van schuurpapier op hout; er was geen vrije echte opname
+  bereikbaar.
 
 Per item is één fragment gekozen, kort geknipt en genormaliseerd. Enkele geluiden zonder ESC-50-bron zijn **gesynthetiseerd**
 (`src/add_synth.py`): de **fietsbel**, de **motor** (optrekkend motorgeluid) en

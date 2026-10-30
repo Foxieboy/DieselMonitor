@@ -40,5 +40,9 @@
     "file": "103074-7-0-0.wav",
     "bron": "UrbanSound8K / Freesound 103074 (CC BY-NC)",
     "bytes": 23816
+  },
+  "schuurmachine": {
+    "file": "(gesynthetiseerd, zie schuur_synth.py)",
+    "bytes": 27996
   }
 }
